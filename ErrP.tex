@@ -697,66 +697,42 @@ The results show that as the Q-Table is progressively trained the average amount
 In the case for subject 5 and 6, the reward information obtained from the brainwaves is not enough to train the agent effectively. Figures \ref{fig:avg_steps_5} and \ref{fig:avg_steps_6} show no apparent learning, as the amount of steps to reach the goal doesn't decrease when trained. Both subjects have less recorded data from the sessions in comparison to the rest of the subjects. In particular, subject 5 has less recorded experiences, so it is respective graphic shows the amount of steps for an empty Q-Table and for a Q-Table trained with only one experience. These results are consistent with fig. \ref{fig:roc:manuel} and fig. \ref{fig:roc:marta}, which show that the signal classification for these subjects hasn't been particularly successful. The average steps result for these subject are similar to that of fig. \ref{fig:roc:noise} which is constructed from noise, so the generated Q-Table would be similar to one generated with noise.
 
 
+\begin{figure}[h!]
+\begin{subfigure}{0.5\textwidth}
+\includegraphics[scale=0.2]{Images/Average_steps/alex.png}
+\includegraphics[scale=0.2]{Images/Average_steps/gonza.png}
+\includegraphics[scale=0.2]{Images/Average_steps/jose.png}
+ \includegraphics[scale=0.2]{Images/Average_steps/juan.png} 
+\caption{Initial state of the grid.}
+\label{fig:subim1}
+\end{subfigure}
+\begin{subfigure}{0.5\textwidth}
+ \includegraphics[scale=0.2]{Images/Average_steps/manu.png} 
+  \includegraphics[scale=0.2]{Images/Average_steps/marta.png} 
+  \includegraphics[scale=0.2]{Images/Average_steps/nati.png} 
+  \includegraphics[scale=0.2]{Images/Average_steps/santiago.png} 
+\caption{Final state of the grid.}
+\label{fig:subim2}
+\end{subfigure}
+\caption{Grid system representation used in cognitive experience.}
+\label{fig:game_representation}
+\end{figure}
 
-\begin{figure}[h]
-        \centering
-        \includegraphics[scale=0.4]{Images/Average_steps/alex.png} 
-        \caption{Average steps using Q-table trained with the results of subject 1}
-        \label{fig:avg_steps_1}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{Images/Average_steps/noise.png}
+\caption{Average steps using Q-Table trained with noise.}
+\label{fig:avg_steps_noise}
 \end{figure}
 
 
 \begin{figure}[h]
-        \centering
-        \includegraphics[scale=0.4]{Images/Average_steps/gonza.png} 
-        \caption{Average steps using Q-table trained with the results of subject 2}
-        \label{fig:avg_steps_2}
+    \centering
+    \includegraphics[scale=0.4]{Images/algorithm_calibration/Total_calib.png}
+    \caption{Score Obtained With The Optimal Calibration Per Algorithm Per Subject}
+    \label{diag:algorithm_calibration:subject_calib}
 \end{figure}
-
-\begin{figure}[h]
-        \centering
-        \includegraphics[scale=0.4]{Images/Average_steps/jose.png} 
-        \caption{Average steps using Q-table trained with the results of subject 3}
-        \label{fig:avg_steps_3}
-\end{figure}
-
-\begin{figure}[h]
-        \centering
-        \includegraphics[scale=0.4]{Images/Average_steps/juan.png} 
-        \caption{Average steps using Q-table trained with the results of subject 4}
-        \label{fig:avg_steps_4}
-\end{figure}
-
-
-\begin{figure}[h]
-        \centering
-        \includegraphics[scale=0.4]{Images/Average_steps/manu.png} 
-        \caption{Average steps using Q-table trained with the results of subject 5}
-        \label{fig:avg_steps_5}
-\end{figure}
-
-\begin{figure}[h]
-        \centering
-        \includegraphics[scale=0.4]{Images/Average_steps/marta.png} 
-        \caption{Average steps using Q-table trained with the results of subject 6}
-        \label{fig:avg_steps_6}
-\end{figure}
-
-
-\begin{figure}[h]
-        \centering
-        \includegraphics[scale=0.4]{Images/Average_steps/nati.png} 
-        \caption{Average steps using Q-table trained with the results of subject 7}
-        \label{fig:avg_steps_7}
-\end{figure}
-
-\begin{figure}[h]
-        \centering
-        \includegraphics[scale=0.4]{Images/Average_steps/santiago.png} 
-        \caption{Average steps using Q-table trained with the results of subject 8}
-        \label{fig:avg_steps_8}
-\end{figure}
-
 
 \section{Conclusion}
 The present research work set out to validate if ErrP signals could be used to train an agent using reinforcement learning. The collected data show that ErrP signals can in fact be classified and used to train an agent effectively. 
