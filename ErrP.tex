@@ -593,7 +593,7 @@ This experiment consists of collecting signals from a person's brain while they 
 
 The experimental procedure is summarized in Figure \ref{diag:complete_flow}. The core of the procedure is the retrieval of the subject's brain activity.  This process is called brainwave session. Subjects are recruited voluntarily. They are given a consent form with questions regarding their health (previous health issues and particular visual sensitivity), habits (sleeping hours, caffeine and alcohol consumption), as well as an approval petition to collect the required data. The brainwave sessions are performed with 8 subjects, 5 males and 3 females, average age 25.125 years, standard deviation 1.54 years, range of 22-28 years. All subjects have normal vision, are right-handed and have no history of neurological disorders.
 
-After the form is filled out, a short description of the procedure is given to the subject. They are only told that the objective of the agent is to reach the goal and the four movements that the agent can make. When this concludes, the subject is introduced to the wireless digital EEG device (g.Nautilus, g.Tec, Austria) that they have to wear during the brainwave session. It has eight electrodes (g.LADYbird, g.Tec, Austria) on the positions Fz, Cz, Pz, Oz, P3, P4, PO7 and PO8, identified according to the 10-20 International System, with a reference set to the right ear lobe and ground set as the AFz position. The electrodes contact points are adjusted applying conductive gel until the impedance values displayed by the program g.NeedAccess (g.Tec, Austria) are within the desired range. This process takes between 10 and 15 minutes. After this step, the subject is instructed to close their eyes and the same program is used to check the live channel values so that there are no dead ones and the expected values are displayed for eye movements or muscle chewing.
+After the form is filled out, a short description of the procedure is given to each subject. They are only told that the objective of the agent is to reach the goal and the four movements that the agent can make. When this concludes, the subject is introduced to the wireless digital EEG device (g.Nautilus, g.Tec, Austria) that they have to wear during the brainwave session. It has eight electrodes (g.LADYbird, g.Tec, Austria) on the positions Fz, Cz, Pz, Oz, P3, P4, PO7 and PO8, identified according to the 10-20 International System, with a reference set to the right ear lobe and ground set as the AFz position. The electrodes contact points are adjusted applying conductive gel until the impedance values displayed by the program g.NeedAccess (g.Tec, Austria) are within the desired range. This process takes between 10 and 15 minutes. After this step, the subject is instructed to close their eyes and the same program is used to check the live channel values so that there are no dead ones and the expected values are displayed for eye movements or muscle chewing.
 
 Once the headset is correctly applied, the OpenVibe Acquisition Server program, from the OpenVibe platform~\cite{OPEN-VIBE-PAPER}, is launched and configured with a sampling rate of $250$ Hz. A $50$ Hz notch filter is applied to filter out power line. An additional bandpass filter between $0.5$ Hz and $60$ Hz is applied as well. Data is handled and processed with the OpenVibe Designer, from the same platform, using 8 channels for the brain data (one channel per electrode) and an additional channel for the stimuli. After everything is connected, the subject seats in a comfortable chair in front of a computer screen. The brightness of the screen is set to the maximum setting to avoid any visual inconvenience in which the subject can not distinguish the components of the game that appear on the screen.
 
@@ -716,15 +716,14 @@ In the case for subject 5 and 6, the reward information obtained from the brainw
 \begin{subfigure}{0.25\textwidth}
     \centering
     \includegraphics[scale=0.2]{Images/Classification_test/roc_manuel.png}
-    \caption{ROC Curve for Subject 5.}
     \label{fig:subject5roc}
 \end{subfigure}
 \begin{subfigure}{0.25\textwidth}
     \centering
     \includegraphics[scale=0.2]{Images/Classification_test/roc_marta.png}
-    \caption{ROC Curve for Subject 5.}
     \label{fig:subject6roc}
 \end{subfigure}
+\caption{ROC Curve for Subjects 5 and 6}
 \end{figure}
 
 %These results are consistent with fig. \ref{fig:roc:manuel} and fig. \ref{fig:roc:marta}, which show that the signal classification for these subjects hasn't been particularly successful. 
