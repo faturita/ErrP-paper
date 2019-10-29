@@ -472,13 +472,13 @@ ErrP, BCI, EEG, RL, Agent, AI
 
 % You must have at least 2 lines in the paragraph with the drop letter
 % (should never be an issue)
-\IEEEPARstart{T}{he} effectiveness of today's human–machine interaction and artificial intelligence is limited by a communication bottleneck as humans are required to translate high-level concepts into a machine-mandated sequence of instructions \cite{CURSOR-CONTROL-PAPER}.   This work tackles this problem by exploring the use of brain signals as an interface between human and computer, trying to overcome this limitation by providing information to the system without explicit communication from the user.  This information is used to make a gaming agent improve its operational performance using electroencephalography (EEG) signals as feedback of the performed task from an observational human critic. The idea is that subjects observing a computer game play can train the gaming agent using only signals components called Error-related Potentials (ErrP) that can be identified from their brain signals.   These can be found on EEG traces and are elicited when a subject is aware of the presence of un unexpected outcome, which she identifies as an error.  It is currently an extensive area of research in the neuroscience community~\cite{Holroyd2009}.  They can be detected by signal processing and machine learning techniques~\cite{EERP-PAPER} and they are also used in Brain-Computer Interfaces (BCI) to implement or enhance artificial communication channels~\cite{Chavarriaga2014}.
+\IEEEPARstart{T}{he} effectiveness of today's human–machine interaction and artificial intelligence is limited by a communication bottleneck as humans are required to translate high-level concepts into a machine-mandated sequence of instructions~\cite{CURSOR-CONTROL-PAPER}.   This work tackles this problem by exploring the use of brain signals as an interface between human and computer, trying to overcome this limitation by providing information to the system without explicit communication from the user.  This information is used to make a gaming agent improve its operational performance using electroencephalography (EEG) signals as feedback of the performed task from an observational human critic. The idea is that subjects observing a computer game play can train the gaming agent using only signals components called Error-related Potentials (ErrP) that can be identified from their brain signals.   These can be found on EEG traces and are elicited when a subject is aware of the presence of un unexpected outcome, which she identifies as an error.  It is currently an extensive area of research in the neuroscience community~\cite{Holroyd2009}.  They can be detected by signal processing and machine learning techniques~\cite{EERP-PAPER} and they are also used in Brain-Computer Interfaces (BCI) to implement or enhance artificial communication channels~\cite{Chavarriaga2014}.
 
-In order to train the agent, a natural solution for this scenario comes handy from the field of Artificial Intelligence: Reinforcement Learning (RL)~\cite{Santos1999}.  An algorithmic learning strategy can be established by mimicking how biological agents learn from the environment by exploring it and getting feedback, which can be a negative or positive reinforcement.  This strategy aims to maximize the amount of positive rewards while keeping low the number of negative feedback.  This allow to pose the learning problem as a mere stochastic optimization strategy~\cite{sutton2018reinforcement}.  Recently, this technique has seen a come-back. Nonneglected is the influence of DeepBrain's AlphaGo project, which was the first to reach superhuman proficiency when it won the complex game Go against several world champions~\cite{ALPHA-GO}.
+In order to train the agent, Reinforcement Learning (RL)~\cite{Santos1999} comes as natural solution for this scenario from the field of Artificial Intelligence.  RL is an algorithmic learning strategy that can be established by mimicking how biological agents learn from the environment by exploring it and getting feedback rewards, either negative or positive.  This strategy aims to maximize the amount of positive rewards while keeping low the number of negative feedback.  Thus, the learning problem is  posed as a mere stochastic optimization strategy~\cite{sutton2018reinforcement}.  Recently, this technique has seen a come-back. Nonneglected is the influence of DeepBrain's AlphaGo project, which was the first to reach superhuman proficiency when it won the complex game Go against several world champions~\cite{ALPHA-GO}.
 
 %By using variants of this technique, in 2015 AlphaGo won 5 matches against 3-times European Champion, Mr Fan Hui. AlphaGo then went on to compete against Mr Lee Sedol, winner of 18 world titles and considered to be the greatest player until then, and won 4 out of 5 matches in 2016 \cite{ALPHA-GO}.
 
-Previous research has explored the usage of RL with reward signals based on brain activity, recorded by an EEG-based BCI system during the task execution. The papers \cite{ROBOT-CONTROL-PAPER,Omedes2013} have successfully demonstrated that a robot can be controlled by obtaining a reward signal from brain activity of a person which is observing the robot solving a task.  Other approaches have used the signal as an important feedback to identify targets for robots when implementing shared-control strategies~\cite{Schiatti2018}.  Additionally, ErrPs have been used as well in the context of games as an additional feedback channel that can be explored to enhance gaming experience~\cite{Plass-OudeBos2010,kober2018bci}.  In this same line, the objective of this work is to use the information extracted from brainwaves to enhance the performance of a gaming agent, replicating and extending those results.
+Previous research has explored the usage of RL with reward signals based on brain activity, recorded by an EEG-based BCI system during task execution. The papers \cite{ROBOT-CONTROL-PAPER,Omedes2013} have successfully demonstrated that a robot can be controlled by obtaining a reward signal from brain activity of a person which is observing the robot solving a task.  Other approaches have used the signal as an important feedback to identify targets for robots when implementing shared-control strategies~\cite{Schiatti2018}.  Additionally, ErrPs have been used as well in the context of games as an additional feedback channel that can be explored to enhance gaming experience~\cite{Plass-OudeBos2010,kober2018bci}.  In this same line, the objective of this work is to use the information extracted from brainwaves to enhance the performance of a gaming agent, replicating and extending those results.
 
 
 
@@ -577,12 +577,12 @@ Previous research has explored the usage of RL with reward signals based on brai
 % footnotes above bottom floats. This can be corrected via the
 % \fnbelowfloat command of the stfloats package.
 
-In Section \ref{section:materials} the general layout of the cognitive game experiment is described. Section \ref{section:calibration} outlines the processing pipeline used to detect ErrP components. The following Section \ref{learning} describes the agent learning phase.   Results \ref{results} and conclusions \ref{conclusions} are exposed at the last two sections.
+In Section \ref{section:materials} the general layout of the cognitive game experiment is described. Section \ref{section:calibration} outlines the processing pipeline used to detect ErrP components. The following Section \ref{learning} describes the agent learning phase.   Results and Conclusions are exposed in Sections \ref{results} and \ref{conclusions}.
 
 \section{Materials and Methods}
 \label{section:materials}
 
-This experiment consists of collecting signals from a person's brain while they are watching a game where the agent knows the game rules but not how to win it. Hence, the agent can learn the winning strategy using the person's feedback to improve its own performance. This section describes the process of obtaining the person's brain signals and how they are used to make the agent more efficient.
+This experiment consists of collecting signals from a person's brain while they are watching a game where the agent knows the game rules but not how to win it. Hence, the agent can learn the winning strategy using the person's feedback to improve its own performance. This section describes the process of obtaining the person's brain signals that are used to make the agent more efficient.
 
 \begin{figure}[h]
     \centering
@@ -636,7 +636,7 @@ After the data is loaded and tagged, epochs are extracted from the raw data. Epo
 
 Samples that do not correspond to an epoch are not used. Also, epochs referring to the start or finish of the experience are excluded. This is done because the start and the end of the experience doesn't involve the agent taking an action, thus giving signals that should not be considered in the classification process.
 
-In this way, the raw data of an entire brainwave session is processed into an array of experiences where each element is an array of epochs tagged with a number specifying the prediction of the classifier, i.e. if the epoch corresponds to an action that made the agent move further from the goal (hit) or an action that made the agent move closer to the goal (no hit). The ErrP is expected to be found in hits. To get the data ready for classification, the stimuli channel is removed in order to classify the signals using only the EEG data. Each epoch is regularized using a MinMaxScaler, i.e. substracting the minimun value in the feature and dividing by the signal peak-to-peak amplitude.  The eight channels are concatenated using the  MNE Vectorizer function to transform the data matrix into a single array sample. Lastly, this data is used by the classification module as information to train and test a classifier.
+In this way, the raw data of an brainwave session is processed into an array of experiences where each element is an array of epochs tagged with a number specifying the prediction of the classifier, i.e. if the epoch corresponds to an action that made the agent move further from the goal (hit) or an action that made the agent move closer to the goal (no hit). The ErrP is expected to be found in hits. To get the data ready for classification, the stimuli channel is removed in order to classify the signals using only the EEG data. Each epoch is regularized using a MinMaxScaler, i.e. substracting the minimun value in the feature and dividing by the signal peak-to-peak amplitude.  The eight channels are concatenated using the  MNE Vectorizer function to transform the data matrix into a single array sample. Lastly, this data is used by the classification module as information to train and test a classifier.
 
 Vectorized epochs are used in the final classification step.  Four different classification algorithms are used.  Logistic Regression, Multi-layer Perceptron with a hidden layer of 100000 neurons, Random Forest and finally a Support Vector Classifier (i.e. SVM)~\cite{Lotte2018}.  
 
@@ -647,7 +647,7 @@ Vectorized epochs are used in the final classification step.  Four different cla
 \section{Reinforcement Learning}
 \label{learning}
 
-The set of experiences of each subject is split into training and testing, so that the results of the classification can then be used to improve the performance of the agent. After training the classifier, the testing experiences are classified. Then, for each experience a reward file is generated. For this purpose, game states files, which are submitted by the game when an experience takes place, are used. These files contain an ordered list of the states of the game throughout an experience. With this file and the classification of the test data of an experience, a reward file is composed. This file specifies a reward for each movement in the game, based on the classification of the event that corresponds to that movement. The reward can either be -1 when the event is classified as a hit or 0 when it is classified as a no hit. The accuracy of this rewards depends on the performance of the classifier. This reward file is used by the a variant of a Reinforcement Learning algorithm called Q-Learning algorithm.
+The set of experiences of each subject is split into training and testing, so that the results of the classification can then be used to improve the performance of the agent. After training, the testing experiences are classified. Then, for each experience a reward file is generated. For this purpose, game states files, which are submitted by the game when an experience takes place, are used. These files contain an ordered list of the states of the game throughout an experience. With this file and the classification of the test data of an experience, a reward file is composed. This file specifies a reward for each movement in the game, based on the classification of the event that corresponds to that movement. The reward can either be -1 when the event is classified as a hit or 0 when it is classified as a no hit. The accuracy of this rewards depends on the performance of the classifier. This reward file is used by the a variant of a Reinforcement Learning algorithm called Q-Learning algorithm.
 
 
 \subsection{Q-Learning}{
@@ -690,7 +690,7 @@ Figure~\ref{fig:classifiers} show the binary classification accuracy obtained fo
     \label{fig:logisticregression}
 \end{figure}
 
-On the other hand, Figure \ref{fig:avg_steps} shows for each subject the average amount of steps the agent takes to reach the goal as the Q-Table is progressively trained using the reward information obtained from their tested experiences. Each point corresponds to the average amount of steps it takes for the agent to reach the goal for a specific Q-Table in 200 iterations. The first point represents the amount of steps it takes to reach the goal for a Q-Table that hasn't been trained at all, where movements are decided randomly. The next point corresponds to the amount of steps it takes to reach the goal using a policy derived from a Q-Table trained with one experience, and so on.
+On the other hand, Figure \ref{fig:avg_steps} shows for each subject the average amount of steps the agent takes to reach the goal as the Q-Table is progressively trained using the reward information obtained from their tested experiences. Each point corresponds to the average number of steps in 200 iterations that it takes for the agent to reach the goal for a specific Q-Table. The first point represents the amount of steps it takes to reach the goal for a Q-Table that hasn't been trained at all, where movements are decided randomly. The next point corresponds to the amount of steps it takes to reach the goal using a policy derived from a Q-Table trained with one experience, and so on.
 
 \begin{figure}[h!]
 \begin{subfigure}{0.5\textwidth}
@@ -716,11 +716,13 @@ In the case for subject 5 and 6, the reward information obtained from the brainw
 \begin{subfigure}{0.25\textwidth}
     \centering
     \includegraphics[scale=0.2]{Images/Classification_test/roc_manuel.png}
+    \caption{ }
     \label{fig:subject5roc}
 \end{subfigure}
 \begin{subfigure}{0.25\textwidth}
     \centering
     \includegraphics[scale=0.2]{Images/Classification_test/roc_marta.png}
+    \caption{ }    
     \label{fig:subject6roc}
 \end{subfigure}
 \caption{ROC Curve for Subjects 5 and 6}
@@ -765,7 +767,6 @@ Electroencephalographic signals have high inter-subject variability~\cite{Chavar
 \label{fig:transferlearning}
 \end{figure}
 
-
 Finally, Figure~\ref{fig:avg_steps_all} show the result of training an agent with accumulative experiences from subjects 1,2,3,4,7, and 8.
 
 \begin{figure}[h!]
@@ -782,17 +783,32 @@ Finally, Figure~\ref{fig:avg_steps_all} show the result of training an agent wit
 
 The present research work aims to reproduce similar results that states whether ErrP signals could be used to train a gaming agent using reinforcement learning. The collected data show that ErrP signals can in fact be classified and used to train an agent effectively. 
 
-This work aims to keep the system as simple as possible, emphasizing the flow of information from the subjective error perception of the human critic, through the reward generation using the signal processing and classification pipeline, and finally the updating of the Q-Table to enhance the performance of the gaming agent.
+This work aims to keep the system as simple as possible, emphasizing the flow of information from the subjective error perception of the human critic, through the reward generation using the signal processing and classification pipeline, and finally Q-Table updating  to enhance the performance of the gaming agent.
 
 %Enfatizar la idea de que la mejor métrica de la propia detección está dada por la propia capacidad del agente de minimizar su tarea, que hay un flujo de información que involucra la propia percepción de la persona.
 
-While classifying, the better performing classifier is Logistic Regression. One important aspect of the classification results is the low percentage of false positives, meaning that it is not common that the agent learns that an action is wrong when in fact it is an action that takes it closer to the goal. On the other hand, the percentage of false negatives is generally higher, but this is not a serious issue since missing out on learning that an action is wrong does not lower the performance of the agent, but only means it will take more experiences to learn a correct path.
+While classifying, the obtained better performing classifier is Logistic Regression. One important aspect of the classification results is the low percentage of false positives (Figure~\ref{fig:confusionmatrix}), meaning that it is not common that the agent learns that an action is wrong when in fact it is an action that takes it closer to the goal. On the other hand, the percentage of false negatives is generally higher, but this is not a serious issue since missing out on learning that an action is wrong does not lower the performance of the agent, but only means it will take more experiences to learn a correct path.
+
+\begin{figure}[h!]
+\begin{subfigure}{0.5\textwidth}
+\centering
+\includegraphics[scale=0.12]{Images/Classification_test/matrix_alex.png}
+\includegraphics[scale=0.12]{Images/Classification_test/matrix_jose.png}\\
+\includegraphics[scale=0.12]{Images/Classification_test/matrix_juan.png}
+\includegraphics[scale=0.12]{Images/Classification_test/matrix_santiago.png}
+\end{subfigure}
+\caption{Confusion Matrix for subjects 1,3,4 and 8.}
+\label{fig:confusionmatrix}
+\end{figure}
+
 
 Once ErrP signals are identified they can be used to train a reinforcement learning algorithm. Brainwave sessions have a low amount of experiences in order to reduce fatigue from the subjects. However data suggests that longer sessions are required in order to reach better classification scores, since more data is available in order to train the classifier. It can be seen that subjects with the largest amounts of data have the best classification. This can also be achieved designing a bigger game system that generates more samples with every session.
 
-At the same time, the training depends strictly on the subject's data that was used to train it. Results show that training a classifier with data of one subject, but using it to classify the events of experiences of another subject does not lead to an improvement on the performance of the agent. Despite that, the rewards generated from different subjects can be used to train the same Q-Table to improve its performance, which may lead to strategies where the overall performance is improved based on the information on different human critics at the same time.
+At the same time, the training depends strictly on the subject's data that was used to train it. Results show that training a classifier with data of one subject, but using it to classify the events of experiences of another subject does not lead to an improvement on the performance of the agent. Despite that, the rewards generated from different subjects can be used to train the same Q-Table to improve its performance, which may lead to strategies where the overall performance is improved based on the information from different human critics at the same time.
 
-One additional aspect to remark is the robustness of RL implementation.  General accuracy is in general low.  Even with that lower accuracy values, the RL algorithm was able to extract meaningful information from rewards files that were pointing to improve the agent performance.  The complexity of the game should be tackled to allow at least the possibility that the target position be dynamically especified.  In that case the agent would start to learn to follow the target, instead of learning to go to a specific static destination (which is actually learning now). 
+One additional aspect to remark is the robustness of the learning strategy based on Q-Learning~\cite{Bauer2015,Rubin2012}.  The obtained accuracy to discriminate ErrPs is low.  However, even with such a lower accuracy values, the RL algorithm was able to extract meaningful information from rewards files that were helpful to improve the agent performance.  
+
+Further work could be conducted in order to increase the complexity of the game to allow at least the possibility that the target position be dynamically changed.  In that case the agent would start to learn to follow the target, instead of learning to go to a specific static destination spot.  Additionally, the classifier could be enhanced to recognize more effectively the Error Potential.
 
 Finally, this research verifies that brain signals can be used as an interface between human and a gaming computer enabling an alternative communication with the system without explicit input from the user.
 
