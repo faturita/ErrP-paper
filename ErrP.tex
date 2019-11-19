@@ -63,7 +63,7 @@
 \usepackage{hyperref}
 \usepackage{algorithm2e} % For algorithms
 \usepackage{amsmath, amssymb, amsthm} % Mathematical packages
-
+\hypersetup{hidelinks=true}    
 
 % Some very useful LaTeX packages include:
 % (uncomment the ones you want to load)
@@ -377,7 +377,7 @@
 
 \author{Bartolomé Francisco, Moreno Juan,  Navas Natalia, Vitali José, \\
 Rodrigo~Ramele,~\IEEEmembership{Member,~IEEE,} 
-        Juan~Miguel,~Santos% <-this % stops a space
+        Juan~Miguel~Santos% <-this % stops a space
 \thanks{R. Ramele and J.M.Santos are with the Department
 of Computer Engineering, Instituto Tecnológico de Buenos Aires(ITBA), Argentina,
 e-mail: rramele@itba.edu.ar.}% <-this % stops a space
@@ -437,21 +437,15 @@ e-mail: rramele@itba.edu.ar.}% <-this % stops a space
 % As a general rule, do not put math, special symbols or citations
 % in the abstract or keywords.
 \begin{abstract}
-The field of Brain Computer Interfaces (BCI) has seen a bloom in the past few years. One of its applications is the training of systems using signals originated from the human brain. Out of all the methods used to acquire information from the central nervous system the one that has gained the most popularity is Electroencephalography (EEG), mainly because of its effectiveness, low cost and because it is noninvasive.
-Event-related potential (ERP) are brain signals that are time-locked to a particular event. Error-related potential (ErrP) are a particular type of ERP that are can be elicited by a person who attends a recognizable error. When subjects observe an agent who makes a mistake this potential can be discerned when analyzing the signals which are directly related with the cognitive interpretation of an erroneous outcome or decision.
-Reinforcement Learning (RL) is an approach to machine learning where an agent tries to maximize the reward obtained while interacting with an unknown environment.  How much a gaming agent can be trained by the rewards obtained from human critics that watch their actions ?  This work implements a parsimonious application of this idea, to train an agent to solve a simple game using exclusively the information obtained from human critics that observe how to agent plays.
-
-
-
+The field of Brain Computer Interfaces (BCI) has seen a bloom in the past few years. One of its applications is the training of systems using signals originated from the human brain. Out of all the methods used to acquire information from the central nervous system, the one that has gained most popularity is Electroencephalography (EEG), mainly because of its effectiveness, low cost and its noninvasive characteristic.
+Event-related potential (ERP) are brain signals that are time-locked to a particular event. Error-related potential (ErrP) are a particular type of ERP that  can be elicited by a person who attends a recognizable error. When subjects observe an agent who makes a mistake this potential can be discerned by analyzing the signals which are directly related with the cognitive interpretation of an erroneous outcome or decision.
+Reinforcement Learning (RL) is an approach to machine learning where an agent tries to maximize the reward obtained while interacting with an unknown environment.  In this work, a gaming agent is trained using Reinforcement Learning, and using the feedback obtained from human critic observers.  Results show that there is an effective transfer of information and that the agent learns successfully to solve the game efficiently.
 \end{abstract}
 
 % Note that keywords are not normally used for peerreview papers.
 \begin{IEEEkeywords}
 ErrP, BCI, EEG, RL, Agent, AI
 \end{IEEEkeywords}
-
-
-
 
 
 
@@ -472,7 +466,7 @@ ErrP, BCI, EEG, RL, Agent, AI
 
 % You must have at least 2 lines in the paragraph with the drop letter
 % (should never be an issue)
-\IEEEPARstart{T}{he} effectiveness of today's human–machine interaction and artificial intelligence is limited by a communication bottleneck as humans are required to translate high-level concepts into a machine-mandated sequence of instructions~\cite{CURSOR-CONTROL-PAPER}.   This work tackles this problem by exploring the use of brain signals as an interface between human and computer, trying to overcome this limitation by providing information to the system without explicit communication from the user.  This information is used to make a gaming agent improve its operational performance using electroencephalography (EEG) signals as feedback of the performed task from an observational human critic. The idea is that subjects observing a computer game play can train the gaming agent using only signals components called Error-related Potentials (ErrP) that can be identified from their brain signals.   These can be found on EEG traces and are elicited when a subject is aware of the presence of un unexpected outcome, which she identifies as an error.  It is currently an extensive area of research in the neuroscience community~\cite{Holroyd2009}.  They can be detected by signal processing and machine learning techniques~\cite{EERP-PAPER} and they are also used in Brain-Computer Interfaces (BCI) to implement or enhance artificial communication channels~\cite{Chavarriaga2014}.
+\IEEEPARstart{T}{he} effectiveness of today's human–machine interaction and artificial intelligence is limited by a communication bottleneck as humans are required to translate high-level concepts into a machine-mandated sequence of instructions~\cite{CURSOR-CONTROL-PAPER}.   This work tackles this problem by exploring the use of brain signals as an interface between human and computer, trying to overcome this limitation by providing information to the system without explicit communication from the user.  This information is used to make a gaming agent improve its operational performance using electroencephalography (EEG) signals as feedback of the performed task, obtained from an observational human critic. The idea is that subjects observing a computer game play can train the gaming agent using only signals components called Error-related Potentials (ErrP) that can be identified from their brain signals.   These can be found on EEG traces and are elicited when a subject is aware of the presence of un unexpected outcome, which she identifies as an error.  It is currently an extensive area of research in the neuroscience community~\cite{Holroyd2009}.  They can be detected by signal processing and machine learning techniques~\cite{EERP-PAPER} and they are also used in Brain-Computer Interfaces (BCI) to implement or enhance artificial communication channels~\cite{Chavarriaga2014}.
 
 In order to train the agent, Reinforcement Learning (RL)~\cite{Santos1999} comes as natural solution for this scenario from the field of Artificial Intelligence.  RL is an algorithmic learning strategy that can be established by mimicking how biological agents learn from the environment by exploring it and getting feedback rewards, either negative or positive.  This strategy aims to maximize the amount of positive rewards while keeping low the number of negative feedback.  Thus, the learning problem is  posed as a mere stochastic optimization strategy~\cite{sutton2018reinforcement}.  Recently, this technique has seen a come-back. Nonneglected is the influence of DeepBrain's AlphaGo project, which was the first to reach superhuman proficiency when it won the complex game Go against several world champions~\cite{ALPHA-GO}.
 
@@ -584,21 +578,21 @@ In Section \ref{section:materials} the general layout of the cognitive game expe
 
 This experiment consists of collecting signals from a person's brain while they are watching a game where the agent knows the game rules but not how to win it. Hence, the agent can learn the winning strategy using the person's feedback to improve its own performance. This section describes the process of obtaining the person's brain signals that are used to make the agent more efficient.
 
-\begin{figure}[h]
+\begin{figure*}
     \centering
-    \includegraphics[scale=0.4]{Images/complete_flow.png}
+    \includegraphics[width=\textwidth]{Images/complete_flow.png}
     \caption{Overview of the experimental procedure.}
     \label{diag:complete_flow}
-\end{figure}
+\end{figure*}
 
-The experimental procedure is summarized in Figure \ref{diag:complete_flow}. The core of the procedure is the retrieval of the subject's brain activity.  This process is called brainwave session. Subjects are recruited voluntarily. They are given a consent form with questions regarding their health (previous health issues and particular visual sensitivity), habits (sleeping hours, caffeine and alcohol consumption), as well as an approval petition to collect the required data. The brainwave sessions are performed with 8 subjects, 5 males and 3 females, average age 25.125 years, standard deviation 1.54 years, range of 22-28 years. All subjects have normal vision, are right-handed and have no history of neurological disorders.
+The experimental procedure is summarized in Figure \ref{diag:complete_flow}. The central part is the retrieval of the subject's brain activity.  This process is called brainwave session. Subjects are recruited voluntarily. They are given a consent form with questions regarding their health (previous health issues and particular visual sensitivity), habits (sleeping hours, caffeine and alcohol consumption), as well as an approval petition to collect the required data. The brainwave sessions are performed with 8 subjects, 5 males and 3 females, average age 25.125 years, standard deviation 1.54 years, range of 22-28 years. All subjects have normal vision, are right-handed and have no history of neurological disorders.
 
 After the form is filled out, a short description of the procedure is given to each subject. They are only told that the objective of the agent is to reach the goal and the four movements that the agent can make. When this concludes, the subject is introduced to the wireless digital EEG device (g.Nautilus, g.Tec, Austria) that they have to wear during the brainwave session. It has eight electrodes (g.LADYbird, g.Tec, Austria) on the positions Fz, Cz, Pz, Oz, P3, P4, PO7 and PO8, identified according to the 10-20 International System, with a reference set to the right ear lobe and ground set as the AFz position. The electrodes contact points are adjusted applying conductive gel until the impedance values displayed by the program g.NeedAccess (g.Tec, Austria) are within the desired range. This process takes between 10 and 15 minutes. After this step, the subject is instructed to close their eyes and the same program is used to check the live channel values so that there are no dead ones and the expected values are displayed for eye movements or muscle chewing.
 
 Once the headset is correctly applied, the OpenVibe Acquisition Server program, from the OpenVibe platform~\cite{OPEN-VIBE-PAPER}, is launched and configured with a sampling rate of $250$ Hz. A $50$ Hz notch filter is applied to filter out power line. An additional bandpass filter between $0.5$ Hz and $60$ Hz is applied as well. Data is handled and processed with the OpenVibe Designer, from the same platform, using 8 channels for the brain data (one channel per electrode) and an additional channel for the stimuli. After everything is connected, the subject seats in a comfortable chair in front of a computer screen. The brightness of the screen is set to the maximum setting to avoid any visual inconvenience in which the subject can not distinguish the components of the game that appear on the screen.
 
 
-The Acquisition Server has the responsibility of receiving and synchronizing the signal data from the headset and any event information from the game and transfers it to the OpenVibe Designer application. When the subject is ready, the Game and the OpenVibe Designer programs are launched and configured to communicate with the previously mentioned acquisition server. A brainwave session consists of several experiences, each one being a game run.  At the end, the game state information and the signal data with the game event information of each run are saved for offline processing.
+The Acquisition Server has the responsibility of receiving and synchronizing the signal data from the headset and any event information from the game, and transfers it to the OpenVibe Designer application. When the subject is ready, the Game and the OpenVibe Designer programs are launched and configured to communicate with the previously mentioned acquisition server. A brainwave session consists of several experiences, each one being a game run.  At the end, the game state information and the signal data with the game event information of each run are saved for offline processing.
 
 %ACA For each run, the signals and stimulus information are then passed to the classification module that uses them to train the classifier.  After this step is finished, the game movements and the trained classifier are used to update a Q-Table for each experience. Lastly, the calculated Q-Table is used to test if the agent has boosted its performance while playing the game. This module is explained in Section \ref{q_learning_step}.
 
@@ -616,7 +610,7 @@ The game parsimoniously consists of a $5x5$ grid of grey circular spots with a b
 \includegraphics[scale=0.2]{Images/grid_end_state.png}
 \end{subfigure}
 \centering 
-\caption{Grid system representation used in the Cognitive Game Experience.}
+\caption{Grid system representation used in the Cognitive Game Experience. The blue spot represents the initial location while the green spot represents the target location. }
 \label{fig:game_representation}
 \end{figure}
 
@@ -638,7 +632,7 @@ Samples that do not correspond to an epoch are not used. Also, epochs referring 
 
 In this way, the raw data of an brainwave session is processed into an array of experiences where each element is an array of epochs tagged with a number specifying the prediction of the classifier, i.e. if the epoch corresponds to an action that made the agent move further from the goal (hit) or an action that made the agent move closer to the goal (no hit). The ErrP is expected to be found in hits. To get the data ready for classification, the stimuli channel is removed in order to classify the signals using only the EEG data. Each epoch is regularized using a MinMaxScaler, i.e. substracting the minimun value in the feature and dividing by the signal peak-to-peak amplitude.  The eight channels are concatenated using the  MNE Vectorizer function to transform the data matrix into a single array sample. Lastly, this data is used by the classification module as information to train and test a classifier.
 
-Vectorized epochs are used in the final classification step.  Four different classification algorithms are used.  Logistic Regression, Multi-layer Perceptron with a hidden layer of 100000 neurons, Random Forest and finally a Support Vector Classifier (i.e. SVM)~\cite{Lotte2018}.  
+Vectorized epochs are used in the final classification step.  Four different classification algorithms are used.  Logistic Regression, Multi-layer Perceptron with a hidden layer of 100 neurons (i.e. default values for the Scikit-Learn MLPClassifier), Random Forest and finally a Support Vector Classifier (i.e. SVM)~\cite{Lotte2018}.  
 
 %and finally the logistic regression classifier.  Even tough the classification accuracy is low, the information is enough to have valid rewards that can be used to retrieve the information.
 
@@ -647,16 +641,17 @@ Vectorized epochs are used in the final classification step.  Four different cla
 \section{Reinforcement Learning}
 \label{learning}
 
-The set of experiences of each subject is split into training and testing, so that the results of the classification can then be used to improve the performance of the agent. After training, the testing experiences are classified. Then, for each experience a reward file is generated. For this purpose, game states files, which are submitted by the game when an experience takes place, are used. These files contain an ordered list of the states of the game throughout an experience. With this file and the classification of the test data of an experience, a reward file is composed. This file specifies a reward for each movement in the game, based on the classification of the event that corresponds to that movement. The reward can either be -1 when the event is classified as a hit or 0 when it is classified as a no hit. The accuracy of this rewards depends on the performance of the classifier. This reward file is used by the a variant of a Reinforcement Learning algorithm called Q-Learning algorithm.
+ARREGLAR !!!
+The set of experiences of each subject is split into training and testing, so that the results of the classification can then be used to improve the performance of the agent. After training, testing experiences are classified. Then, for each experience a reward file is generated. For this purpose, game states files, which are submitted by the game when an experience takes place, are used. These files contain an ordered list of the states of the game throughout an experience. With this file and the classification of the test data of an experience, a reward file is composed. This file specifies a reward for each movement in the game, based on the classification of the event that corresponds to that movement. The reward can either be -1 when the event is classified as a hit or 0 when it is classified as a no hit. The accuracy of this rewards depends on the performance of the classifier. This reward file is used by the a variant of a Reinforcement Learning algorithm called Q-Learning algorithm.
 
 
 \subsection{Q-Learning}{
 \label{q_learning_step}
 
-Q-Learning~\cite{Watkins1992} is a form of model-free reinforcement learning algorithm where an agent tries an action at a particular state and evaluate its consequences in terms of the reward or penalty it receives.  In order to represent rewards, a matrix is used, where rows correspond to all the possible states, whereas columns represent all possible actions.  The reward for an action given a state is the value that can be found on the corresponding row and column.  This matrix is known as a Q-Table.  The algorithm proceeds by randomly choosing what action to do and updating iteratively the Q-Table based on the received reward $r$ by the following equation
+Q-Learning~\cite{Watkins1992} is a form of model-free reinforcement learning algorithm where an agent tries an action at a particular state and evaluate its consequences in terms of the reward or penalty it receives.  In order to represent rewards, a matrix is used, where rows correspond to all the possible states, whereas columns represent all possible actions.  The reward for an action given a state, is the value that can be found on the corresponding row and column.  This matrix is known as a Q-Table.  The algorithm proceeds by randomly choosing what action to do and updating iteratively the Q-Table based on the received reward $r$ by the following equation
 
 \begin{equation}
-    Q(s,a) \leftarrow Q(s,a) + \alpha[r+\gamma* Max(s, a)-Q(s, a) ]
+    Q(s,a) \leftarrow Q(s,a) + \alpha[r+\gamma* \max Q(s, a)-Q(s, a) ]
     \label{equ:update_q_table}
 \end{equation}
 
@@ -674,7 +669,7 @@ While using the previously mentioned step function, the Q-Table is updated in ea
 \section{Results}
 \label{results}
 
-Figure~\ref{fig:classifiers} show the binary classification accuracy obtained for the eight subjects for the four different classification algorithms using a 10-fold cross validation procedure.  The best overall performance is obtained using Logistic Regression.
+Figures~\ref{fig:classifiers} and~\ref{fig:logisticregression} show the binary classification accuracy obtained for the eight subjects for the four different classification algorithms using a 10-fold cross validation procedure.  The best overall performance is obtained using Logistic Regression.
 
 \begin{figure}[h]
     \centering
@@ -694,43 +689,45 @@ On the other hand, Figure \ref{fig:avg_steps} shows for each subject the average
 
 \begin{figure}[h!]
 \begin{subfigure}{0.5\textwidth}
-\includegraphics[scale=0.2]{Images/Average_steps/alex.png}
-\includegraphics[scale=0.2]{Images/Average_steps/gonza.png}
-\includegraphics[scale=0.2]{Images/Average_steps/jose.png}
- \includegraphics[scale=0.2]{Images/Average_steps/juan.png} 
-  \includegraphics[scale=0.2]{Images/Average_steps/manu.png} 
-  \includegraphics[scale=0.2]{Images/Average_steps/marta.png} 
-  \includegraphics[scale=0.2]{Images/Average_steps/nati.png} 
-  \includegraphics[scale=0.2]{Images/Average_steps/santiago.png} 
+\centering
+\includegraphics[scale=0.27]{Images/Average_steps/a.png}
+\includegraphics[scale=0.27]{Images/Average_steps/b.png}
+\centering
+\includegraphics[scale=0.27]{Images/Average_steps/c.png}
+ \includegraphics[scale=0.27]{Images/Average_steps/d.png} 
+ \centering
+  \includegraphics[scale=0.27]{Images/Average_steps/e.png} 
+  \includegraphics[scale=0.27]{Images/Average_steps/f.png} 
+  \centering
+  \includegraphics[scale=0.27]{Images/Average_steps/g.png} 
+  \includegraphics[scale=0.27]{Images/Average_steps/h.png} 
 \end{subfigure}
-\caption{Average number of steps for the agent when trained with experiences from subjects 1-8.}
+\caption{Average number of steps for the agent when trained with experiences from subjects 1(A)-8(H). Y axis show the averaged number of steps, while x axis show the number of experiences used to accumulative train the Q-Table.}
 \label{fig:avg_steps}
 \end{figure}
 
 
-The results show that as the Q-Table is progressively trained the average amount of steps decreases, meaning that the agent learns. However, the rate at which it learns varies per subject, certain subjects have more effective experiments than others, for example results for subject 1 (fig \ref{fig:avg_steps} A) show faster learning than those of subject 8 (fig \ref{fig:avg_steps} H).
+The results show that as the Q-Table is progressively trained the average amount of steps decreases, meaning that the agent learns. However, the rate at which it learns varies per subject, certain subjects have more effective experiments than others. For example results for subject 1 (fig \ref{fig:avg_steps} A) show faster learning than those of subject 8 (fig \ref{fig:avg_steps} H).
 
-In the case for subject 5 and 6, the reward information obtained from the brainwaves is not enough to train the agent effectively. Figures \ref{fig:avg_steps} E and \ref{fig:avg_steps} F show no apparent learning, as the amount of steps to reach the goal doesn't decrease when trained.  These results are also consistent with the ROC curves, shown on Figures~\ref{fig:subject5roc} and~\ref{fig:subject6roc} obtained for both Subjecs, where the area under the curve are close to chance level.  Both subjects have less recorded data from the sessions in comparison to the rest of the subjects. 
+In the case for subject 5 and 6, the reward information obtained from the brainwaves is not enough to train the agent effectively. Figures \ref{fig:avg_steps} E and \ref{fig:avg_steps} F show no apparent learning, as the amount of steps to reach the goal doesn't decrease when trained.  These results are also consistent with their ROC curves, shown on Figures~\ref{fig:rocsubjects} obtained for both Subjecs, where the area under the curve are close to chance level.  Both subjects have less recorded data from the sessions in comparison to the rest of the subjects. 
 
 \begin{figure}[h!]
+\captionsetup[subfigure]{justification=centering}
 \begin{subfigure}{0.25\textwidth}
     \centering
     \includegraphics[scale=0.2]{Images/Classification_test/roc_manuel.png}
-    \caption{ }
-    \label{fig:subject5roc}
 \end{subfigure}
 \begin{subfigure}{0.25\textwidth}
     \centering
-    \includegraphics[scale=0.2]{Images/Classification_test/roc_marta.png}
-    \caption{ }    
-    \label{fig:subject6roc}
+    \includegraphics[scale=0.2]{Images/Classification_test/roc_marta.png}  
 \end{subfigure}
-\caption{ROC Curve for Subjects 5 and 6}
+\caption{ROC Curves for Subjects 5 (up) and 6 (down)}
+\label{fig:rocsubjects}
 \end{figure}
 
 %These results are consistent with fig. \ref{fig:roc:manuel} and fig. \ref{fig:roc:marta}, which show that the signal classification for these subjects hasn't been particularly successful. 
 
-Figure~\ref{fig:avg_steps_noise} show the result of an agent successively trained with experiences obtained from a brainwave session, generated with sham signals.  In this case, random EEG signals were generated using OpenVibe for all channels, as if they were generated from a human observer.  As it can be seen, the agent learns nothing, and regardless of the amount of experiences that are used to train the Q-Table, the number of steps required to reach the goal does not decrease.  This pattern is also obtained when the experiences from Subjects 5 and 6 are used, showing that the reward labeling predicted by the trained classifier for those subjects worked like a random classifier.
+Figure~\ref{fig:avg_steps_noise} shows the result of an agent successively trained with experiences obtained from a brainwave session, generated with sham signals.  In this case, random EEG signals were generated using OpenVibe for all channels, as if they were generated from a human observer.  As it can be seen, the agent learns nothing, and regardless of the amount of experiences that are used to train the Q-Table, the number of steps required to reach the goal does not decrease.  This pattern is also obtained when the experiences from Subjects 5 and 6 are used, showing that the reward labeling predicted by the trained classifier for those subjects worked like a random classifier.
 
 \begin{figure}[h!]
 \centering
@@ -760,14 +757,14 @@ Electroencephalographic signals have high inter-subject variability~\cite{Chavar
 
 \begin{figure}[h!]
 \begin{subfigure}{0.5\textwidth}
-\includegraphics[scale=0.2]{Images/Average_steps/marta_santiago.png}
-\includegraphics[scale=0.2]{Images/Average_steps/alex_jose.png}
+\includegraphics[scale=0.27]{Images/Average_steps/Ax.png}
+\includegraphics[scale=0.27]{Images/Average_steps/Bx.png}
 \end{subfigure}
-\caption{Average steps using Q-table trained with experiences from subject 8 classified with a classifier trained with data from subject 6. Average steps using Q-table trained with experiences from subject 1 classified with a classifier trained with data from subject 3.}
+\caption{(A) Average steps using Q-table trained with experiences from subject 8 classified with a classifier trained with data from subject 6.  (B) Average steps using Q-table trained with experiences from subject 1 classified with a classifier trained with data from subject 3.}
 \label{fig:transferlearning}
 \end{figure}
 
-Finally, Figure~\ref{fig:avg_steps_all} show the result of training an agent with accumulative experiences from subjects 1,2,3,4,7, and 8.
+Finally, Figure~\ref{fig:avg_steps_all} shows the result of training an agent with accumulative experiences from subjects 1,2,3,4,7, and 8.
 
 \begin{figure}[h!]
 \centering
@@ -797,7 +794,7 @@ While classifying, the obtained better performing classifier is Logistic Regress
 \includegraphics[scale=0.12]{Images/Classification_test/matrix_juan.png}
 \includegraphics[scale=0.12]{Images/Classification_test/matrix_santiago.png}
 \end{subfigure}
-\caption{Confusion Matrix for subjects 1,3,4 and 8.}
+\caption{Confusion Matrix for subjects 1,3,4 and 8. Darker colors show higher values.  It can be seen the lower percentage of false positives (upper left corner of each chart).}
 \label{fig:confusionmatrix}
 \end{figure}
 
@@ -810,7 +807,7 @@ One additional aspect to remark is the robustness of the learning strategy based
 
 Further work could be conducted in order to increase the complexity of the game to allow at least the possibility that the target position be dynamically changed.  In that case the agent would start to learn to follow the target, instead of learning to go to a specific static destination spot.  Additionally, the classifier could be enhanced to recognize more effectively the Error Potential.
 
-Finally, this research verifies that brain signals can be used as an interface between human and a gaming computer enabling an alternative communication with the system without explicit input from the user.
+Finally, in line with other results, this research verifies that brain signals can be used as an interface between human and a gaming computer enabling an alternative communication with the system without explicit input from the user.
 
 
 
@@ -875,22 +872,22 @@ The authors would like to thank...
 %\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
 % or if you just want to reserve a space for a photo:
 
-\begin{IEEEbiography}{Michael Shell}
-Biography text here.
-\end{IEEEbiography}
+%\begin{IEEEbiography}{Michael Shell}
+%Biography text here.
+%\end{IEEEbiography}
 
 % if you will not have a photo at all:
-\begin{IEEEbiographynophoto}{John Doe}
-Biography text here.
-\end{IEEEbiographynophoto}
+%\begin{IEEEbiographynophoto}{John Doe}
+%Biography text here.
+%\end{IEEEbiographynophoto}
 
 % insert where needed to balance the two columns on the last page with
 % biographies
 %\newpage
 
-\begin{IEEEbiographynophoto}{Jane Doe}
-Biography text here.
-\end{IEEEbiographynophoto}
+%\begin{IEEEbiographynophoto}{Jane Doe}
+%Biography text here.
+%\end{IEEEbiographynophoto}
 
 % You can push biographies down or up by placing
 % a \vfill before or after them. The appropriate
