@@ -592,7 +592,7 @@ After the form is filled out, a short description of the procedure is given to e
 Once the headset is correctly applied, the OpenVibe Acquisition Server program, from the OpenVibe platform~\cite{OPEN-VIBE-PAPER}, is launched and configured with a sampling rate of $250$ Hz. A $50$ Hz notch filter is applied to filter out power line. An additional bandpass filter between $0.5$ Hz and $60$ Hz is applied as well. Data is handled and processed with the OpenVibe Designer, from the same platform, using 8 channels for the brain data (one channel per electrode) and an additional channel for the stimuli. After everything is connected, the subject seats in a comfortable chair in front of a computer screen. The brightness of the screen is set to the maximum setting to avoid any visual inconvenience in which the subject can not distinguish the components of the game that appear on the screen.
 
 
-The Acquisition Server has the responsibility of receiving and synchronizing the signal data from the headset and any event information from the game, and transfers it to the OpenVibe Designer application. When the subject is ready, the Game and the OpenVibe Designer programs are launched and configured to communicate with the previously mentioned acquisition server. A brainwave session consists of several experiences, each one being a game run.  At the end, the game state information and the signal data with the game event information of each run are saved for offline processing.
+The Acquisition Server has the responsibility of receiving and synchronizing the signal data from the headset and any event information from the game, and transfers it to the OpenVibe Designer application. When the subject is ready, the Game Manager and the OpenVibe Designer programs are launched and configured to communicate with the previously mentioned acquisition server. A brainwave session consists of several experiences, each one being a game run.  At the end, the game state information and the signal data with the game event information of each run are saved for offline processing.
 
 %ACA For each run, the signals and stimulus information are then passed to the classification module that uses them to train the classifier.  After this step is finished, the game movements and the trained classifier are used to update a Q-Table for each experience. Lastly, the calculated Q-Table is used to test if the agent has boosted its performance while playing the game. This module is explained in Section \ref{q_learning_step}.
 
@@ -630,7 +630,7 @@ After the data is loaded and tagged, epochs are extracted from the raw data. Epo
 
 Samples that do not correspond to an epoch are not used. Also, epochs referring to the start or finish of the experience are excluded. This is done because the start and the end of the experience doesn't involve the agent taking an action, thus giving signals that should not be considered in the classification process.
 
-In this way, the raw data of an brainwave session is processed into an array of experiences where each element is an array of epochs tagged with a number specifying the prediction of the classifier, i.e. if the epoch corresponds to an action that made the agent move further from the goal (hit) or an action that made the agent move closer to the goal (no hit). The ErrP is expected to be found in hits. To get the data ready for classification, the stimuli channel is removed in order to classify the signals using only the EEG data. Each epoch is regularized using a MinMaxScaler, i.e. substracting the minimun value in the feature and dividing by the signal peak-to-peak amplitude.  The eight channels are concatenated using the  MNE Vectorizer function to transform the data matrix into a single array sample. Lastly, this data is used by the classification module as information to train and test a classifier.
+In this way, the raw data of an brainwave session is processed into an array of experiences where each element is an array of epochs tagged with a number specifying the prediction of the classifier, i.e. if the epoch corresponds to an action that made the agent move further from the goal (hit) or an action that made the agent move closer to the goal (no-hit). The ErrP is expected to be found in hits. To get the data ready for classification, the stimuli channel is removed in order to classify the signals using only the EEG data. Each epoch is regularized using a MinMaxScaler, i.e. substracting the minimun value in the feature and dividing by the signal peak-to-peak amplitude.  The eight channels are concatenated using the  MNE Vectorizer function to transform the data matrix into a single array sample. Lastly, this data is used by the classification module as information to train and test a classifier.
 
 Vectorized epochs are used in the final classification step.  Four different classification algorithms are used.  Logistic Regression, Multi-layer Perceptron with a hidden layer of 100 neurons (i.e. default values for the Scikit-Learn MLPClassifier), Random Forest and finally a Support Vector Classifier (i.e. SVM)~\cite{Lotte2018}.  
 
@@ -641,8 +641,7 @@ Vectorized epochs are used in the final classification step.  Four different cla
 \section{Reinforcement Learning}
 \label{learning}
 
-ARREGLAR !!!
-The set of experiences of each subject is split into training and testing, so that the results of the classification can then be used to improve the performance of the agent. After training, testing experiences are classified. Then, for each experience a reward file is generated. For this purpose, game states files, which are submitted by the game when an experience takes place, are used. These files contain an ordered list of the states of the game throughout an experience. With this file and the classification of the test data of an experience, a reward file is composed. This file specifies a reward for each movement in the game, based on the classification of the event that corresponds to that movement. The reward can either be -1 when the event is classified as a hit or 0 when it is classified as a no hit. The accuracy of this rewards depends on the performance of the classifier. This reward file is used by the a variant of a Reinforcement Learning algorithm called Q-Learning algorithm.
+The set of experiences of each subject is split into training and testing, so that the results of the classification can then be used to improve the performance of the agent. Each experience includes an ordered list of extracted epochs for each movement that the agent triggered plus the game state information, i.e. the movement specification.  After a classifier is trained, the epochs of the experience are classified as hit or no-hit.  With the game state information and the classification of the test data of an experience, a reward file is composed. This file specifies a reward for each movement in the game run, based on the classification of the event that corresponds to that movement. The reward can either be -1 when the event is classified as a hit or 0 when it is classified as a no-hit. The accuracy of this rewards depends on the performance of the classifier. This reward file is used by the a variant of a Reinforcement Learning algorithm called Q-Learning algorithm.
 
 
 \subsection{Q-Learning}{
@@ -671,14 +670,14 @@ While using the previously mentioned step function, the Q-Table is updated in ea
 
 Figures~\ref{fig:classifiers} and~\ref{fig:logisticregression} show the binary classification accuracy obtained for the eight subjects for the four different classification algorithms using a 10-fold cross validation procedure.  The best overall performance is obtained using Logistic Regression.
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[scale=0.4]{Images/algorithm_calibration/Total_calib.png}
     \caption{Binary Classification Accuracy using different classifiers while recognizing ErrP potentials for the eight subjects.}
     \label{fig:classifiers}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[scale=0.4]{Images/algorithm_calibration/LR_calib.png}
     \caption{Binary Classification Accuracy using Logistic Regression for the eight subjects.}
@@ -702,7 +701,7 @@ On the other hand, Figure \ref{fig:avg_steps} shows for each subject the average
   \includegraphics[scale=0.27]{Images/Average_steps/g.png} 
   \includegraphics[scale=0.27]{Images/Average_steps/h.png} 
 \end{subfigure}
-\caption{Average number of steps for the agent when trained with experiences from subjects 1(A)-8(H). Y axis show the averaged number of steps, while x axis show the number of experiences used to accumulative train the Q-Table.}
+\caption{Average number of steps for the agent when trained with experiences from subjects 1(A)-8(H). Y axis show the averaged number of steps, while x axis show the number of experiences used to cumulative train the Q-Table.}
 \label{fig:avg_steps}
 \end{figure}
 
@@ -727,7 +726,7 @@ In the case for subject 5 and 6, the reward information obtained from the brainw
 
 %These results are consistent with fig. \ref{fig:roc:manuel} and fig. \ref{fig:roc:marta}, which show that the signal classification for these subjects hasn't been particularly successful. 
 
-Figure~\ref{fig:avg_steps_noise} shows the result of an agent successively trained with experiences obtained from a brainwave session, generated with sham signals.  In this case, random EEG signals were generated using OpenVibe for all channels, as if they were generated from a human observer.  As it can be seen, the agent learns nothing, and regardless of the amount of experiences that are used to train the Q-Table, the number of steps required to reach the goal does not decrease.  This pattern is also obtained when the experiences from Subjects 5 and 6 are used, showing that the reward labeling predicted by the trained classifier for those subjects worked like a random classifier.
+Figure~\ref{fig:avg_steps_noise} shows the result of an agent successively trained with experiences obtained from a brainwave session, generated with sham signals.  In this case, random EEG signals were generated using OpenVibe Acquisition Server signal generator for all channels, as if they were generated from a human observer.  As it can be seen, the agent learns nothing, and regardless of the amount of experiences that are used to train the Q-Table, the number of steps required to reach the goal does not decrease.  This pattern is also obtained when the experiences from Subjects 5 and 6 are used, showing that the reward labeling predicted by the trained classifier for those subjects worked like a random classifier.
 
 \begin{figure}[h!]
 \centering
@@ -784,7 +783,7 @@ This work aims to keep the system as simple as possible, emphasizing the flow of
 
 %Enfatizar la idea de que la mejor métrica de la propia detección está dada por la propia capacidad del agente de minimizar su tarea, que hay un flujo de información que involucra la propia percepción de la persona.
 
-While classifying, the obtained better performing classifier is Logistic Regression. One important aspect of the classification results is the low percentage of false positives (Figure~\ref{fig:confusionmatrix}), meaning that it is not common that the agent learns that an action is wrong when in fact it is an action that takes it closer to the goal. On the other hand, the percentage of false negatives is generally higher, but this is not a serious issue since missing out on learning that an action is wrong does not lower the performance of the agent, but only means it will take more experiences to learn a correct path.
+While classifying, the obtained better performing classifier is Logistic Regression. One important aspect of the classification results is the low percentage of false positives (Figure~\ref{fig:confusionmatrix}), showing a high specificity.  It is not common that the agent learns that an action is wrong when in fact it is an action that takes it closer to the goal. On the other hand, the percentage of false negatives is generally higher, but this is not a serious issue since missing out on learning that an action is wrong does not lower the performance of the agent, but only means it will take more experiences to learn a correct path.
 
 \begin{figure}[h!]
 \begin{subfigure}{0.5\textwidth}
@@ -794,14 +793,14 @@ While classifying, the obtained better performing classifier is Logistic Regress
 \includegraphics[scale=0.12]{Images/Classification_test/matrix_juan.png}
 \includegraphics[scale=0.12]{Images/Classification_test/matrix_santiago.png}
 \end{subfigure}
-\caption{Confusion Matrix for subjects 1,3,4 and 8. Darker colors show higher values.  It can be seen the lower percentage of false positives (upper left corner of each chart).}
+\caption{Confusion Matrix for subjects 1,3,4 and 8. Darker colors show higher values.  It can be seen the lower percentage of false positives (upper right corner of each chart).}
 \label{fig:confusionmatrix}
 \end{figure}
 
 
 Once ErrP signals are identified they can be used to train a reinforcement learning algorithm. Brainwave sessions have a low amount of experiences in order to reduce fatigue from the subjects. However data suggests that longer sessions are required in order to reach better classification scores, since more data is available in order to train the classifier. It can be seen that subjects with the largest amounts of data have the best classification. This can also be achieved designing a bigger game system that generates more samples with every session.
 
-At the same time, the training depends strictly on the subject's data that was used to train it. Results show that training a classifier with data of one subject, but using it to classify the events of experiences of another subject does not lead to an improvement on the performance of the agent. Despite that, the rewards generated from different subjects can be used to train the same Q-Table to improve its performance, which may lead to strategies where the overall performance is improved based on the information from different human critics at the same time.
+At the same time, the effective agent training depends on the subject's data that was used to train it. Results show that training a classifier with data of one subject, but using it to classify the events of experiences of another subject does not lead to an improvement on the performance of the agent. Despite that, the rewards generated from different subjects can be used to train the same Q-Table to improve its performance, which may lead to strategies where the overall performance is improved based on the information from different human critics at the same time.
 
 One additional aspect to remark is the robustness of the learning strategy based on Q-Learning~\cite{Bauer2015,Rubin2012}.  The obtained accuracy to discriminate ErrPs is low.  However, even with such a lower accuracy values, the RL algorithm was able to extract meaningful information from rewards files that were helpful to improve the agent performance.  
 
