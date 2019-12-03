@@ -1,3 +1,51 @@
+@article{Yousefi2019,
+abstract = {OBJECTIVE: The ultimate goal of many brain-computer interface (BCI) research efforts is to provide individuals with severe motor impairments with a communication channel that they can control at will. To achieve this goal, an important system requirement is asynchronous control, whereby users can initiate intentional brain activation in a self-paced rather than system-cued manner. However, to date, asynchronous BCIs have been explored in a minority of BCI studies and their performance is generally below that of system-paced alternatives. In this paper, we present an asynchronous electroencephalography (EEG) BCI that detects a non-motor imagery cognitive task and investigated the possibility of improving its performance using error-related potentials (ErrP). APPROACH: Ten able-bodied adults attended two sessions of data collection each, one for training and one for testing the BCI. The visual interface consisted of a centrally located cartoon icon. For each participant, an asynchronous BCI differentiated among the idle state and a personally selected cognitive task (mental arithmetic, word generation or figure rotation). The BCI continuously analyzed the EEG data stream and displayed real-time feedback (i.e. icon fell over) upon detection of brain activity indicative of a cognitive task. The BCI also monitored the EEG signals for the presence of error-related potentials following the presentation of feedback. An ErrP classifier was invoked to automatically alter the task classifier outcome when an error-related potential was detected. MAIN RESULTS: The average post-error correction trial success rate across participants, 85{\%} [Formula: see text] 12{\%}, was significantly higher (p   {\textless}  0.05) than that pre-error correction (78{\%} [Formula: see text] 11{\%}). SIGNIFICANCE: Our findings support the addition of ErrP-correction to maximize the performance of asynchronous BCIs..},
+author = {Yousefi, Rozhin and {Rezazadeh Sereshkeh}, Alborz and Chau, Tom},
+doi = {10.1088/1741-2552/ab4943},
+issn = {17412552},
+journal = {Journal of neural engineering},
+mendeley-groups = {ErrP},
+month = {nov},
+number = {6},
+pages = {066042},
+publisher = {IOP Publishing},
+title = {{Development of a robust asynchronous brain-switch using ErrP-based error correction}},
+url = {https://iopscience.iop.org/article/10.1088/1741-2552/ab4943},
+volume = {16},
+year = {2019}
+}
+
+
+
+@misc{6emh-wb46-19,
+doi = {10.21227/6emh-wb46},
+url = {http://dx.doi.org/10.21227/6emh-wb46},
+author = {Francisco Bartolomé; Juan Moreno; Natalia Navas; José Vitali },
+publisher = {IEEE Dataport},
+title = {ErrP-Dataset},
+year = {2019}
+}
+
+@article{Kim2017,
+abstract = {Reinforcement learning (RL) enables robots to learn its optimal behavioral strategy in dynamic environments based on feedback. Explicit human feedback during robot RL is advantageous, since an explicit reward function can be easily adapted. However, it is very demanding and tiresome for a human to continuously and explicitly generate feedback. Therefore, the development of implicit approaches is of high relevance. In this paper, we used an error-related potential (ErrP), an event-related activity in the human electroencephalogram (EEG), as an intrinsically generated implicit feedback (rewards) for RL. Initially we validated our approach with seven subjects in a simulated robot learning scenario. ErrPs were detected online in single trial with a balanced accuracy (bACC) of 91{\%}, which was sufficient to learn to recognize gestures and the correct mapping between human gestures and robot actions in parallel. Finally, we validated our approach in a real robot scenario, in which seven subjects freely chose gestures and the real robot correctly learned the mapping between gestures and actions (ErrP detection (90{\%} bACC)). In this paper, we demonstrated that intrinsically generated EEG-based human feedback in RL can successfully be used to implicitly improve gesture-based robot control during human-robot interaction. We call our approach intrinsic interactive RL.},
+author = {Kim, Su Kyoung and Kirchner, Elsa Andrea and Stefes, Arne and Kirchner, Frank},
+doi = {10.1038/s41598-017-17682-7},
+file = {:Users/rramele/Library/Application Support/Mendeley Desktop/Downloaded/Kim et al. - 2017 - Intrinsic interactive reinforcement learning – Using error-related potentials for real world human-robot interacti.pdf:pdf},
+issn = {20452322},
+journal = {Scientific Reports},
+keywords = {Computer science,EEG,Electroencephalography},
+mendeley-groups = {ErrP},
+month = {dec},
+number = {1},
+pages = {17562},
+publisher = {Nature Publishing Group},
+title = {{Intrinsic interactive reinforcement learning-Using error-related potentials for real world human-robot interaction}},
+url = {http://www.nature.com/articles/s41598-017-17682-7},
+volume = {7},
+year = {2017}
+}
+
+
 @article{Bauer2015,
 abstract = {Restorative brain-computer interfaces (BCI) are increasingly used to provide feedback of neuronal states in a bid to normalize pathological brain activity and achieve behavioral gains. However, patients and healthy subjects alike often show a large variability, or even inability, of brain self-regulation for BCI control, known as BCI illiteracy. Although current co-adaptive algorithms are powerful for assistive BCIs, their inherent class switching clashes with the operant conditioning goal of restorative BCIs. Moreover, due to the treatment rationale, the classifier of restorative BCIs usually has a constrained feature space, thus limiting the possibility of classifier adaptation. In this context, we applied a Bayesian model of neurofeedback and reinforcement learning for different threshold selection strategies to study the impact of threshold adaptation of a linear classifier on optimizing restorative BCIs. For each feedback iteration, we first determined the thresholds that result in minimal action entropy and maximal instructional efficiency. We then used the resulting vector for the simulation of continuous threshold adaptation. We could thus show that threshold adaptation can improve reinforcement learning, particularly in cases of BCI illiteracy. Finally, on the basis of information-theory, we provided an explanation for the achieved benefits of adaptive threshold setting.},
 author = {Bauer, Robert and Gharabaghi, Alireza},
@@ -186,6 +234,7 @@ author = {{Plass-Oude Bos}, Danny and Reuderink, Boris and van de Laar, Bram and
 doi = {10.1007/978-1-84996-272-8_10},
 mendeley-groups = {ErrP},
 pages = {149--178},
+booktitle = {Brain-Computer Interfaces, Applying our minds to Human Computer Interaction},
 publisher = {Springer, London},
 title = {{Brain-Computer Interfacing and Games}},
 url = {http://link.springer.com/10.1007/978-1-84996-272-8{\_}10},
@@ -297,18 +346,37 @@ volume = {28},
 year = {1999}
 }
 
-
 @article{ALPHA-GO,
-  title={Mastering the Game of Go without Human Knowledge},
-  author={David Silver, Julian Schrittwieser, Karen Simonyan, Ioannis Antonoglou, Aja Huang, Arthur Guez, Thomas Hubert, Lucas Baker, Matthew Lai, Adrian Bolton, Yutian Chen, Timothy Lillicrap, Fan Hui, Laurent Sifre, George van den Driessche, Thore Graepel, Demis Hassabis.},
-  year={2017},
+abstract = {A long-standing goal of artificial intelligence is an algorithm that learns, tabula rasa, superhuman proficiency in challenging domains. Recently, AlphaGo became the first program to defeat a world champion in the game of Go. The tree search in AlphaGo evaluated positions and selected moves using deep neural networks. These neural networks were trained by supervised learning from human expert moves, and by reinforcement learning from self-play. Here we introduce an algorithm based solely on reinforcement learning, without human data, guidance or domain knowledge beyond game rules. AlphaGo becomes its own teacher: a neural network is trained to predict AlphaGo's own move selections and also the winner of AlphaGo's games. This neural network improves the strength of the tree search, resulting in higher quality move selection and stronger self-play in the next iteration. Starting tabula rasa, our new program AlphaGo Zero achieved superhuman performance, winning 100-0 against the previously published, champion-defeating AlphaGo.},
+author = {Silver, David and Schrittwieser, Julian and Simonyan, Karen and Antonoglou, Ioannis and Huang, Aja and Guez, Arthur and Hubert, Thomas and Baker, Lucas and Lai, Matthew and Bolton, Adrian and Chen, Yutian and Lillicrap, Timothy and Hui, Fan and Sifre, Laurent and {Van Den Driessche}, George and Graepel, Thore and Hassabis, Demis},
+doi = {10.1038/nature24270},
+issn = {14764687},
+journal = {Nature},
+keywords = {Computational science,Computer science,Reward},
+mendeley-groups = {ErrP},
+month = {oct},
+number = {7676},
+pages = {354--359},
+pmid = {29052630},
+publisher = {Nature Publishing Group},
+title = {{Mastering the game of Go without human knowledge}},
+url = {http://www.nature.com/articles/nature24270},
+volume = {550},
+year = {2017}
 }
 
-@article{EERP-PAPER,
-  title={Error-related EEG Potentials In Brain-Computer Interfaces},
-  author={Ferrez, Pierre},
-  year={2007},
+@book{EERP-PAPER,
+abstract = {"A Bradford book." This volume presents a timely overview of the latest BCI research, with contributions from many of the important research groups in the field. An introduction to brain-computer interfacing / Andrea Kübler and Klaus-Robert Müller -- Noninvasive brain-computer interface research at the Wadsworth Center / Eric W. Sellers [and others] -- Brain-computer interfaces for communication in paralysis : a clinical experimental approach / Thilo Hinterberger [and others] -- Graz-brain-computer interface : state of research / Gert Pfurtscheller [and others] -- The Berlin brain-computer interface : machine learning based detection of user specific brain states / Benjamin Blankertz [and others] -- The IDIAP brain-computer interface : an asynchronous multi-class approach / José del R. Millán, Pierre W. Ferrez, and Anna Buttfield -- Brain interface design for asynchronous control / Jaimie F. Borisoff, Steve G. Mason, and Gary E. Birch -- Electrocorticogram as a brain-computer interface signal source / Jane E. Huggins [and others]. Probabilistically modeling and decoding neural population activity in motor cortex / Michael J. Black and John P. Donoghue -- The importance of online error correction and feed-forward adjustments in brain-machine interfaces for restoration of movement / Dawn Taylor -- Advances in cognitive neural prosthesis : recognition of neural data with an information-theoretic objective / Zoran Nenadic [and others] -- A temporal kernel-based model for tracking hand-movements from neural activities / Lavi Shpigelman [and others] -- General signal processing and machine learning tools for BCI analysis / Guido Dornhege [and others] -- Classifying event-related desynchronization in EEG, ECoG and MEG signals / Jeremy Hill [and others] -- Classification of time-embedded EEG using short-time principal component analysis / Chuck Anderson [and others] -- Non-invasive estimates of local field potentials for brain-computer interfaces / Rolando Grave de Peralta Menendez [and others]. Error-related EEG potentials in brain-computer interfaces / Pierre Ferrez and José del R. Millán -- Adaptation in brain-computer interfaces / José del R. Millán [and others] -- Evaluation criteria for BCI research / Alois Schlögl [and others] -- BioSig, an open source software library for BCI research / Alois Schlögl [and others] -- BCI 2000 : a general-purpose software platform for BCI / Jürgen Mellinger and Gerwin Schalk -- Brain-computer interfaces for communication and motor control, perspectives on clinical applications / Andrea Kübler, Femke Nijboer, and Niels Birbaumer -- Combining BCI and virtual reality : scouting virtual worlds / Robert Leeb [and others] -- Improving human performance in a real operating environment through real-time mental workload detection / Jens Kohlmorgen [and others] -- Single-trial analysis of EEG during rapid visual discrimination : enabling cortically-coupled computer vision / Paul Sajda [and others].},
+author = {Dornhege, Guido.},
+isbn = {9780262256049},
+mendeley-groups = {ErrP},
+pages = {507},
+publisher = {MIT Press},
+title = {{Toward brain-computer interfacing}},
+url = {https://ieeexplore.ieee.org/abstract/document/6281216},
+year = {2007}
 }
+
 
 @article{TRANSFER-LEARNING,
   title={Transfer Learning in Brain-Computer Interfaces},
@@ -345,20 +413,40 @@ year = {1999}
     keywords="Brain Computer Interface research, BCI, brain activity, central nervous system, brain signals, severely disabled, muscle control, communication, technology"
 }
 
-@book{CURSOR-CONTROL-PAPER,
-    title={Neuroadaptive technology enables implicit cursor control based on medial prefrontal cortex activity},
-    author={Thorsten O. Zander, Laurens R. Krol, Niels P. Birbaumer and Klaus Gramann},
-    year={2016},
-    publisher={},
-    keywords=""
+@article{CURSOR-CONTROL-PAPER,
+abstract = {The effectiveness of today's human–machine interaction is limited by a communication bottleneck as operators are required to translate high-level concepts into a machine-mandated sequence of instructions. In contrast, we demonstrate effective, goal-oriented control of a computer system without any form of explicit communication from the human operator. Instead, the system generated the necessary input itself, based on real-time analysis of brain activity. Specific brain responseswere evoked by violating the operators' expectations to varying degrees. The evoked brain activity demonstrated detectable differences reflecting congruency with or deviations from the operators' expectations. Real-time analysis of this activity was used to build a user model of those expectations, thus representing the optimal (expected) state as perceived by the operator. Based on this model, which was continuously updated, the computer automatically adapted itself to the expectations of its operator. Further analyses showed this evoked activity to originate from themedial prefrontal cortex and to exhibit a linear correspondence to the degree of expectation violation. These findings extend our un- derstanding of human predictive coding and provide evidence that the information used to generate the user model is task-specific and reflects goal congruency. This paper demonstrates a form of interaction without any explicit input by the operator, enabling computer systems to become neuroadaptive, that is, to automatically adapt to specific aspects of their operator'smindset.Neuroadaptive technology significantlywidens the communication bottleneck and has the potential to fundamentally change the way we interact with technology.},
+author = {Zander, Thorsten O. and Krol, Laurens R. and Birbaumer, Niels P. and Gramann, Klaus},
+doi = {10.1073/pnas.1605155114},
+file = {:Users/rramele/Library/Application Support/Mendeley Desktop/Downloaded/Zander et al. - 2016 - Neuroadaptive technology enables implicit cursor control based on medial prefrontal cortex activity.pdf:pdf},
+issn = {0027-8424},
+journal = {Proceedings of the National Academy of Sciences},
+keywords = {electroencephalogram,human–computer interaction,neuroadaptive technology,passive brain–computer interfaces,predictive coding},
+mendeley-groups = {Thesis},
+month = {dec},
+number = {52},
+pages = {14898--14903},
+pmid = {27956633},
+publisher = {National Academy of Sciences},
+title = {{Neuroadaptive technology enables implicit cursor control based on medial prefrontal cortex activity}},
+url = {http://www.pnas.org/lookup/doi/10.1073/pnas.1605155114},
+volume = {113},
+year = {2016}
 }
 
-@article{ROBOT-CONTROL-PAPER,
-    title={Robot Reinforcement Learning using EEG-based reward signals},
-    author={I. Iturrate, L. Montesano, J. Minguez},
-    year={2010},
-    publisher={},
-    keywords=""
+@inproceedings{ROBOT-CONTROL-PAPER,
+abstract = {Reinforcement learning algorithms have been successfully applied in robotics to learn how to solve tasks based on reward signals obtained during task execution. These reward signals are usually modeled by the programmer or provided by supervision. However, there are situations in which this reward is hard to encode, and so would require a supervised approach of reinforcement learning, where a user directly types the reward on each trial. This paper proposes to use brain activity recorded by an EEG-based BCI system as reward signals. The idea is to obtain the reward from the activity generated while observing the robot solving the task. This process does not require an explicit model of the reward signal. Moreover, it is possible to capture subjective aspects which are specific to each user. To achieve this, we designed a new protocol to use brain activity related to the correct or wrong execution of the task. We showed that it is possible to detect and classify different levels of error in single trials. We also showed that it is possible to apply reinforcement learning algorithms to learn new similar tasks using the rewards obtained from brain activity. {\textcopyright}2010 IEEE.},
+author = {Iturrate, I{\~{n}}aki and Montesano, Luis and M{\'{i}}nguez, Javier},
+booktitle = {Proceedings - IEEE International Conference on Robotics and Automation},
+doi = {10.1109/ROBOT.2010.5509734},
+isbn = {9781424450381},
+issn = {10504729},
+mendeley-groups = {ErrP},
+month = {may},
+pages = {4822--4829},
+publisher = {IEEE},
+title = {{Robot reinforcement learning using EEG-based reward signals}},
+url = {http://ieeexplore.ieee.org/document/5509734/},
+year = {2010}
 }
 
 @article{ERP-UPS_AND_DOWNS,
@@ -376,22 +464,27 @@ year = {1999}
 }
 
 @article{OPEN-VIBE-PAPER,
-    title={OpenViBE: An Open-Source Software Platform to Design, Test and Use Brain-Computer Interfaces in Real and Virtual Environments},
-    author={Yann Renard, Fabien Lotte, Guillaume Gibert, Marco Congedo, Emmanuel Maby, Vincent Delannoy, Olivier Bertrand, and Anatole Lecuyer},
-    year={2010},
-    keywords=""
+abstract = {Abstract This paper describes the OpenViBE software platform which enables researchers to design, test, and use brain–computer interfaces (BCIs). BCIs are communication systems that enable users to send commands to computers solely by means of brain activity. BCIs are gaining interest among the virtual reality (VR) community since they have appeared as promising interaction devices for virtual environments (VEs). The key features of the platform are (1) high modularity, (2) embedded tools for visualization and feedback based on VR and 3D displays, (3) BCI design made available to non-programmers thanks to visual programming, and (4) various tools offered to the different types of users. The platform features are illustrated in this paper with two entertaining VR applications based on a BCI. In the first one, users can move a virtual ball by imagining hand movements, while in the second one, they can control a virtual spaceship using real or imagined foot movements. Online experiments with these applicatio...},
+archivePrefix = {arXiv},
+arxivId = {10.1162/pres.19.1.35.},
+author = {Renard, Yann and Lotte, Fabien and Gibert, Guillaume and Congedo, Marco and Maby, Emmanuel and Delannoy, Vincent and Bertrand, Olivier and L{\'{e}}cuyer, Anatole},
+doi = {10.1162/pres.19.1.35},
+eprint = {pres.19.1.35.},
+isbn = {1054-7460},
+issn = {1054-7460},
+journal = {Presence: Teleoperators and Virtual Environments},
+mendeley-groups = {Entropy,Histogram of Oriented Gradients P300,Thesis},
+month = {feb},
+number = {1},
+pages = {35--53},
+pmid = {6797525},
+primaryClass = {10.1162},
+title = {{OpenViBE: An Open-Source Software Platform to Design, Test, and Use Brain–Computer Interfaces in Real and Virtual Environments}},
+url = {http://www.mitpressjournals.org/doi/10.1162/pres.19.1.35},
+volume = {19},
+year = {2010}
 }
 
-% @article{pearson1931test,
-%   title={The test of significance for the correlation coefficient},
-%   author={Pearson, Egon S},
-%   journal={Journal of the American Statistical Association},
-%   volume={26},
-%   number={174},
-%   pages={128--134},
-%   year={1931},
-%   publisher={Taylor \& Francis}
-% }
 
 @Manual{MNE,
     title = {MNE software for processing MEG and EEG data, NeuroImage, Volume 86},
@@ -400,10 +493,27 @@ year = {1999}
     url = {https://mne-tools.github.io/0.13/index.html}
   }
   
-@Manual{MNE-PYTHON,
-    title = {MEG and EEG data analysis with MNE-Python, Frontiers in Neuroscience, Volume 7},
-    author = {A. Gramfort, M. Luessi, E. Larson, D. Engemann, D. Strohmeier, C. Brodbeck, R. Goj, M. Jas, T. Brooks, L. Parkkonen, M. H\"{a}lm\"{a}ll\"{a}linen},
-    year = {2013},
-    url = {https://mne-tools.github.io/0.13/index.html}
-  }
+@article{MNE-PYTHON,
+abstract = {Magnetoencephalography and electroencephalography (M/EEG) measure the weak electromagnetic signals generated by neuronal activity in the brain. Using these signals to characterize and locate neural activation in the brain is a challenge that requires expertise in physics, signal processing, statistics, and numerical methods. As part of the MNE software suite, MNE-Python is an open-source software package that addresses this challenge by providing state-of-the-art algorithms implemented in Python that cover multiple methods of data preprocessing, source localization, statistical analysis, and estimation of functional connectivity between distributed brain regions. All algorithms and utility functions are implemented in a consistent manner with well-documented interfaces, enabling users to create M/EEG data analysis pipelines by writing Python scripts. Moreover, MNE-Python is tightly integrated with the core Python libraries for scientific comptutation (NumPy, SciPy) and visualization (matplotlib and Mayavi), as well as the greater neuroimaging ecosystem in Python via the Nibabel package. The code is provided under the new BSD license allowing code reuse, even in commercial products. Although MNE-Python has only been under heavy development for a couple of years, it has rapidly evolved with expanded analysis capabilities and pedagogical tutorials because multiple labs have collaborated during code development to help share best practices. MNE-Python also gives easy access to preprocessed datasets, helping users to get started quickly and facilitating reproducibility of methods by other researchers. Full documentation, including dozens of examples, is available at http://martinos.org/mne.},
+archivePrefix = {arXiv},
+arxivId = {[1] A. Gramfort, “MEG and EEG data analysis with MNE-Python,” Front. Neurosci., vol. 7, no. December, pp. 1–13, 2013.},
+author = {Gramfort, Alexandre and Luessi, Martin and Larson, Eric and Engemann, Denis A. and Strohmeier, Daniel and Brodbeck, Christian and Goj, Roman and Jas, Mainak and Brooks, Teon and Parkkonen, Lauri and H{\"{a}}m{\"{a}}l{\"{a}}inen, Matti},
+doi = {10.3389/fnins.2013.00267},
+eprint = {[1] A. Gramfort, “MEG and EEG data analysis with MNE-Python,” Front. Neurosci., vol. 7, no. December, pp. 1–13, 2013.},
+file = {:Users/rramele/Library/Application Support/Mendeley Desktop/Downloaded/Gramfort et al. - 2013 - MEG and EEG data analysis with MNE-Python(2).pdf:pdf},
+isbn = {1662-4548 (Print) 1662-453X (Linking)},
+issn = {1662453X},
+journal = {Frontiers in Neuroscience},
+keywords = {Electroencephalography (EEG),Magnetoencephalography (MEG),Neuroimaging,Open-source,Python,Software},
+mendeley-groups = {EEGWave},
+month = {dec},
+number = {7 DEC},
+pages = {267},
+pmid = {24431986},
+publisher = {Frontiers},
+title = {{MEG and EEG data analysis with MNE-Python}},
+url = {http://journal.frontiersin.org/article/10.3389/fnins.2013.00267/abstract},
+volume = {7},
+year = {2013}
+}
 
