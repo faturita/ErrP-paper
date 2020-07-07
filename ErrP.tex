@@ -741,7 +741,7 @@ Figure~\ref{fig:avg_steps_noise} shows the result of an agent successively train
 \label{fig:avg_steps_noise}
 \end{figure}
 
-Electroencephalographic signals have high inter-subject variability~\cite{Chavarriaga2014}.   This is evidenced in Figure~\ref{fig:transferlearning} where the agent training is performed by using rewards obtained by classifying epochs from one subject, but using a classifier which was trained using the brainwaves from a different subject.   Not performance gain is evidenced, the agents learn nothing which implies that the reward information is useless.
+Electroencephalographic signals have high inter-subject variability~\cite{Chavarriaga2014}.   This is evidenced in Figure~\ref{fig:transferlearning} where the agent training is performed by using rewards obtained by classifying epochs from one subject, but using a classifier which was trained using the brainwaves from a different subject.   No performance gain is evidenced, the agents learn nothing which implies that the reward information is useless.
 
 
 \begin{figure}[h!]
@@ -753,7 +753,7 @@ Electroencephalographic signals have high inter-subject variability~\cite{Chavar
 \label{fig:transferlearning}
 \end{figure}
 
-Finally, Figure~\ref{fig:avg_steps_all} shows the result of training an agent with accumulative experiences from subjects 1,2,3,4,7, and 8.  It can be seen that the overall performance of the agent improves as long as there are more experiences to be used to train it, regardless if they were generated from the brainwaves classification from different subjects.  
+Finally, Figure~\ref{fig:avg_steps_all} shows the result of training an agent with cumulative experiences from subjects 1,2,3,4,7, and 8.  It can be seen that the overall performance of the agent improves as long as there are more experiences to be used to train it, regardless if they were generated from the brainwaves classification from different subjects.  
 
 
 \begin{figure}[h!]
@@ -801,7 +801,7 @@ One additional aspect to remark is the robustness of the learning strategy based
 
 Further work will be conducted in order to increase the complexity of the game to allow the possibility that the target position be dynamically changed.  In that case the agent would start to learn to follow the target, instead of learning to go to a specific static destination spot.  Additionally, the classifier could be enhanced to recognize more effectively the Error Potential~\cite{Iwane2017}.
 
-Concluding, this research show evidence that brain signals can be used as an interface between human and a gaming computer enabling an alternative communication with the system without explicit input from the user.
+Concluding, this research shows evidence that brain signals can be used as an interface between human and a gaming computer enabling an alternative communication with the system without explicit input from the user.
 
 
 
