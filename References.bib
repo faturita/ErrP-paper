@@ -1,3 +1,108 @@
+@inproceedings{Xu2020,
+abstract = {Providing Reinforcement Learning (RL) agents with human feedback can dramatically improve various aspects of learn- ing. However, previous methods require human observer to give inputs explicitly (e.g., press buttons, voice interface), burdening the human in the loop of RL agent's learning pro- cess. Further, it is sometimes difficult or impossible to obtain the explicit human advise (feedback), e.g., autonomous driv- ing, disabled rehabilitation, etc. In this work, starting from game playing, we investigate capturing human's intrinsic re- actions as implicit (and natural) feedback through EEG in the form of error-related potentials (ErrP), providing a natural and direct way for humans to improve the RL agent learn- ing in various visual-based games. As such, the human intel- ligence can be integrated via implicit feedback with RL al- gorithms to accelerate the learning of RL agent. We develop three reasonably complex 2D discrete navigational games to experimentally evaluate the overall performance of the pro- posed work. Major contributions of our work are as follows, (i) we propose and experimentally validate the zero-shot learning of ErrPs, where the ErrPs can be learned for one game, and transferred to other unseen games, (ii) we pro- pose a novel RL framework for integrating implicit human feedbacks via ErrPs with RL models, improving the label ef- ficiency and reducing human cognitive load, and (iii) com- pared to prior works, we scale the application of ErrPs to rea- sonably complex environments, and demonstrate the signif- icance of our approach for accelerated learning through real user experiments.},
+address = {New York, New York, USA},
+author = {Xu, Duo and Agarwal, Mohit and Fekri, Faramarz and Sivakumar, Raghupathy},
+booktitle = {AAAI-20 Workshop on Reinforcement Learning in Games},
+mendeley-groups = {ErrP},
+title = {{Playing Games with Implicit Human Feedback}},
+url = {https://www.semanticscholar.org/paper/Playing-Games-with-Implicit-Human-Feedback-Xu-Agarwal/faba141483180e53f461c6035ce95041cfed9a8f},
+year = {2020}
+}
+
+
+@book{Sutton2018,
+abstract = {Reinforcement learning, one of the most active research areas in artificial intelligence, is a computational approach to learning whereby an agent tries to maximize the total amount of reward it receives when interacting with a complex, uncertain environment. In Reinforcement Learning, Richard Sutton and Andrew Barto provide a clear and simple account of the key ideas and algorithms of reinforcement learning. Their discussion ranges from the history of the field's intellectual foundations to the most recent developments and applications. The only necessary mathematical background is familiarity with elementary concepts of probability.The book is divided into three parts. Part I defines the reinforcement learning problem in terms of Markov decision processes. Part II provides basic solution methods: dynamic programming, Monte Carlo methods, and temporal-difference learning. Part III presents a unified view of the solution methods and incorporates artificial neural networks, eligibility traces, and planning; the two final chapters present case studies and consider the future of reinforcement learning.},
+author = {Sutton, Richard S. and Barto, Andrew G.},
+booktitle = {The MIT Press},
+isbn = {9780262039246},
+mendeley-groups = {ErrP},
+title = {{Reinforcement Learning, Second Edition: An Introduction}},
+year = {2018}
+}
+
+
+@inproceedings{Luo2019,
+abstract = {Reinforcement learning (RL) from human preferences suffered from temporal and interaction environments' limitations, which rule out real-time and real-world robotic applications of deep RL. To overcome the limitations, this study introduced the electroencephalography (EEG)-measured error-related potentials (ErrPs) to train a robotic RL system based on a brain-computer interface (BCI). We decoded ErrP signals by selecting human preferences in real-time to train robotic behavior by deep RL during a binary object selection task. Twelve healthy subjects participated in the ErrP experiments, in which they were asked to select and adjust self-favored behavior after a machine's random selections. The decoded ErrP signals classified by a convolutional neural network (CNN)architecture to achieve an average classification accuracy and an area under the ROC curve of 67.49{\%} and 0.639, respectively. By using the well-trained ErrP signals classifier to train the deep RL system, our final results for training robotic behavior through ErrP-based preferences showed an average of 15.21{\%} improvement in efficiency while obtaining acceptable rewards in RL. Thus, the work used brain signals instead of pressing or clicking buttons as the rewards of RL, and constructed a real-time and free from interaction interference intuitive RL system.},
+author = {Luo, Tian Jian and Fan, Ya Chao and Lv, Ji Tu and Zhou, Chang Le},
+booktitle = {Proceedings - 2018 IEEE International Conference on Bioinformatics and Biomedicine, BIBM 2018},
+doi = {10.1109/BIBM.2018.8621183},
+isbn = {9781538654880},
+keywords = {brain-computer interface,deep neural networks,error-related potentials,intuitive system,reinforcement learning},
+mendeley-groups = {ErrP},
+month = {dec},
+pages = {697--701},
+publisher = {IEEE},
+title = {{Deep reinforcement learning from error-related potentials via an EEG-based brain-computer interface}},
+url = {https://ieeexplore.ieee.org/document/8621183/},
+year = {2019}
+}
+
+
+
+@article{Wirth2020,
+abstract = {Objective. Error-related potentials (ErrP) are generated in the brain when humans perceive errors. These ErrP signals can be used to classify actions as erroneous or non-erroneous, using single-trial electroencephalography (EEG). A small number of studies have demonstrated the feasibility of using ErrP detection as feedback for reinforcement-learning-based brain-computer interfaces (BCI), confirming the possibility of developing more autonomous BCI. These systems could be made more efficient with specific information about the type of error that occurred. A few studies differentiated the ErrP of different errors from each other, based on direction or severity. However, errors cannot always be categorised in these ways. We aimed to investigate the feasibility of differentiating very similar error conditions from each other, in the absence of previously explored metrics. Approach. In this study, we used two data sets with 25 and 14 participants to investigate the differences between errors. The two error conditions in each task were similar in terms of severity, direction and visual processing. The only notable differences between them were the varying cognitive processes involved in perceiving the errors, and differing contexts in which the errors occurred. We used a linear classifier with a small feature set to differentiate the errors on a single-trial basis. Main results. For both data sets, we observed neurophysiological distinctions between the ErrPs related to each error type. We found further distinctions between age groups. Furthermore, we achieved statistically significant single-trial classification rates for most participants included in the classification phase, with mean overall accuracy of 65.2{\%} and 65.6{\%} for the two tasks. Significance. As a proof of concept our results showed that it is feasible, using single-trial EEG, to classify these similar error types against each other. This study paves the way for more detailed and efficient learning in BCI, and thus for a more autonomous human-machine interaction.},
+author = {Wirth, C. and Dockree, P. M. and Harty, S. and Lacey, E. and Arvaneh, M.},
+doi = {10.1088/1741-2552/ab53fe},
+file = {:Users/rramele/Library/Application Support/Mendeley Desktop/Downloaded/Wirth et al. - 2019 - Towards error categorisation in BCI single-trial EEG classification between different errors.pdf:pdf},
+issn = {17412552},
+journal = {Journal of Neural Engineering},
+mendeley-groups = {ErrP},
+month = {dec},
+number = {1},
+pages = {016008},
+pmid = {31683267},
+publisher = {IOP Publishing},
+title = {{Towards error categorisation in BCI: Single-trial EEG classification between different errors}},
+url = {https://iopscience.iop.org/article/10.1088/1741-2552/ab53fe},
+volume = {17},
+year = {2020}
+}
+
+
+
+@incollection{Goh2019,
+abstract = {Electroencephalography based brain computer interface has enabled communication of human's intention to a computer directly from the brain by decoding signatures that relay the intention information. Error-related potential has been adopted as a signature for natural communication and performance monitoring, among others. In this work, we investigate the use of error-related potential as an input channel to transfer human preference of a strategical advisory to a computer. Air traffic control task was used as a case study to make an empirical inquiry of error-related potential for higher level cognitive tasks (i.e. situation awareness in air traffic control tasks). The experimental task requires the subjects to monitor and assess air traffic scenarios presented on a simulated environment that provides conflict resolution advisories. The task is known to be highly mental demanding as it requires continuous situation awareness of the traffic. An interface and experimental protocol were developed for this experiment to validate that error-related potential can be used a new channel for preference. The implementation of the complete design was described together with the experimental evidence of error-related potential. According to the results, we found error-related potential that is in line with existing literature. We also discussed how the preliminary findings of this work can be used as an integral part of an intelligent conflict resolution advisory system that can learn from human preference and duplicate the decision making.},
+author = {Goh, Sim Kuan and Tran, Ngoc Phu and Pham, Duc Thinh and Alam, Sameer and Izzetoglu, Kurtulus and Duong, Vu},
+booktitle = {Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
+doi = {10.1007/978-3-030-22419-6_27},
+isbn = {9783030224189},
+issn = {16113349},
+keywords = {Air traffic control,Air traffic management,Brain computer interface,Conflict detection and resolution,Decision network,Error-related potential},
+mendeley-groups = {ErrP},
+month = {jul},
+pages = {384--393},
+publisher = {Springer, Cham},
+title = {{Construction of Air Traffic Controller's Decision Network Using Error-Related Potential}},
+url = {http://link.springer.com/10.1007/978-3-030-22419-6{\_}27},
+volume = {11580 LNAI},
+year = {2019}
+}
+
+
+
+@article{Zhou2019,
+abstract = {This article introduces the Turn-Taking Spiking Neural Network (TTSNet), which is a cognitive model to perform early turn-taking prediction about a human or agent's intentions. The TTSNet framework relies on implicit and explicit multimodal communication cues (physical, neurological and physiological) to be able to predict when the turn-taking event will occur in a robust and unambiguous fashion. To test the theories proposed, the TTSNet framework was implemented on an assistant robotic nurse, which predicts surgeon's turn-taking intentions and delivers surgical instruments accordingly. Experiments were conducted to evaluate TTSNet's performance in early turn-taking prediction. It was found to reach an (Formula presented.) score of 0.683 given 10{\%} of completed action, and an (Formula presented.) score of 0.852 at 50{\%} and 0.894 at 100{\%} of the completed action. This performance outperformed multiple state-of-the-art algorithms, and surpassed human performance when limited partial observation is given ({\textless}40{\%}). Such early turn-taking prediction capability would allow robots to perform collaborative actions proactively, in order to facilitate collaboration and increase team efficiency.},
+archivePrefix = {arXiv},
+arxivId = {1807.11096},
+author = {Zhou, Tian and Wachs, Juan P.},
+doi = {10.1177/0278364919872252},
+eprint = {1807.11096},
+issn = {17413176},
+journal = {International Journal of Robotics Research},
+keywords = {Cognitive human–robot interaction,cognitive robotics,gesture,human-centered and life-like robotics,learning and adaptive systems,medical robots and systems,posture,social spaces and facial expressions},
+mendeley-groups = {ErrP},
+month = {dec},
+number = {14},
+pages = {1619--1643},
+publisher = {SAGE PublicationsSage UK: London, England},
+title = {{Spiking Neural Networks for early prediction in human–robot collaboration}},
+url = {http://journals.sagepub.com/doi/10.1177/0278364919872252},
+volume = {38},
+year = {2019}
+}
+
+
+
 @inproceedings{Iwane2017,
 abstract = {Error-related potentials (ErrP) have been increasingly studied in psychophysical experiments as well as for brain-machine interfacing. In the latter case, the generalisation capabilities of ErrP decoders is a crucial element to avoid frequent recalibration processes, thus increasing their usability. Previous studies have suggested that ErrP signals are rather stable across recording sessions. Also, studies using protocols of serial stimuli presentation show that these potentials do not change significantly with the presentation rate. Here we complement these studies by analysing the decoding generalisation capabilities. Using data from monitoring experiments, we evaluate how much the performance degrades when tested in a condition different than the one the decoder was trained with. Moreover, we compare different spatial filtering techniques to see which preprocessing steps yield less-sensitive features for ErrP decoding.},
 author = {Iwane, Fumiaki and Chavarriaga, Ricardo and Iturrate, I{\~{n}}aki and {Del Millan}, Jos{\'{e}}},
