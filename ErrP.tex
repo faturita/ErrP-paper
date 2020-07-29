@@ -381,7 +381,7 @@ Ramele~Rodrigo,~\IEEEmembership{Member,~IEEE,}
 \thanks{R. Ramele and J.M.Santos are with the Department
 of Computer Engineering, Instituto Tecnológico de Buenos Aires(ITBA), Argentina,
 e-mail: rramele@itba.edu.ar.}% <-this % stops a space
-\thanks{Manuscript received April 19, 2005; revised August 26, 2015.}}
+\thanks{Manuscript received December 9, 2019; revised August 20, 2020.}}
 
 % note the % following the last \IEEEmembership and also \thanks - 
 % these prevent an unwanted space from occurring between the last author name
@@ -447,6 +447,7 @@ Reinforcement Learning (RL) is an Artificial Intelligence approach where an agen
 ErrP, BCI, EEG, RL, Agent, AI
 \end{IEEEkeywords}
 
+%n this study into the player’s emotional theory of mind (ToM) of gameplaying agents, we investigate how an agent’s behaviour and the player’s own performance and emotions shape the recognition of a frustrated behaviour. We focus on the perception of frustration as it is a prevalent affective experience in human-computer interaction. We present a testbed game tailored towards this end, in which a player competes against an agent with a frustration model based on theory. We collect gameplay data, an annotated ground truth about the player’s appraisal of the agent’s frustration, and apply face recognition to estimate the player’s emotional state. We examine the collected data through correlation analysis and predictive machine learning models, and find that the player’s observable emotions are not correlated highly with the perceived frustration of the agent. This suggests that our subject’s ToM is a cognitive process based on the gameplay context. Our predictive models—using ranking support vector machines—corroborate these results, yielding moderately accurate predictors of players’ ToM.
 
 
 % For peer review papers, you can put extra information on the cover
@@ -466,13 +467,16 @@ ErrP, BCI, EEG, RL, Agent, AI
 
 % You must have at least 2 lines in the paragraph with the drop letter
 % (should never be an issue)
-\IEEEPARstart{T}{he} effectiveness of today's human–machine interaction and artificial intelligence is limited by a communication bottleneck as humans are required to translate high-level concepts into a machine-mandated sequence of instructions~\cite{Xu2020,CURSOR-CONTROL-PAPER}.   This work tackles this problem by exploring the use of brain signals as an interface between humans and computers, trying to provide information to the system without explicit communication from the user.   
-
-On the other hand, video games has been used widely as tools to test new means of interactions\cite{REF}. Gaming agents are computer programs that can sense the game environment, process information, and interact with a computer game, behaving like a real user playing the game.
-
+\IEEEPARstart{T}{he} effectiveness of today's human–machine interaction and artificial intelligence is limited by a communication bottleneck as humans are required to translate high-level concepts into a machine-mandated sequence of instructions~\cite{Xu2020,CURSOR-CONTROL-PAPER}.   This work tackles this problem by exploring the use of brain signals as an interface between humans and computers, trying to provide information to the system without explicit communication from the user.   In this respect, video games has been used widely as tools to test new means of interactions~\cite{Carter2014,Barr2007}. Gaming agents are computer programs that can sense the computer game environment, process information, and interact with it, behaving like a real user playing the game.  They are used in the context of testing and evaluating artificial intelligence algorithms and procedures that aim to win the game or to behave like a real user player~\cite{Zhao2020}.
 In this work, the feedback obtained from an observational human critic (OHC) in the form of electroencephalographic (EEG) signals is used to evaluate the operational performance of a gaming agent.  Observational human critics are silent subjects observing a computer gaming agent playing the game. In this set up, gaming agents can be trained using only signals components called Error-related Potentials (ErrP) that can be identified from their brain signals.   This type of signals can be found on EEG traces and are elicited when a subject is aware of the presence of an unexpected outcome, which she/he identifies as an error.  It is currently an extensive area of research in the neuroscience community~\cite{Holroyd2009}.  
 
 Error-related Potentials can be detected by signal processing and machine learning techniques~\cite{EERP-PAPER} and they are also used in Brain-Computer Interfaces (BCI) to implement or enhance artificial communication channels~\cite{Chavarriaga2014}.
+
+The appealing idea of a direct interface between the human brain and an artificial system, called Brain Computer Interface (BCI) or Brain Machine Interfaces (BMI), has proved the feasibility of a distinct non-biological communication channel to transmit information from the Central Nervous System (CNS) to a computer device~\cite{Vasiljevic2020}.
+
+
+BCI is a new input modality to explicitely transfer informtion that can be used in the context of a computer game~\cite{Scherer2012} and their relevance in gaming environments was quickly recognized~\cite{Nijholt2007}.
+and are relevant in the context of the accessibility for video games~\cite{Aguado-Delgado2020}. and in the growing area of e-sports~\cite{Yakovlev2020}.
 
 In order to train the agent, Reinforcement Learning (RL)~\cite{Santos1999,Sutton2018} comes as a natural solution for this scenario from the field of Artificial Intelligence.  This is an algorithmic learning strategy that can be established by mimicking how biological agents learn from its environment by exploring it and getting feedback rewards, either negative or positive.  This strategy aims to maximize the amount of positive rewards while keeping the number of negative feedback low.  Thus, the learning problem is  posed as a mere stochastic optimization strategy~\cite{sutton2018reinforcement}.  Recently, this technique has been used extensively in the context of recent advances in artificial intelligence~\cite{REF}. Nonneglected is the influence of DeepBrain's AlphaGo project, which was the first to reach a very high proficiency when it won the complex game Go against several world champions~\cite{ALPHA-GO}.
 
@@ -486,7 +490,7 @@ In the context of Brain Computer Interfaces a growing number of studies have dem
 
 Previous research has explored the usage of RL with reward signals based on brain activity, recorded by an EEG-based BCI system during task execution. The papers \cite{ROBOT-CONTROL-PAPER,Kim2017,Omedes2013} have successfully demonstrated that a robot can be controlled by obtaining a reward signal from a person's brain activity which is observing the robot solve a task.  Other approaches have used the signal as an important feedback for human-robot interaction or to implement shared-control strategies~\cite{Schiatti2018}.  Additionally, ErrPs have also been used in the context of games as an additional feedback channel that can be explored to enhance gaming experience~\cite{Plass-OudeBos2010,kober2018bci}.  In this same line, the objective of this work is to use the information extracted from brainwaves to enhance the performance of a gaming agent, replicating and extending the usage of this signal.
 
-Therefore, the two contributions of this work are (1) bla bla bla bla bla bla bla bla, (2) 
+Therefore, the four contributions of this work are (1) a very simple game that can elicit the ErrP potential, (2) the EEG brainwaves from observational human observers, (3) that even when classification accuracy is low and produces a noisy reward signal is enough for an agent to learn the optimal policy to solve this simple game and (4) the collaborative rewards from multiple observational human observers can compensate the lack of accuracy obtained from specific subjects.
 
 
 % An example of a floating figure using the graphicx package.
@@ -653,7 +657,7 @@ In this way, the raw data of a brainwave session is processed into an array of e
 \section{Reinforcement Learning}
 \label{learning}
 
-Each experience consists of a list of game movement configurations and the associated epochs obtained from subject's brainwaves.  The set of experiences of each subject is split into training and testing.  Training experiences are used to train the classifier, whereas test experiences are used to test its performance.  After a classifier is trained, the epochs of the experience are classified as hit or no-hit.  A reward for each movement in the game run is produced, based on the classification of the epoch that correspond to that movement.  The reward can either be -1 when the event is classified as a hit or 0 when it is classified as a no-hit. The accuracy of this rewards depends on the performance of the classifier. The list of game movements and their associated reward information are used to train the agent by a variant of Reinforcement Learning called Q-Learning algorithm.
+Each experience consists of a list of game movement configurations and the associated epochs obtained from OHC's brainwaves.  The set of experiences of each OHC is split into training and testing.  Training experiences are used to train the classifier, whereas test experiences are used to test its performance.  After a classifier is trained, the epochs of the experience are classified as hit or no-hit.  A reward for each movement in the game run is produced, based on the classification of the epoch that correspond to that movement.  The reward can either be -1 when the event is classified as a hit or 0 when it is classified as a no-hit. The accuracy of this rewards depends on the performance of the classifier. The list of game movements and their associated reward information are used to train the agent by a variant of Reinforcement Learning called Q-Learning algorithm.
 
 %The set of experiences of each subject is split into training and testing, so that the results of the classification can then be used to improve the performance of the agent. Each experience includes an ordered list of extracted epochs for each movement that the agent carried out plus the game state information, i.e. the movement specification.  
 
@@ -676,7 +680,7 @@ The algorithm is developed in Python and uses the OpenAI Gym toolkit~\cite{opena
 
 \subsection{Agent Learning}
 \label{q_learning_step_alg}
-The Q-Table is initialized with zeros, unless a preexisting Q-Table is passed as a parameter.  For the agent, in order to learn from the feedback generated by the subject, the Q-Table is not used to determine the action to take at a given state. Instead, the policy which determines which action to take in a particular state is given by the agent's actions taken from the brainwave session results. This allows to learn the Q-Table based on the subject's feedback from the movements the agent took, which are chosen pseudo-randomly, while executing the brainwave session. The previously mentioned feedback is not explicit as it comes from the interpreted brain signal data. This implies that the reward is determined by the subject's brain activity. 
+The Q-Table is initialized with zeros, unless a preexisting Q-Table is passed as a parameter.  For the agent, in order to learn from the feedback generated by the OHC, the Q-Table is not used to determine the action to take at a given state. Instead, the policy which determines which action to take in a particular state is given by the agent's actions taken from the brainwave session results. This allows to learn the Q-Table based on the OHC's feedback from the movements the agent took, which are chosen pseudo-randomly, while executing the brainwave session. The previously mentioned feedback is not explicit as it comes from the interpreted brain signal data. This implies that the reward is determined by the OHC's brain activity. 
 
 Hence, following the iterative procedure based on Equation~\ref{equ:update_q_table}, the Q-Table is updated in each iteration.  After the algorithm finishes iterating through all the training episodes, the Q-Table is stored to test the performance of the agent.
 
@@ -684,23 +688,23 @@ Hence, following the iterative procedure based on Equation~\ref{equ:update_q_tab
 \section{Results}
 \label{results}
 
-Figures~\ref{fig:classifiers} and~\ref{fig:logisticregression} show the binary classification accuracy obtained for the eight subjects for the four different classification algorithms using a 10-fold cross validation procedure.  The best overall performance is obtained using Logistic Regression.
+Figures~\ref{fig:classifiers} and~\ref{fig:logisticregression} show the binary classification accuracy obtained for the eight OHCs for the four different classification algorithms using a 10-fold cross validation procedure.  The best overall performance is obtained using Logistic Regression.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[scale=0.4]{Images/algorithm_calibration/Total_calib.png}
-    \caption{Binary classification score using different classifiers while recognizing ErrP potentials for the eight subjects.  Chance Level is 0.5.}
+    \caption{Binary classification score using different classifiers while recognizing ErrP potentials for the eight OHCs.  Chance Level is 0.5.}
     \label{fig:classifiers}
 \end{figure}
 
 \begin{figure}[ht]
     \centering
     \includegraphics[scale=0.4]{Images/algorithm_calibration/LR_calib.png}
-    \caption{Binary Classification Score using Logistic Regression for the eight subjects.}
+    \caption{Binary Classification Score using Logistic Regression for the eight OHCs.}
     \label{fig:logisticregression}
 \end{figure}
 
-On the other hand, Figure \ref{fig:avg_steps} shows for each subject the average amount of steps the agent takes to reach the goal as the Q-Table is progressively trained using the reward information obtained from their classified experiences. Each point corresponds to the average number of steps in 200 repetitions that it takes for the agent to reach the goal for a specific Q-Table. The first point represents the amount of steps the agent takes to reach the goal for a Q-Table that hasn't been trained at all, where movements are decided randomly. The next point corresponds to the amount of steps it takes to reach the goal using a policy derived from a Q-Table trained with one experience, and so on.
+On the other hand, Figure \ref{fig:avg_steps} shows for each OHC the average amount of steps the agent takes to reach the goal as the Q-Table is progressively trained using the reward information obtained from their classified experiences. Each point corresponds to the average number of steps in 200 repetitions that it takes for the agent to reach the goal for a specific Q-Table. The first point represents the amount of steps the agent takes to reach the goal for a Q-Table that hasn't been trained at all, where movements are decided randomly. The next point corresponds to the amount of steps it takes to reach the goal using a policy derived from a Q-Table trained with one experience, and so on.
 
 \begin{figure}[h!]
 \begin{subfigure}{0.5\textwidth}
@@ -717,14 +721,14 @@ On the other hand, Figure \ref{fig:avg_steps} shows for each subject the average
   \includegraphics[scale=0.27]{Images/Average_steps/g.png} 
   \includegraphics[scale=0.27]{Images/Average_steps/h.png} 
 \end{subfigure}
-\caption{Average number of steps for the agent when trained with experiences from subjects 1-8. Y axis show the averaged number of steps, while x axis show the number of experiences used to cumulative train the Q-Table.}
+\caption{Average number of steps for the agent when trained with experiences from OHCs 1-8. Y axis show the averaged number of steps, while x axis show the number of experiences used to cumulative train the Q-Table.}
 \label{fig:avg_steps}
 \end{figure}
 
 
-The results show that as the Q-Table is progressively trained the average amount of steps decreases, meaning that the agent learns. However, the rate at which it learns varies per subject, depending on the classification accuracy of the extracted brainwaves.  For example results for subject 1 show faster learning than those of subject 8 (Figure \ref{fig:avg_steps}).
+The results show that as the Q-Table is progressively trained the average amount of steps decreases, meaning that the agent learns. However, the rate at which it learns varies per OHC, depending on the classification accuracy of the extracted brainwaves.  For example results for OHC 1 show faster learning than those of OHC 8 (Figure \ref{fig:avg_steps}).
 
-In the case for subject 5 and 6, the reward information obtained from the brainwaves is not enough to train the agent effectively. Figures \ref{fig:avg_steps} E and \ref{fig:avg_steps} F show no apparent learning, as the amount of steps to reach the goal doesn't decrease when trained.  These results are also consistent with their classification ROC curves, shown on Figures~\ref{fig:rocsubjects} obtained for both subjects, where the area under the curve are close to chance level.  Both subjects have less recorded data from the sessions in comparison to the rest of the subjects.   This variation in performance for different subjects has been studied extensively in BCI.  Besides low data samples there are other reasons affecting the classification accuracy:  cognitive reasons, this being the subject not paying extensively attention to the game dynamics, very low Signal-To-Noise Ratio (SNR) of the ErrP component or even the BCI-illiteracy phenomena where the specific subject's signals do not contain the expected component response~\cite{Yousefi2019}.
+In the case for OHC 5 and 6, the reward information obtained from the brainwaves is not enough to train the agent effectively. Figures \ref{fig:avg_steps} E and \ref{fig:avg_steps} F show no apparent learning, as the amount of steps to reach the goal doesn't decrease when trained.  These results are also consistent with their classification ROC curves, shown on Figures~\ref{fig:rocsubjects} obtained for both OHCs, where the area under the curve are close to chance level.  Both OHCs have less recorded data from the sessions in comparison to the rest of the OHCs.   This variation in performance for different OHCs has been studied extensively in BCI.  Besides low data samples there are other reasons affecting the classification accuracy:  cognitive reasons, this being the OHC not paying extensively attention to the game dynamics, very low Signal-To-Noise Ratio (SNR) of the ErrP component or even the BCI-illiteracy phenomena where the specific OHC's signals do not contain the expected component response~\cite{Yousefi2019}.
 
 \begin{figure}[h!]
 \captionsetup[subfigure]{justification=centering}
@@ -736,13 +740,13 @@ In the case for subject 5 and 6, the reward information obtained from the brainw
     \centering
     \includegraphics[scale=0.2]{Images/Classification_test/roc_f.png}  
 \end{subfigure}
-\caption{ROC Curves for subjects 5 (up) and 6 (down)}
+\caption{ROC Curves for OHCs 5 (up) and 6 (down)}
 \label{fig:rocsubjects}
 \end{figure}
 
 %These results are consistent with fig. \ref{fig:roc:e} and fig. \ref{fig:roc:f}, which show that the signal classification for these subjects hasn't been particularly successful. 
 
-Figure~\ref{fig:avg_steps_noise} shows the result of an agent successively trained with experiences obtained from a brainwave session, generated with sham signals.  In this case, random EEG signals were generated using OpenVibe Acquisition Server signal generator for all channels, as if they were generated from a human observer who doesn't pay attention to the game.  As it can be seen, the agent learns nothing, and regardless of the amount of experiences that are used to learn the Q-Table, the number of steps required to reach the goal does not decrease.  This pattern is also obtained when the experiences from subjects 5 and 6 are used, showing that the reward labeling predicted by the trained classifier for those subjects worked like a random classifier.
+Figure~\ref{fig:avg_steps_noise} shows the result of an agent successively trained with experiences obtained from a brainwave session, generated with sham signals.  In this case, random EEG signals were generated using OpenVibe Acquisition Server signal generator for all channels, as if they were generated from a human observer who doesn't pay attention to the game.  As it can be seen, the agent learns nothing, and regardless of the amount of experiences that are used to learn the Q-Table, the number of steps required to reach the goal does not decrease.  This pattern is also obtained when the experiences from OHCs 5 and 6 are used, showing that the reward labeling predicted by the trained classifier for those OHCs worked like a random classifier.
 
 \begin{figure}[h!]
 \centering
@@ -751,7 +755,7 @@ Figure~\ref{fig:avg_steps_noise} shows the result of an agent successively train
 \label{fig:avg_steps_noise}
 \end{figure}
 
-Electroencephalographic signals have high inter-subject variability~\cite{Chavarriaga2014}.   This is evidenced in Figure~\ref{fig:transferlearning} where the agent training is performed by using rewards obtained by classifying epochs from one subject, but using a classifier which was trained using the brainwaves from a different subject.   No performance gain is evidenced, the agents learn nothing which implies that the reward information is useless.
+Electroencephalographic signals have high inter-subject variability~\cite{Chavarriaga2014}.   This is evidenced in Figure~\ref{fig:transferlearning} where the agent training is performed by using rewards obtained by classifying epochs from one OHC, but using a classifier which was trained using the brainwaves from a different OHC.   No performance gain is evidenced, the agents learn nothing which implies that the reward information is useless.
 
 
 \begin{figure}[h!]
@@ -759,17 +763,17 @@ Electroencephalographic signals have high inter-subject variability~\cite{Chavar
 \includegraphics[scale=0.27]{Images/Average_steps/Ax.png}
 \includegraphics[scale=0.27]{Images/Average_steps/Bx.png}
 \end{subfigure}
-\caption{(A) Average steps using Q-table trained with experiences from subject 8 classified with a classifier trained with data from subject 6.  (B) Average steps using Q-table trained with experiences from subject 1 classified with a classifier trained with data from subject 3.}
+\caption{(A) Average steps using Q-table trained with experiences from OHC 8 classified with a classifier trained with data from OHC 6.  (B) Average steps using Q-table trained with experiences from OHC 1 classified with a classifier trained with data from OHC 3.}
 \label{fig:transferlearning}
 \end{figure}
 
-Finally, Figure~\ref{fig:avg_steps_all} shows the result of training an agent with cumulative experiences from subjects 1,2,3,4,7, and 8.  It can be seen that the overall performance of the agent improves as long as there are more experiences to be used to train it, regardless if they were generated from the brainwaves classification from different subjects.  
+Finally, Figure~\ref{fig:avg_steps_all} shows the result of training an agent with cumulative experiences from OHCs 1,2,3,4,7, and 8.  It can be seen that the overall performance of the agent improves as long as there are more experiences to be used to train it, regardless if they were generated from the brainwaves classification from different OHCs.  
 
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{Images/Average_steps/all.png}
-\caption{Average steps using Q-Table trained with 6 experiences from different subjects.}
+\caption{Average steps using Q-Table trained with 6 experiences from different OHCs.}
 \label{fig:avg_steps_all}
 \end{figure}
 
@@ -799,13 +803,13 @@ While classifying, the better performing classifier is Logistic Regression. One 
 \includegraphics[scale=0.12]{Images/Classification_test/matrix_d.png}
 \includegraphics[scale=0.12]{Images/Classification_test/matrix_h.png}
 \end{subfigure}
-\caption{Confusion Matrix for subjects 1,3,4 and 8. Darker colors show higher values.  It can be seen the lower percentage of false positives (upper right corner of each chart).}
+\caption{Confusion Matrix for OHCs 1,3,4 and 8. Darker colors show higher values.  It can be seen the lower percentage of false positives (upper right corner of each chart).}
 \label{fig:confusionmatrix}
 \end{figure}
 
-Once ErrP signals are identified they can be used to train an agent using a reinforcement learning algorithm. Brainwave sessions have a low amount of experiences in order to reduce fatigue from subjects. However data suggests that longer sessions are required in order to reach better classification scores, since more data is available in order to train the classifier. It can be seen that subjects with the largest amounts of data have the best classification. This can also be achieved designing a bigger game system that generates more samples with every session.
+Once ErrP signals are identified they can be used to train an agent using a reinforcement learning algorithm. Brainwave sessions have a low amount of experiences in order to reduce fatigue from OHCs. However data suggests that longer sessions are required in order to reach better classification scores, since more data is available in order to train the classifier. It can be seen that OHCs with the largest amounts of data have the best classification. This can also be achieved designing a bigger game system that generates more samples with every session.
 
-At the same time, effective agent training depends on the subject's data that was used to train it. Results show that training a classifier with data of one subject, but using it to classify the events of experiences of another subject does not lead to an improvement on the performance of the agent. Despite that, the rewards generated from different subjects can be used to train the same Q-Table to improve its performance, which may lead to strategies where the overall performance is improved based on the information from different human critics at the same time.
+At the same time, effective agent training depends on the OHC's data that was used to train it. Results show that training a classifier with data of one OHC, but using it to classify the events of experiences of another OHC does not lead to an improvement on the performance of the agent. Despite that, the rewards generated from different subjects can be used to train the same Q-Table to improve its performance, which may lead to strategies where the overall performance is improved based on the information from different human critics at the same time.
 
 One additional aspect to remark is the robustness of the learning strategy based on Q-Learning~\cite{Bauer2015,Rubin2012}.  The obtained accuracy to discriminate ErrPs is low.  However, even with such a lower accuracy values, the RL algorithm was able to extract meaningful information from rewards that were helpful to improve the agent performance.  
 
