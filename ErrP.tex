@@ -484,7 +484,7 @@ In order to train the agent, Reinforcement Learning (RL)~\cite{Sutton2018} comes
 
 Previous research has explored the usage of RL with reward signals based on brain activity, recorded by an EEG-based BCI system during task execution. The papers \cite{ROBOT-CONTROL-PAPER,Kim2017,Omedes2013} have successfully demonstrated that a robot can be controlled by obtaining a reward signal from a person's brain activity which is observing the robot solve a task.  In the context of Brain Computer Interfaces a growing number of studies have demonstrated the feasibility of using ErrPs as rewards for RL schemes such as to enhance robotic behaviour\cite{Luo2019}, to assess air traffic controllers decissions~\cite{Goh2019} or  to categorise actions as errors~\cite{Wirth2020}. Other approaches have used the signal as an important feedback for human-robot interaction or to implement shared-control strategies~\cite{Schiatti2018}.  Additionally, ErrPs have also been used in the context of games as an additional feedback channel that can be explored to improve gaming experience~\cite{Plass-OudeBos2010,kober2018bci}.  
 
-Therefore, in this work, we aim to use the information extracted from brainwaves to enhance the performance of a gaming agent.   The four contributions of are (1) a very simple game that can elicit the ErrP potential, (2) the EEG brainwaves dataset from observational human observers, (3) results that confirm that even when ErrP classification accuracy is low and produces a noisy reward signal, that provides enough information for an agent to learn the optimal policy to solve the simple game and (4) that collaborative rewards from multiple observational human observers can compensate the lack of accuracy obtained from specific subjects.
+Therefore, in this work, we aim to use the information extracted from brainwaves to enhance the performance of a gaming agent.   The four contributions  are (1) a very simple game that can elicit the ErrP potential, (2) the EEG brainwaves dataset from observational human observers, (3) results that confirm that even when ErrP classification accuracy is low and produces a noisy reward signal, that provides enough information for an agent to learn the optimal policy and solve the simple game and (4) that collaborative rewards from multiple observational human observers can compensate the lack of accuracy obtained from specific subjects.
 
 
 % An example of a floating figure using the graphicx package.
@@ -640,7 +640,7 @@ After the data is loaded and tagged, epochs are extracted from the raw data. Epo
 
 Samples that do not correspond to an epoch (located beyond the 2 seconds frame after the onset of the event) are not used. Also, epochs referring to the start or finish of the experience are excluded. This is done because the start and the end of the experience doesn't involve the agent taking an action.
 
-In this way, the raw data of a brainwave session is processed into an array of experiences where each element is an array of epochs tagged with a number specifying the prediction of the classifier, i.e. if the epoch corresponds to an action that made the agent moves further from the goal (hit) or an action that made the agent moves closer to the goal (no-hit). The ErrP is expected to be found in hits. To get the data ready for classification, the stimulus channel is removed in order to classify the signals using only the EEG data. Each epoch is regularized using a MinMaxScaler, i.e. substracting the minimun value in the epoch and dividing by the signal peak-to-peak amplitude~\cite{Zhou2019}.  The eight channels are concatenated using the  MNE Vectorizer function to transform the data matrix into a single array sample. Lastly, this data is used by the classification module as information to train and test a classifier. Four different classification algorithms are used.  Logistic Regression, Multi-layer Perceptron with a hidden layer of 100 neurons (i.e. default values for the Scikit-Learn MLPClassifier), Random Forest and finally a linear kernel Support Vector Classifier (i.e. SVM)~\cite{Lotte2018}.  
+In this way, the raw data of a brainwave session is processed into an array of experiences where each element is an array of epochs tagged with a number specifying the prediction of the classifier, i.e. if the epoch corresponds to an action that made the agent moves further from the goal (hit) or an action that made the agent moves closer to the goal (no-hit). The ErrP is expected to be found in hits. To get the data ready for classification, the stimulus channel is removed in order to classify the signals using only the EEG data. Each epoch is regularized using a MinMaxScaler, i.e. substracting the minimun value in the epoch and dividing by the signal peak-to-peak amplitude~\cite{Zhou2019}.  The eight channels are concatenated using the  MNE Vectorizer function to transform the data matrix into a single array sample. Lastly, this data is used by the classification module as information to train and test a classifier. Four different classification algorithms are used.  Logistic Regression, Multi-layer Perceptron with a hidden layer of 100 neurons (i.e. default values for the Scikit-Learn MLPClassifier), Random Forest, KNeighbours with k=3 and finally a linear kernel Support Vector Classifier (i.e. SVM)~\cite{Lotte2018}.  
 
 %Vectorized epochs are used in the final classification step.  
 
@@ -682,20 +682,13 @@ Hence, following the iterative procedure based on Equation~\ref{equ:update_q_tab
 \section{Results}
 \label{results}
 
-Figures~\ref{fig:classifiers} and~\ref{fig:logisticregression} show the binary classification accuracy obtained for the eight OHCs for the four different classification algorithms using a 10-fold cross validation procedure.  The best overall performance is obtained using Logistic Regression.
+Figure~\ref{fig:classifiers} show the binary classification accuracy obtained for the eight OHCs for the four different classification algorithms using a 10-fold cross validation procedure.  The best overall performance is obtained using Logistic Regression.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[scale=0.4]{Images/algorithm_calibration/Total_calib.png}
+    \includegraphics[scale=0.14]{revisedimages/cross_val.eps}
     \caption{Binary classification score using different classifiers while recognizing ErrP potentials for the eight OHCs.  Chance Level is 0.5.}
     \label{fig:classifiers}
-\end{figure}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[scale=0.4]{Images/algorithm_calibration/LR_calib.png}
-    \caption{Binary Classification Score using Logistic Regression for the eight OHCs.}
-    \label{fig:logisticregression}
 \end{figure}
 
 On the other hand, Figure \ref{fig:avg_steps} shows for each OHC the average amount of steps the agent takes to reach the goal as the Q-Table is progressively trained using the reward information obtained from their classified experiences. Each point corresponds to the average number of steps in 200 repetitions that it takes for the agent to reach the goal for a specific Q-Table. The first point represents the amount of steps the agent takes to reach the goal for a Q-Table that hasn't been trained at all, where movements are decided randomly. The next point corresponds to the amount of steps it takes to reach the goal using a policy derived from a Q-Table trained with one experience, and so on.
@@ -715,14 +708,14 @@ On the other hand, Figure \ref{fig:avg_steps} shows for each OHC the average amo
   \includegraphics[scale=0.27]{Images/Average_steps/g.png} 
   \includegraphics[scale=0.27]{Images/Average_steps/h.png} 
 \end{subfigure}
-\caption{Average number of steps for the agent when trained with experiences from OHCs 1-8. Y axis show the averaged number of steps, while x axis show the number of experiences used to cumulative train the Q-Table.}
+\caption{Average number of steps for the agent to reach the goal when trained with experiences from OHCs 1-8. Y axis show the averaged number of steps, while x axis show the number of experiences used to cumulative train the Q-Table.}
 \label{fig:avg_steps}
 \end{figure}
 
 
 The results show that as the Q-Table is progressively trained the average amount of steps decreases, meaning that the agent learns. However, the rate at which it learns varies per OHC, depending on the classification accuracy of the extracted brainwaves.  For example results for OHC 1 show faster learning than those of OHC 8 (Figure \ref{fig:avg_steps}).
 
-In the case for OHC 5 and 6, the reward information obtained from the brainwaves is not enough to train the agent effectively. Figures \ref{fig:avg_steps} E and \ref{fig:avg_steps} F show no apparent learning, as the amount of steps to reach the goal doesn't decrease when trained.  These results are also consistent with their classification ROC curves, shown on Figures~\ref{fig:rocsubjects} obtained for both OHCs, where the area under the curve are close to chance level.  Both OHCs have less recorded data from the sessions in comparison to the rest of the OHCs.   This variation in performance for different OHCs has been studied extensively in BCI.  Besides low data samples there are other reasons affecting the classification accuracy:  cognitive reasons, this being the OHC not paying extensively attention to the game dynamics, very low Signal-To-Noise Ratio (SNR) of the ErrP component or even the BCI-illiteracy phenomena where the specific OHC's signals do not contain the expected component response~\cite{Yousefi2019}.
+In the case for OHC 5 and 6, the reward information obtained from the brainwaves is not enough to train the agent effectively. Figures \ref{fig:avg_steps} for subjects 5 and 6 show no apparent learning, as the amount of steps to reach the goal doesn't decrease when trained.  These results are also consistent with their classification ROC curves, shown on Figures~\ref{fig:rocsubjects} obtained for both OHCs, where the area under the curve are close to chance level.  Both OHCs have less recorded data from the sessions in comparison to the rest of the OHCs.   This variation in performance for different OHCs has been studied extensively in BCI.  Besides low data samples there are other reasons affecting the classification accuracy:  cognitive reasons, this being the OHC not paying extensively attention to the game dynamics, very low Signal-To-Noise Ratio (SNR) of the ErrP component or even the BCI-illiteracy phenomena where the specific OHC's signals do not contain the expected component response~\cite{Yousefi2019}.
 
 \begin{figure}[h!]
 \captionsetup[subfigure]{justification=centering}
@@ -730,7 +723,7 @@ In the case for OHC 5 and 6, the reward information obtained from the brainwaves
 \centering
 \includegraphics[scale=0.09]{revisedimages/roc_1.eps}   \hspace{-1.5em}
 \includegraphics[scale=0.09]{revisedimages/roc_2.eps} \\
-\vspace{-1.3em}
+%\vspace{-1.3em}
 \centering
 \includegraphics[scale=0.09]{revisedimages/roc_3.eps}   \hspace{-1.5em}
  \includegraphics[scale=0.09]{revisedimages/roc_4.eps} \\
@@ -751,7 +744,7 @@ Figure~\ref{fig:avg_steps_noise} shows the result of an agent successively train
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.4]{Images/Average_steps/noise.png}
+\includegraphics[scale=0.4]{Images/Average_steps/noise.eps}
 \caption{Average steps using Q-Table trained with a noisy signal.}
 \label{fig:avg_steps_noise}
 \end{figure}
@@ -773,7 +766,7 @@ Finally, Figure~\ref{fig:avg_steps_all} shows the result of training an agent wi
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.4]{Images/Average_steps/all.png}
+\includegraphics[scale=0.4]{Images/Average_steps/all.eps}
 \caption{Average steps using Q-Table trained with 6 experiences from different OHCs.}
 \label{fig:avg_steps_all}
 \end{figure}
@@ -799,14 +792,14 @@ While classifying, the better performing classifier is Logistic Regression. One 
 \begin{figure}[h!]
 \begin{subfigure}{0.5\textwidth}
 \centering
-\includegraphics[scale=0.12]{revisedimages/matrix_1.eps}
-\includegraphics[scale=0.12]{revisedimages/matrix_2.eps}\\
-\includegraphics[scale=0.12]{revisedimages/matrix_3.eps}
-\includegraphics[scale=0.12]{revisedimages/matrix_4.eps}\\
-\includegraphics[scale=0.12]{revisedimages/matrix_5.eps}
-\includegraphics[scale=0.12]{revisedimages/matrix_6.eps}\\
-\includegraphics[scale=0.12]{revisedimages/matrix_7.eps}
-\includegraphics[scale=0.12]{revisedimages/matrix_8.eps}\\
+\includegraphics[scale=0.14]{revisedimages/matrix_1.eps}
+\includegraphics[scale=0.14]{revisedimages/matrix_2.eps}\\
+\includegraphics[scale=0.14]{revisedimages/matrix_3.eps}
+\includegraphics[scale=0.14]{revisedimages/matrix_4.eps}\\
+\includegraphics[scale=0.14]{revisedimages/matrix_5.eps}
+\includegraphics[scale=0.14]{revisedimages/matrix_6.eps}\\
+\includegraphics[scale=0.14]{revisedimages/matrix_7.eps}
+\includegraphics[scale=0.14]{revisedimages/matrix_8.eps}\\
 \end{subfigure}
 \caption{Confusion Matrix for OHCs 1-8. Darker colors show higher values.  It can be seen the lower percentage of false positives (upper right corner of each chart).}
 \label{fig:confusionmatrix}
