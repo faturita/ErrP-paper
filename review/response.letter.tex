@@ -111,7 +111,7 @@ However, I am not sure if there is something new in the paper compared to the 20
 
 \begin{quotation}
 {\color{blue}
-We conducted a literature review and updated the introduction accordingly.  We highlighted what we think is our contribution, which is a simple game that can be used to trigger the ErrP response in a very simple scenario that can be used to train the agent.  Additionally, regarding the results that we got, we think it is important to emphasize that the cumulative contribution of different subjects enhances the performance of an agent even though the classification accuracy of ErrP signals is not good.
+We conducted a new BCI and games literature review and updated the introduction accordingly, adding more updated background.  We highlighted what we think is our contribution, which is a simple game that can be used to trigger the ErrP response in a simple scenario that can be used to train an agent.  We were unable to find a similar work from that same perspective.  
 }
 \end{quotation}
 
@@ -120,7 +120,7 @@ From the scientific part, the results are not so convincing. In particular, the 
 
 \begin{quotation}
 {\color{blue}
-Issues raised by the Reviewer are accurate and timely described.  We aim to find a suitable game that at the same time can be implemented by RL and that triggered the ErrP response.  As far as we are aware of, we couldn't find any experiment that tackles the generation of ErrP for games in this way.  Most of the work replicates the structure of robot learning in robotics but none on a simple game platform as the one described here.
+Issues raised by the Reviewer are accurate and timely described.  We aimed to find a suitable game that at the same time can be trained with a Reinforcement Learning technique and that triggered the ErrP response as well.  We modified the manuscript, emphasized three results of our experiments.  First we show that the basic Q-Learning algorithm is robust to noisy signals.  Additionally,  we showed the futility of transfer learning approaches using the brainwaves signals, and finally that the cumulative contribution of the rewards obtained from different subjects enhances the performance of an agent.
 }
 \end{quotation}
 
@@ -129,7 +129,7 @@ Nevertheless, the paper could be improved in many ways. An obvious point would b
 
 \begin{quotation}
 {\color{blue}
-In this context we are completely limited to perform further experimentation.  However, we added two more classification schemes.
+We rewrote the classification scheme and performed two more experiments.  First we included kNeighbours as a new classification algorithm.  This can be seen in Section B and in Figure 3.  Moreover, we performed a complete transfer learning experiment, verifying if it was possible to improve the efficiency of the gaming agent  and verified that the best results for the improvement (i.e. reduction) on the average number of steps required to reach the target in 200 plays is achieved when a classifier is trained with ErrP signals from the same subject that is used to identify the ErrP and to provide the rewards.    This is added in Section V and in Figure 7.
 }
 \end{quotation}
 
@@ -163,7 +163,7 @@ the agent learns successfully to solve the game efficiently.”
 
 \begin{quotation}
 {\color{blue}
-We need to change the abstract according to all the changes that we have to do.
+We performed several changes in the manuscript.  We modified the introduction describing those changes and emphasizing what we think may be our main contributions.
 }
 \end{quotation}
 
@@ -172,7 +172,7 @@ We need to change the abstract according to all the changes that we have to do.
 
 \begin{quotation}
 {\color{blue}
-We modified the sentence.
+We modified the sentence.  We thanks the reviewer for pointing out this issue.
 }
 \end{quotation}
 
@@ -180,7 +180,7 @@ We modified the sentence.
 
 \begin{quotation}
 {\color{blue}
-The acronym was revised and we also verified all the other acronyms used in the text.  The term agent was defined, and their relation with the Game Manager in Figure 1 was established.
+The acronym was revised and we also verified all the other acronyms used in the text.  The term "agent" was defined, and their relation with the Game Manager in Figure 1 was established.
 }
 \end{quotation}
 
@@ -188,7 +188,7 @@ The acronym was revised and we also verified all the other acronyms used in the 
 
 \begin{quotation}
 {\color{blue}
-This mistake has been corrected.
+This mistake has been corrected.  We apologize for the bad choice of words.
 }
 \end{quotation}
 
@@ -196,7 +196,7 @@ This mistake has been corrected.
 
 \begin{quotation}
 {\color{blue}
-The precision for this information was adjusted to two decimals for the age mean and standard deviation.  We removed the "state information" and replaced the wording of the phrase in order to clarify more clearly the information that we wanted to convey.
+The precision was adjusted to two decimals for the age mean and the standard deviation.  We removed  "state information" and replaced the wording of the phrase in order to clarify more clearly the information that we wanted to convey:  we refer to state information to the sequence of movement that the gaming performs on the game.
 }
 \end{quotation}
 
@@ -204,7 +204,7 @@ P3, 2 red normally indicates an error
 
 \begin{quotation}
 {\color{blue}
-We understand the Reviewers point, and we agree with him that red is not the right color to represent the completion of a task in the game.  However, we do not want to change it this point because is not trivial the screen configuration that we used in the experiments that elicited the ErrP response, which may be affected by colors and shapes~\cite{REF}.
+We understand the Reviewer's point, and we agree with her/him that red is not the right color to represent the completion of a task in the game, and in this case it may have cognitive implications regarding the generalized concept that red indicates an error.   It is known that the ErrP response may be affected by colors and shapes~\cite{EIMER1997143}.  The experiments that we performed were implemented with the board showed on Figure 2 of the manuscript.  We added this very important issue at the conclusions in relation with possible future works.
 }
 \end{quotation}
 
@@ -212,7 +212,7 @@ P3, 11 I assume that the “observational human critic” is the player/particip
 
 \begin{quotation}
 {\color{blue}
-Absolutely.  I didn't decide if use OHC "observational human critic" or subject throughtout all the text.
+Absolutely.  We preferred to use OHC "observational human critic" to emphasize what the subject is actually doing while using the system.
 }
 \end{quotation}
 
@@ -220,7 +220,7 @@ P3, 41 define MNE
 
 \begin{quotation}
 {\color{blue}
-Historically MNE standed for Miimun Error Estimate, a software package developed in Martinos Center of Harvard University.  Now MNE  is the name of the entire software platform to perform analysis of several type of brain signals like Magnetoencephalograpy and Electroencephalography.
+Historically MNE standed for Minimum Error Estimate, a software package developed in Martinos Center of Harvard University.  Now MNE  is the name of a entire software platform to perform analysis of several type of brain signals like Magnetoencephalograpy and Electroencephalography.
 }
 \end{quotation}
 
@@ -228,21 +228,18 @@ P3, 56 Thus, each epoch is composed of a matrix 500 x 8. // add channels
 
 \begin{quotation}
 {\color{blue}
-Excellent.
+Excellent.  We added that information.
 }
 \end{quotation}
 
-P4, 32 Hence, following the iterative procedure based on Equation 1, the Q-Table is updated in each iteration. After the algorithm finishes iterating through all the training episodes, the Q-Table is stored to test the performance of the agent.
+P4, 32 Hence, following the iterative procedure based on Equation 1, the Q-Table is updated in each iteration. After the algorithm finishes iterating throughout all the training episodes, the Q-Table is stored to test the performance of the agent.
 // Will the game always terminate? How long does the game take? Does smooth progression toward finish affect the err potential?
 
 \begin{quotation}
 {\color{blue}
 
-If the gaming agent moves randomly on the board of Figure 2, it takes on average 100 steps to arrive to the final location on the grid.  Each step, the movement direction is selected from the Q-Table once every 2 seconds, so on average it takes around 200 seconds to finish the game.  After some training, the Q-Table could potentially end up in loops so if the steps count arrives to 200 the game is interrupted and it starts all over again (and in that case no reward is received).
-
-We didn't test if the err potential was affected by the smooth progression toward the end.  It's something interesting to test.
-
-We added all this information in the paper.
+If the gaming agent moves randomly on the board of Figure 2, it takes on average 100 steps to arrive to the final location on the grid.  Each step, the movement direction is selected from the Q-Table once every 2 seconds, so on average it takes around 200 seconds to finish the game.  After some training, the Q-Table could potentially end up in loops so if the steps count arrives to 200 the game is interrupted and it starts all over again.
+So far we didn't test if the Error Potential is affected by the smooth progression toward the end, which is indeed something interesting to verify in this simple scenario.  We added this very interesting extension in Section 6.
 
 }
 \end{quotation}
@@ -252,7 +249,7 @@ P4 Fig 3. Is the chance score = 0.5?
 
 \begin{quotation}
 {\color{blue}
-Yes, it is.  We added that information in the Figure caption.
+Yes, it is.  We added that information in the Figure's caption.
 }
 \end{quotation}
 
@@ -260,7 +257,7 @@ P4 the labels referred to in Fig 5 should correlate with the test here, i.e., A=
 
 \begin{quotation}
 {\color{blue}
-The figure labels were modified to reflect which graph references which subject, in a more clearly way.
+The figure labels on Figure 4(now) were modified to reflect which graph references which subject.  Additionally, we use the same notation on the new Figure 5.
 }
 \end{quotation}
 
@@ -268,7 +265,7 @@ P4 referring to Fig 6; a comparison ROC curve with subject 1 would be more inter
 
 \begin{quotation}
 {\color{blue}
-We added the ROC Curve for subject 1.
+We added on Figure 5(now) all the ROC curves that we obtained for all the different subjects, including the one for Subject 1.  
 }
 \end{quotation}
 
@@ -277,7 +274,7 @@ P5, 34 what is meant by “experiences”?
 
 \begin{quotation}
 {\color{blue}
-HAY QUE REVISAR BIEN QUE QUEREMOS DECIR CON ESTO.
+Each experience is defined by.....
 }
 \end{quotation}
 
@@ -285,7 +282,7 @@ P5, 29 col 2 – remove Average steps per Q-Table legend.
 
 \begin{quotation}
 {\color{blue}
-ESTO LO PODEMOS HACER ES ELIMINAR ESO DEL GRAFICO
+This was modified in all the Figures, adjusting fonts and labels.  We appreciate a lot the time to point out this feature to enhance the quality of the manuscript.
 }
 \end{quotation}
 
@@ -294,7 +291,11 @@ P5 50, col 2 The collected data show that ErrP signals can in fact be classified
 
 \begin{quotation}
 {\color{blue}
-EN ESTA LA IDEA SERIA RESPONDER QUE ES POSIBLE HACERLO PORQUE EL AGENTE SI NO LO ENTRENAS NO MEJORA Y SI LO ENTRENAS AUN CON DATOS POBRES SI MEJORA.
+Each time the gaming agent plays this simple game, it takes on average around 100 steps to reach the target spot.   We asked an observational human critic to watch the gaming agent play the game, while we recorded their brainwaves.  We trained first a classifier to be able to recognize Error Potentials from these brainwaves.  We started the game again, and the gaming agent started to move around the board, but this time each time an Error Potential was identified from the brainwaves, it was used as a negative reward to train a new Q-Table for the agent.  We performed another experience, but this time the gaming agent used the Q-Table that was updated in the previous experience.
+We verified that by doing this experiment, the agent required less and less steps on average to reach the goal until it arrives to the optimal number of around 10 steps.  We found that although the number of training sessions depended on the accuracy of the classifier, even with very low values (just above chance level), the agent learns and the number of average number of steps is reduced.
+We verified that if trained the agent with noise signals, completely uncorrelated with the reward, the agent learned nothing, and the average number of steps was not reduced at all.
+Finally, we also verified that if we train a classifier with Error Potentials from one subject and used that classifier to provide the rewards for the experiment, the number of steps is not reduced, and that do not depend on the subjects, is an instrinsical result which is produced when mixing the clasifiers.  Only the usage of a classifier from the same subject produces this improvement.
+Finally, we verified that rewards obtained from different subjects, can be used to improve the performance of the gaming agent.
 }
 \end{quotation}
 
@@ -302,7 +303,7 @@ Page 6 Fig 10 the text is not legible, it should be improved.
 
 \begin{quotation}
 {\color{blue}
-TIENEN USTEDES EL CODIGO PARA GENERAR ESTAS FIGURAS?  SERIA PARA AGRANDAR EL TEXTO
+This is now Figure 9, we increased the fontsize, added a colormap and included the confusion matrices for all the subjects.
 }
 \end{quotation}
 
@@ -312,7 +313,7 @@ Page 6, 40
 
 \begin{quotation}
 {\color{blue}
-This is a shameful mistake, we are terrible sorry.  We thought this was going to be replaced by the platform automatically. Thanks for pointing out this error.
+Yes, the Reviewer is correct.  We modified this sentence to state more clearly the message that we wanted to convey, which is, that results are completely subject dependent, but that 
 }
 \end{quotation}
 
@@ -321,21 +322,15 @@ Results show that training a classifier with data of one subject, but using it
 to classify the events of experiences of another subject does
 not lead to an improvement on the performance of the agent.
 
-\begin{quotation}
-{\color{blue}
-ACA NO ESTOY SEGURO QUE QUISO DECIR
-}
-\end{quotation}
-
-
 // could a pre-trained generic classifier provide a better initial state, subsequently trained with observer data to converge more quickly?
 Are there differential err potential for up, down, left, right?
 
 \begin{quotation}
 {\color{blue}
-This is a shameful mistake, we are terrible sorry.  We thought this was going to be replaced by the platform automatically. Thanks for pointing out this error.
+The statement is absolutely right.  We extended this experience per Reviewer's suggestion and we verified that effectively the only combination of training/testing in the recognition of ErrP that produces an improvement on the performance of the agent is the one that uses information from the same subject (check new Figure 7).   We think a generic-clasiffier to identify ErrP potentials for any subject (i.e. without calibration) is a very research goal of the BCI community because it will allow to have more robust, and easier to use, with shorter setups, BCI devices.  If such a generic pre-trained classifier could be conceived, this simple game can be used to verify if the number of training sessions required is reduced and this will confirm that the pre-trained classifier is helping to do it more quickly.  We didn't verify if the error potential for up down left right per se produces a different error potential, though we verified that in general getting farther from the target (in Manhattan distance) produces a signal which is slightly different from the one that is produced when the gaming agent moves closer to the target.  We added these very interesting experiences to perform in Section 6.
 }
 \end{quotation}
+
 
 \vskip+1ex
 \noindent \dotfill
@@ -357,7 +352,7 @@ It is unclear to me the benefit of evaluating single subject to single subject o
 
 \begin{quotation}
 {\color{blue}
-ErrP detection and experimentation is not an straightforward.  We tested many variants of the game and none could produce the ErrP.  We aimed to have a simple solution, a simple game.  The single subject accuracy that we show on Figure 6 are illustrative that the level of ErrP single trial identification that we achieved for different subjects (which is low).  We wanted to emphasize the finding that even with such low levels of identification (which is a common issue in BCI research \cite{REF}, it was possible for the agent to learn an efficient strategy.
+We tested many variants of the game and we found that not so many could produce the ErrP.  We aimed to have a simple solution, a simple game.  The single subject accuracy that we show on Figure 5(now) show the level of ErrP single trial identification that we achieved for different subjects (which is low).  We wanted to emphasize the finding that even with such low levels of identification, it was possible for the agent to learn an efficient strategy.
 }
 \end{quotation}
 
@@ -365,7 +360,7 @@ Since different subjects attained different performance, all combinations of sub
 
 \begin{quotation}
 {\color{blue}
-ESTE SERIA UN GRAFICO EN UNA TABLA DE 8X8 DONDE SE MUESTRAN TODAS LAS COMBINACIONES POSIBLES. CREEN QUE ESTO SERIA ALGO FACTIBLE ?
+This is an excellent idea that we now explored with a new experiment.  We showed the results on Figure 7, where a classifier is trained to recognized ErrP signals using the information obtained from one Trainer subject and used to generate rewards for a gaming agent on a different Tester subject.  We added information about this on Section 5.
 }
 \end{quotation}
 
@@ -373,7 +368,7 @@ Maybe classification accuracy could be reported at different steps (depending on
 
 \begin{quotation}
 {\color{blue}
-CREO QUE APUNTA A ARMAR ALGUN GRAFICO QUE MUESTRE COMO VA MEJORANDO LA CLASIFICACION A MEDIDA QUE SE VA VARIANDO LOS CONJUNTOS DE TRAINING/TESTING.  NO TIENEN ALGO ASI NO ?
+The classification accuracy obtained for all subject is now being shown on Figure 5 with ROC curves.  What is shown progressively is the experiment itself, where after each training session, a new Q-Table is generated based on rewards obtained from the previous training session and the agent improves their efficiency by reaching the target in a progressively less number of steps on average.  
 }
 \end{quotation}
 
@@ -383,7 +378,8 @@ What is the ratio of hit/no hit segments of action (epochs)?
 
 \begin{quotation}
 {\color{blue}
-PARA CADA EXPERIENCIA, SE ACUERDAN CUAL ES LA RELACION HIT (TIENE ERRP)/NO HIT DE TODOS LOS MOVIMIENTOS QUE SE HACEN EN UNA SOLA CORRIDA ?
+The initial ratio hit/no-hit segments is 50/50, so for each training session, as the average number of steps is around 100, it will be 50 segments of hit (ErrP when the gaming agent moves away from the target in terms of getting a higher module in manhatan distance) or no hit on the contrary.
+When the Q-Table is being updated, the number of hit segments starts to decrease.
 }
 \end{quotation}
 
@@ -393,7 +389,7 @@ moves-> move
 
 \begin{quotation}
 {\color{blue}
-MMMMMMM
+The Reviewer is absolutely right in that there isn't any possible action that the gaming agent can perform at the beginning of the experience (the game agent is located at the upper-left corner).  We modified the phrase to emphasize the message that we wanted to convey, and that there is a very important caveat of the experiment in terms that the gaming agent always has a 5\% chance of wandering and selecting an action randomly, regardless of their Q-Train (whether it is updated or not).  This is precisely to avoid loops or deadlocks situations.
 }
 \end{quotation}
 
@@ -402,7 +398,7 @@ Page 3, column 2, lines 11-13. Has the MinMax Scaler been applied in any other B
 
 \begin{quotation}
 {\color{blue}
-AGREGAR REFERENCIAS DE ALGUN OTRO ESTUDIO QUE USE MINMAX SCALER PARA BCI
+We added a reference where the MinMaxScaler is used in a BCI application (new page 3, second column).
 }
 \end{quotation}
 
@@ -418,7 +414,7 @@ Page 4, Figure 4. This figure is redundant and could be removed.
 
 \begin{quotation}
 {\color{blue}
-YO CREO QUE SERIA MEJOR REEMPLAZAR LA FIGURA 3 CON UNA FIGURA QUE MUESTRE LO MISMO PERO MAS CLARA.  TIENEN USTEDES ALGUNA FIGURA ASI ?
+This figure was removed, thank you very much for your comment.
 }
 \end{quotation}
 
@@ -452,7 +448,7 @@ Page 6, Figure 8. It is unclear to me what is the benefit of showing both A and 
 
 \begin{quotation}
 {\color{blue}
-TIENE RAZON.  ACA PODEMOS MOSTRAR TODAS LAS CURVAS RESUMIDAS.  EL TEMA ES QUE HAY QUE CAMBIAR LOS LABELS PARA QUE PUEDAN AJUSTARSE COMO SI FUESEN GRAFICOS CHICOS, QUEDARIA DE 4X4.
+We included now all the ROC curves for all the subjects, where the difference in AUCs can be seen more clearly.
 }
 \end{quotation}
 
@@ -460,7 +456,7 @@ Page 6, Figure 10. This figure is, in my opinion, incomplete. What is the reason
 
 \begin{quotation}
 {\color{blue}
-HAY QUE MOSTRAR TODAS LAS MATRICES DE CONFUSION.
+Absolutely right.  We included all the confusion matrices for all the subjects.  The reason for this is that we wanted to convey the message that our hypothesis is that as false positives are low, those ErrP that are triggered are indeed good "rewards" that are useful for the training algorithm and the gaming agent is using that information, tough scarce, in a useful way to learn and improve it performance.
 }
 \end{quotation}
 
@@ -477,6 +473,6 @@ Fixed.
 \noindent \dotfill
 \vskip+1ex
 \bibliographystyle{mdpi}
-\bibliography{article}
+\bibliography{Reference}
 
 \end{document}
