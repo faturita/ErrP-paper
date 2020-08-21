@@ -352,7 +352,7 @@ It is unclear to me the benefit of evaluating single subject to single subject o
 
 \begin{quotation}
 {\color{blue}
-We tested many variants of the game and we found that not so many could produce the ErrP.  We aimed to have a simple solution, a simple game.  The single subject accuracy that we show on Figure 5(now) show the level of ErrP single trial identification that we achieved for different subjects (which is low).  We wanted to emphasize the finding that even with such low levels of identification, it was possible for the agent to learn an efficient strategy.
+We tested many variants of simple games and we found that only the one proposed here produced a distinctive  ErrP response. The single subject accuracy that is presented on Figure 5(now) shows the level of ErrP single trial identification that we achieved for different subjects (which is low).  We wanted to emphasize the finding that even with such low levels of identification, it was possible for the agent to learn an efficient strategy.
 }
 \end{quotation}
 
@@ -360,7 +360,7 @@ Since different subjects attained different performance, all combinations of sub
 
 \begin{quotation}
 {\color{blue}
-This is an excellent idea that we now explored with a new experiment.  We showed the results on Figure 7, where a classifier is trained to recognized ErrP signals using the information obtained from one Trainer subject and used to generate rewards for a gaming agent on a different Tester subject.  We added information about this on Section 5.
+This is an excellent idea that we now explored with a new experiment.  We showed the results on Figure 7, where a classifier is trained to recognize ErrP signals using the information obtained from one Trainer subject and used to generate rewards for a gaming agent on a different Tester subject.  We added information about this on Section 5.
 }
 \end{quotation}
 
@@ -378,8 +378,7 @@ What is the ratio of hit/no hit segments of action (epochs)?
 
 \begin{quotation}
 {\color{blue}
-The initial ratio hit/no-hit segments is 50/50, so for each training session, as the average number of steps is around 100, it will be 50 segments of hit (ErrP when the gaming agent moves away from the target in terms of getting a higher module in manhatan distance) or no hit on the contrary.
-When the Q-Table is being updated, the number of hit segments starts to decrease.
+The initial ratio hit/no-hit segments is 50/50, so for each training session, as the average number of steps is around 100, it will be 50 segments of hit (moving further from the target) or no-hit (moving closer).  As the Q-Table is being updated, the number of hit segments slightly decreases.
 }
 \end{quotation}
 
@@ -390,6 +389,7 @@ moves-> move
 \begin{quotation}
 {\color{blue}
 The Reviewer is absolutely right in that there isn't any possible action that the gaming agent can perform at the beginning of the experience (the game agent is located at the upper-left corner).  We modified the phrase to emphasize the message that we wanted to convey, and that there is a very important caveat of the experiment in terms that the gaming agent always has a 5\% chance of wandering and selecting an action randomly, regardless of their Q-Train (whether it is updated or not).  This is precisely to avoid loops or deadlocks situations.
+On the other hand, we fixed the pointed out grammatical error as well.
 }
 \end{quotation}
 
