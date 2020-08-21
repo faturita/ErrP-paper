@@ -23,7 +23,7 @@
 \pagenumbering{roman}
 \setcounter{page}{1}
 
-We are grateful to the reviewer for pointing out relevant issues in our manuscript.
+We are grateful to all the reviewers for their tremendously helpful feedback.
 
 In the following, we discuss how we dealt with each raised issue. 
 
@@ -111,7 +111,7 @@ However, I am not sure if there is something new in the paper compared to the 20
 
 \begin{quotation}
 {\color{blue}
-We conducted a new BCI and games literature review and updated the introduction accordingly, adding more updated background.  We highlighted what we think is our contribution, which is a simple game that can be used to trigger the ErrP response in a simple scenario that can be used to train an agent.  We were unable to find a similar work from that same perspective.  
+We conducted a new BCI and games literature review and updated the Introduction accordingly, adding more updated background.  We highlight now what we think is our contribution, which is a simple game that can be used to trigger the ErrP response in a simple scenario that can be used to train an agent.  We were unable to find a similar work from that same perspective.  
 }
 \end{quotation}
 
@@ -120,7 +120,7 @@ From the scientific part, the results are not so convincing. In particular, the 
 
 \begin{quotation}
 {\color{blue}
-Issues raised by the Reviewer are accurate and timely described.  We aimed to find a suitable game that at the same time can be trained with a Reinforcement Learning technique and that triggered the ErrP response as well.  We modified the manuscript, emphasized three results of our experiments.  First we show that the basic Q-Learning algorithm is robust to noisy signals.  Additionally,  we showed the futility of transfer learning approaches using the brainwaves signals, and finally that the cumulative contribution of the rewards obtained from different subjects enhances the performance of an agent.
+Issues raised by the Reviewer are accurate and timely described.  We aimed to find a suitable game that at the same time can be trained with a Reinforcement Learning technique and that triggered the ErrP response as well.  We modified the manuscript, emphasized three results of our experiments.  First we show that the basic Q-Learning algorithm is robust to noisy signals.  Additionally,  we show the futility of transfer learning approaches using the brainwaves signals, and finally that the cumulative contribution of the rewards obtained from different subjects enhances the performance of an agent.
 }
 \end{quotation}
 
@@ -129,7 +129,7 @@ Nevertheless, the paper could be improved in many ways. An obvious point would b
 
 \begin{quotation}
 {\color{blue}
-We rewrote the classification scheme and performed two more experiments.  First we included kNeighbours as a new classification algorithm.  This can be seen in Section B and in Figure 3.  Moreover, we performed a complete transfer learning experiment, verifying if it was possible to improve the efficiency of the gaming agent  and verified that the best results for the improvement (i.e. reduction) on the average number of steps required to reach the target in 200 plays is achieved when a classifier is trained with ErrP signals from the same subject that is used to identify the ErrP and to provide the rewards.    This is added in Section V and in Figure 7.
+We rewrote the classification scheme and performed two more experiments.  First we included kNeighbours as a new classification algorithm.  This can be seen in Section B and in Figure 3.  In that same Figure, we also added results obtained while performing signal averaging to enhance the SNR of the ErrP component. Moreover, we performed a complete transfer learning experiment, verifying if it was possible to improve the efficiency of the gaming agent and verified that the best results for the improvement (i.e. reduction) on the average number of steps, required to reach the target in 200 plays, is achieved when a classifier is trained with ErrP signals from the same subject that is used to identify the ErrP and to provide the rewards.    This is added in Section V and in Figure 7.
 }
 \end{quotation}
 
@@ -140,182 +140,220 @@ Please see attached document for my comments.
 Training a Gaming Agent on Brainwaves
 There are too many grammatical errors to list individually.
 
+\vspace{2em}
 \begin{quotation}
 {\color{blue}
-We truly appreciate this level of detail in all the comments and the requests for information.  The value provided by the comments in huge.  Thanks !!
+We truly appreciate this level of detail in all the comments and the requests for information. 
 }
 \end{quotation}
-
+\vspace{2em}
 
 //Does the header refer to a general template?
 JOURNAL OF LATEX CLASS FILES, VOL. 14, NO. 8, AUGUST 2015
 
+\vspace{2em}
 \begin{quotation}
 {\color{blue}
-This is a shameful mistake, we are terrible sorry.  We thought this was going to be replaced by the platform automatically. Thanks for pointing out this error.
+This error has been fixed.  Thanks for pointing it out.
 }
 \end{quotation}
+\vspace{2em}
 
 //The abstract read more like an introduction, rather than an indication of the work undertaken for the paper.
 25 “Results show that there is an effective transfer of information and that
 the agent learns successfully to solve the game efficiently.”
 //This is too vague. What are the outcomes of the study?
 
+\vspace{2em}
 \begin{quotation}
 {\color{blue}
-We performed several changes in the manuscript.  We modified the introduction describing those changes and emphasizing what we think may be our main contributions.
+We performed several changes in the manuscript.  We modified the Introduction describing those changes and emphasizing what we think may be our main contributions.
 }
 \end{quotation}
+\vspace{2em}
 
 39 This information is used to make a gaming agent improves its operational performance using electroencephalography (EEG) signals as feedback of the performed task, obtained from an observational human critic.
 //There is a grammar issue. I don’t understand this sentence.
 
+\vspace{2em}
 \begin{quotation}
 {\color{blue}
 We modified the sentence.  We thanks the reviewer for pointing out this issue.
 }
 \end{quotation}
+\vspace{2em}
 
 54 RL should be defined in main body of the paper. Also the term ‘agent’ needs to be defined/clarified. How does it relate to the Game Manager from Figure 1?
 
+\vspace{2em}
 \begin{quotation}
 {\color{blue}
 The acronym was revised and we also verified all the other acronyms used in the text.  The term "agent" was defined, and their relation with the Game Manager in Figure 1 was established.
 }
 \end{quotation}
+\vspace{2em}
 
 17 col 2 Recently, this technique has seen a come-back. // this is not scientific language
 
+\vspace{2em}
 \begin{quotation}
 {\color{blue}
 This mistake has been corrected.  We apologize for the bad choice of words.
 }
 \end{quotation}
+\vspace{2em}
 
 58 col 3 The precision of 25.125 is inappropriate P2, 46 col 2 What is “state information”?
 
+\vspace{2em}
 \begin{quotation}
 {\color{blue}
-The precision was adjusted to two decimals for the age mean and the standard deviation.  We removed  "state information" and replaced the wording of the phrase in order to clarify more clearly the information that we wanted to convey:  we refer to state information to the sequence of movement that the gaming performs on the game.
+The precision was adjusted to two decimals for the age mean and the standard deviation.  We removed  "state information" and replaced the wording of the phrase in order to clarify more clearly the information that we wanted to convey:  we refer to state information to the sequence of movement that the gaming agent performs on the game.
 }
 \end{quotation}
+\vspace{2em}
 
 P3, 2 red normally indicates an error
 
+\vspace{2em}
 \begin{quotation}
 {\color{blue}
-We understand the Reviewer's point, and we agree with her/him that red is not the right color to represent the completion of a task in the game, and in this case it may have cognitive implications regarding the generalized concept that red indicates an error.   It is known that the ErrP response may be affected by colors and shapes~\cite{EIMER1997143}.  The experiments that we performed were implemented with the board showed on Figure 2 of the manuscript.  We added this very important issue at the conclusions in relation with possible future works.
+We understand the Reviewer's point, and we agree with her/him that red is not the right color to represent the completion of a task in the game, and in this case it may have cognitive implications regarding the generalized concept that red indicates an error.   It is known that the ErrP response may be affected by colors and shapes (Eimer 1997, \textit{An event-related potential (ERP) study of transient and sustained visual attention to color and form}).  The experiments that we performed were implemented with the board showed on Figure 2 of the manuscript.  We added this very important issue at the conclusions in relation with possible future works.
 }
 \end{quotation}
+\vspace{2em}
 
 P3, 11 I assume that the “observational human critic” is the player/participant/subject/human observer. This role should be clarified and terminology used consistently.
 
+\vspace{2em}
 \begin{quotation}
 {\color{blue}
-Absolutely.  We preferred to use OHC "observational human critic" to emphasize what the subject is actually doing while using the system.
+Absolutely.  We preferred to use OHC "observational human critic" to emphasize what the subject is actually doing while using the system.  We clarified this notation along the manuscript.
 }
 \end{quotation}
+\vspace{2em}
 
 P3, 41 define MNE
 
+\vspace{2em}
 \begin{quotation}
 {\color{blue}
-Historically MNE standed for Minimum Error Estimate, a software package developed in Martinos Center of Harvard University.  Now MNE  is the name of a entire software platform to perform analysis of several type of brain signals like Magnetoencephalograpy and Electroencephalography.
+Historically MNE standed for Minimum Error Estimate, a software package developed in Martinos Center of Harvard University.  Now MNE  is the name of a entire software platform to perform analysis of several type of brain signals like Magnetoencephalograpy and Electroencephalography.  We added a clarification about this on Section III.
 }
 \end{quotation}
+\vspace{2em}
 
 P3, 56 Thus, each epoch is composed of a matrix 500 x 8. // add channels
 
+\vspace{2em}
 \begin{quotation}
 {\color{blue}
 Excellent.  We added that information.
 }
 \end{quotation}
+\vspace{2em}
 
 P4, 32 Hence, following the iterative procedure based on Equation 1, the Q-Table is updated in each iteration. After the algorithm finishes iterating throughout all the training episodes, the Q-Table is stored to test the performance of the agent.
 // Will the game always terminate? How long does the game take? Does smooth progression toward finish affect the err potential?
 
+\vspace{2em}
 \begin{quotation}
 {\color{blue}
 
-If the gaming agent moves randomly on the board of Figure 2, it takes on average 100 steps to arrive to the final location on the grid.  Each step, the movement direction is selected from the Q-Table once every 2 seconds, so on average it takes around 200 seconds to finish the game.  After some training, the Q-Table could potentially end up in loops so if the steps count arrives to 200 the game is interrupted and it starts all over again.
+If the gaming agent moves randomly on the board of Figure 2, it takes on average 100 steps to arrive to the final location on the grid.  Each step, the movement direction is selected from the Q-Table once every 2 seconds, so on average it takes around 200 seconds to finish the game.  After training, the Q-Table could potentially end up in loops so if the steps count arrives to 200 the game is interrupted and it starts all over again.
 So far we didn't test if the Error Potential is affected by the smooth progression toward the end, which is indeed something interesting to verify in this simple scenario.  We added this very interesting extension in Section 6.
 
 }
 \end{quotation}
-
+\vspace{2em}
 
 P4 Fig 3. Is the chance score = 0.5?
 
+\vspace{2em}
 \begin{quotation}
 {\color{blue}
 Yes, it is.  We added that information in the Figure's caption.
 }
 \end{quotation}
+\vspace{2em}
 
 P4 the labels referred to in Fig 5 should correlate with the test here, i.e., A= subject 1 etc.
 
+\vspace{2em}
 \begin{quotation}
 {\color{blue}
-The figure labels on Figure 4(now) were modified to reflect which graph references which subject.  Additionally, we use the same notation on the new Figure 5.
-}
+The figure labels on Figure 4(now) were modified to reflect which subfigure references which subject.  Additionally, we use the same notation on the new Figure 5.
+} 
 \end{quotation}
+\vspace{2em}
 
 P4 referring to Fig 6; a comparison ROC curve with subject 1 would be more interesting
 
+\vspace{2em}
 \begin{quotation}
 {\color{blue}
 We added on Figure 5(now) all the ROC curves that we obtained for all the different subjects, including the one for Subject 1.  
 }
 \end{quotation}
+\vspace{2em}
 
 
 P5, 34 what is meant by “experiences”?
 
+\vspace{2em}
 \begin{quotation}
 {\color{blue}
 Each experience is defined by.....
 }
 \end{quotation}
+\vspace{2em}
 
 P5, 29 col 2 – remove Average steps per Q-Table legend.
 
+\vspace{2em}
 \begin{quotation}
 {\color{blue}
-This was modified in all the Figures, adjusting fonts and labels.  We appreciate a lot the time to point out this feature to enhance the quality of the manuscript.
+This was modified in all the Figures, adjusting fonts and labels.  We appreciate a lot the time to point out this issue.
 }
 \end{quotation}
+\vspace{2em}
 
 P5 50, col 2 The collected data show that ErrP signals can in fact be classified and used to train an agent effectively.
 // how has effectiveness been determined here?
 
+\vspace{2em}
 \begin{quotation}
 {\color{blue}
-Each time the gaming agent plays this simple game, it takes on average around 100 steps to reach the target spot.   We asked an observational human critic to watch the gaming agent play the game, while we recorded their brainwaves.  We trained first a classifier to be able to recognize Error Potentials from these brainwaves.  We started the game again, and the gaming agent started to move around the board, but this time each time an Error Potential was identified from the brainwaves, it was used as a negative reward to train a new Q-Table for the agent.  We performed another experience, but this time the gaming agent used the Q-Table that was updated in the previous experience.
+Each time the gaming agent plays this simple game, it takes on average around 100 steps to reach the target spot.   We asked an observational human critic to watch the gaming agent play the game, while we recorded their brainwaves.  We trained first a classifier to be able to recognize Error Potentials from these brainwaves.  We started the game again, and the gaming agent started to move around the board, but this time once an Error Potential was identified from the brainwaves, it was used as a negative reward to train a new Q-Table for the agent.  The game was iteratively repeated, but the gaming agent used the Q-Table that was updated in the previous experience.
 We verified that by doing this experiment, the agent required less and less steps on average to reach the goal until it arrives to the optimal number of around 10 steps.  We found that although the number of training sessions depended on the accuracy of the classifier, even with very low values (just above chance level), the agent learns and the number of average number of steps is reduced.
 We verified that if trained the agent with noise signals, completely uncorrelated with the reward, the agent learned nothing, and the average number of steps was not reduced at all.
-Finally, we also verified that if we train a classifier with Error Potentials from one subject and used that classifier to provide the rewards for the experiment, the number of steps is not reduced, and that do not depend on the subjects, is an instrinsical result which is produced when mixing the clasifiers.  Only the usage of a classifier from the same subject produces this improvement.
-Finally, we verified that rewards obtained from different subjects, can be used to improve the performance of the gaming agent.
+Finally, we also verified that if we train a classifier with Error Potentials from one subject and used that classifier to provide the rewards for the experiment, the number of steps is not reduced, and that do not depend on the subjects, is an intrinsic result which is produced when mixing the classifiers.  Only the usage of a classifier from the same subject produces this improvement.
+Finally, we verified that rewards obtained from different subjects, can be used to improve the performance of the gaming agent collaboratively.
 }
 \end{quotation}
+\vspace{2em}
 
 Page 6 Fig 10 the text is not legible, it should be improved.
 
+\vspace{2em}
 \begin{quotation}
 {\color{blue}
 This is now Figure 9, we increased the fontsize, added a colormap and included the confusion matrices for all the subjects.
 }
 \end{quotation}
+\vspace{2em}
 
 Page 6, 40
 “However, even though this implies that the agent misses frequently that an action taken is wrong, this is not hindering the overall performance and the agent is still learning.”
 // Your results show that this is subject dependent
 
+\vspace{2em}
 \begin{quotation}
 {\color{blue}
-Yes, the Reviewer is correct.  We modified this sentence to state more clearly the message that we wanted to convey, which is, that results are completely subject dependent, but that 
+Yes, the Reviewer is correct.  We modified this sentence to state more clearly the message that we wanted to convey, which is, that results are completely subject dependent.  But that even when many action should be tagged as "wrong" (triggering an ErrP) only with a few of them right, it is enough to train the agent towards the optimal solution.
 }
 \end{quotation}
+\vspace{2em}
 
 P6, 56
 Results show that training a classifier with data of one subject, but using it
@@ -325,11 +363,13 @@ not lead to an improvement on the performance of the agent.
 // could a pre-trained generic classifier provide a better initial state, subsequently trained with observer data to converge more quickly?
 Are there differential err potential for up, down, left, right?
 
+\vspace{2em}
 \begin{quotation}
 {\color{blue}
 The statement is absolutely right.  We extended this experience per Reviewer's suggestion and we verified that effectively the only combination of training/testing in the recognition of ErrP that produces an improvement on the performance of the agent is the one that uses information from the same subject (check new Figure 7).   We think a generic-clasiffier to identify ErrP potentials for any subject (i.e. without calibration) is a very research goal of the BCI community because it will allow to have more robust, and easier to use, with shorter setups, BCI devices.  If such a generic pre-trained classifier could be conceived, this simple game can be used to verify if the number of training sessions required is reduced and this will confirm that the pre-trained classifier is helping to do it more quickly.  We didn't verify if the error potential for up down left right per se produces a different error potential, though we verified that in general getting farther from the target (in Manhattan distance) produces a signal which is slightly different from the one that is produced when the gaming agent moves closer to the target.  We added these very interesting experiences to perform in Section 6.
 }
 \end{quotation}
+\vspace{2em}
 
 
 \vskip+1ex
@@ -406,7 +446,7 @@ Page 4. Figure 3. I would suggest adding another set of bars for the grand avera
 
 \begin{quotation}
 {\color{blue}
-LO QUE PIDE ACA EL REVISOR ES AGREGAR UNA BARRA MAS A CADA SUJETO CON LA CLASIFICACION HACIENDO PROMEDIO DE TODAS LAS SENALES.  MMMM Cre que esto sería dificil tenerlo....
+We added a new bar on the Figure 4 where we added the obtained classification accuracy when 5 segments are ensemble averaged to produce a signal (with an improved SNR in terms of the ErrP).  For some subjects we do not have enough segments to 
 }
 \end{quotation}
 
@@ -472,7 +512,7 @@ Fixed.
 \vskip+1ex
 \noindent \dotfill
 \vskip+1ex
-\bibliographystyle{mdpi}
+\bibliographystyle{IEEEtran}
 \bibliography{Reference}
 
 \end{document}
