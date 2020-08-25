@@ -1,0 +1,1141 @@
+
+%DIF LATEXDIFF DIFFERENCE FILE
+%DIF DEL ErrP.1.tex   Tue Aug 25 16:12:04 2020
+%DIF ADD ErrP.tex     Tue Aug 25 16:41:35 2020
+%% bare_jrnl.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% see http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% journal paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE!
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. The IEEE's font choices and paper sizes can   ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+\documentclass[journal]{IEEEtran}
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[journal]{../sty/IEEEtran}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{algorithm2e} % For algorithms
+\usepackage{amsmath, amssymb, amsthm} % Mathematical packages
+\hypersetup{hidelinks=true}
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/pkg/ifpdf
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of the IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/pkg/cite
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at:
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics.
+%
+% Note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/amsmath
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/pkg/algorithms
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/pkg/algorithmicx
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/array
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a larger sans serif font
+% than the serif footnote size font used in traditional IEEE formatting
+% and thus the need to invoke different subfig.sty package options depending
+% on whether compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/pkg/subfig
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure.
+% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
+% corrections already built into the system in which case a warning will
+% be issued if an attempt is made to load fixltx2e.sty as it is no longer
+% needed.
+% The latest version and documentation can be found at:
+% http://www.ctan.org/pkg/fixltx2e
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/stfloats
+% Do not use the stfloats baselinefloat ability as the IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that the IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/pkg/dblfloatfix
+
+
+
+
+%\ifCLASSOPTIONcaptionsoff
+%  \usepackage[nomarkers]{endfloat}
+% \let\MYoriglatexcaption\caption
+% \renewcommand{\caption}[2][\relax]{\MYoriglatexcaption[#2]{#2}}
+%\fi
+% endfloat.sty was written by James Darrell McCauley, Jeff Goldberg and
+% Axel Sommerfeldt. This package may be useful when used in conjunction with
+% IEEEtran.cls'  captionsoff option. Some IEEE journals/societies require that
+% submissions have lists of figures/tables at the end of the paper and that
+% figures/tables without any captions are placed on a page by themselves at
+% the end of the document. If needed, the draftcls IEEEtran class option or
+% \CLASSINPUTbaselinestretch interface can be used to increase the line
+% spacing as well. Be sure and use the nomarkers option of endfloat to
+% prevent endfloat from "marking" where the figures would have been placed
+% in the text. The two hack lines of code above are a slight modification of
+% that suggested by in the endfloat docs (section 8.4.1) to ensure that
+% the full captions always appear in the list of figures/tables - even if
+% the user used the short optional argument of \caption[]{}.
+% IEEE papers do not typically make use of \caption[]'s optional argument,
+% so this should not be an issue. A similar trick can be used to disable
+% captions of packages such as subfig.sty that lack options to turn off
+% the subcaptions:
+% For subfig.sty:
+% \let\MYorigsubfloat\subfloat
+% \renewcommand{\subfloat}[2][\relax]{\MYorigsubfloat[]{#2}}
+% However, the above trick will not work if both optional arguments of
+% the \subfloat command are used. Furthermore, there needs to be a
+% description of each subfigure *somewhere* and endfloat does not add
+% subfigure captions to its list of figures. Thus, the best approach is to
+% avoid the use of subfigure captions (many IEEE journals avoid them anyway)
+% and instead reference/explain all the subfigures within the main caption.
+% The latest version of endfloat.sty and its documentation can obtained at:
+% http://www.ctan.org/pkg/endfloat
+%
+% The IEEEtran \ifCLASSOPTIONcaptionsoff conditional can also be used
+% later in the document, say, to conditionally put the References on a
+% page by themselves.
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/url
+% Basically, \url{my_url_here}.
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFaddtex}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdeltex}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+\providecommand{\DIFmodbegin}{} %DIF PREAMBLE
+\providecommand{\DIFmodend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF HYPERREF PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{\texorpdfstring{\DIFaddtex{#1}}{#1}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{\texorpdfstring{\DIFdeltex{#1}}{}} %DIF PREAMBLE
+\newcommand{\DIFscaledelfig}{0.5}
+%DIF HIGHLIGHTGRAPHICS PREAMBLE %DIF PREAMBLE
+\RequirePackage{settobox} %DIF PREAMBLE
+\RequirePackage{letltxmacro} %DIF PREAMBLE
+\newsavebox{\DIFdelgraphicsbox} %DIF PREAMBLE
+\newlength{\DIFdelgraphicswidth} %DIF PREAMBLE
+\newlength{\DIFdelgraphicsheight} %DIF PREAMBLE
+% store original definition of \includegraphics %DIF PREAMBLE
+\LetLtxMacro{\DIFOincludegraphics}{\includegraphics} %DIF PREAMBLE
+\newcommand{\DIFaddincludegraphics}[2][]{{\color{blue}\fbox{\DIFOincludegraphics[#1]{#2}}}} %DIF PREAMBLE
+\newcommand{\DIFdelincludegraphics}[2][]{% %DIF PREAMBLE
+\sbox{\DIFdelgraphicsbox}{\DIFOincludegraphics[#1]{#2}}% %DIF PREAMBLE
+\settoboxwidth{\DIFdelgraphicswidth}{\DIFdelgraphicsbox} %DIF PREAMBLE
+\settoboxtotalheight{\DIFdelgraphicsheight}{\DIFdelgraphicsbox} %DIF PREAMBLE
+\scalebox{\DIFscaledelfig}{% %DIF PREAMBLE
+\parbox[b]{\DIFdelgraphicswidth}{\usebox{\DIFdelgraphicsbox}\\[-\baselineskip] \rule{\DIFdelgraphicswidth}{0em}}\llap{\resizebox{\DIFdelgraphicswidth}{\DIFdelgraphicsheight}{% %DIF PREAMBLE
+\setlength{\unitlength}{\DIFdelgraphicswidth}% %DIF PREAMBLE
+\begin{picture}(1,1)% %DIF PREAMBLE
+\thicklines\linethickness{2pt} %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,0){\framebox(1,1){}}}% %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,0){\line( 1,1){1}}}% %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,1){\line(1,-1){1}}}% %DIF PREAMBLE
+\end{picture}% %DIF PREAMBLE
+}\hspace*{3pt}}} %DIF PREAMBLE
+} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddbegin}{\DIFaddbegin} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddend}{\DIFaddend} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelbegin}{\DIFdelbegin} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelend}{\DIFdelend} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddbegin}{\DIFOaddbegin \let\includegraphics\DIFaddincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddend}{\DIFOaddend \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelbegin}{\DIFOdelbegin \let\includegraphics\DIFdelincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelend}{\DIFOaddend \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddbeginFL}{\DIFaddbeginFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddendFL}{\DIFaddendFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelbeginFL}{\DIFdelbeginFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelendFL}{\DIFdelendFL} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddbeginFL}{\DIFOaddbeginFL \let\includegraphics\DIFaddincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelbeginFL}{\DIFOdelbeginFL \let\includegraphics\DIFdelincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+%DIF LISTINGS PREAMBLE %DIF PREAMBLE
+\RequirePackage{listings} %DIF PREAMBLE
+\RequirePackage{color} %DIF PREAMBLE
+\lstdefinelanguage{DIFcode}{ %DIF PREAMBLE
+%DIF DIFCODE_UNDERLINE %DIF PREAMBLE
+  moredelim=[il][\color{red}\sout]{\%DIF\ <\ }, %DIF PREAMBLE
+  moredelim=[il][\color{blue}\uwave]{\%DIF\ >\ } %DIF PREAMBLE
+} %DIF PREAMBLE
+\lstdefinestyle{DIFverbatimstyle}{ %DIF PREAMBLE
+	language=DIFcode, %DIF PREAMBLE
+	basicstyle=\ttfamily, %DIF PREAMBLE
+	columns=fullflexible, %DIF PREAMBLE
+	keepspaces=true %DIF PREAMBLE
+} %DIF PREAMBLE
+\lstnewenvironment{DIFverbatim}{\lstset{style=DIFverbatimstyle}}{} %DIF PREAMBLE
+\lstnewenvironment{DIFverbatim*}{\lstset{style=DIFverbatimstyle,showspaces=true}}{} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+
+\begin{document}
+%
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\title{Training a Gaming Agent on Brainwaves}
+%
+%
+% author names and IEEE memberships
+% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
+% a structure at a ~ so this keeps an author's name from being broken across
+% two lines.
+% use \thanks{} to gain access to the first footnote area
+% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
+% was not built to handle multiple paragraphs
+%
+
+\author{Bartolomé Francisco, Moreno Juan,  Navas Natalia, Vitali José, \\
+Ramele~Rodrigo,~\IEEEmembership{Member,~IEEE,}
+        Santos~Juan~Miguel% <-this % stops a space
+\thanks{R. Ramele and J.M.Santos are with the Department
+of Computer Engineering, Instituto Tecnológico de Buenos Aires(ITBA), Argentina,
+e-mail: rramele@itba.edu.ar.}% <-this % stops a space
+\DIFdelbegin %DIFDELCMD < \thanks{Manuscript received April 19, 2005; revised August 26, 2015.}%%%
+\DIFdelend \DIFaddbegin \thanks{Manuscript received December 9, 2019; revised August 25, 2020.}\DIFaddend }
+
+% note the % following the last \IEEEmembership and also \thanks -
+% these prevent an unwanted space from occurring between the last author name
+% and the end of the author line. i.e., if you had this:
+%
+% \author{....lastname \thanks{...} \thanks{...} }
+%                     ^------------^------------^----Do not want these spaces!
+%
+% a space would be appended to the last name and could cause every name on that
+% line to be shifted left slightly. This is one of those "LaTeX things". For
+% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
+% "AB" then you have to do: "\textbf{A}\textbf{B}"
+% \thanks is no different in this regard, so shield the last } of each \thanks
+% that ends a line with a % and do not let a space in before the next \thanks.
+% Spaces after \IEEEmembership other than the last one are OK (and needed) as
+% you are supposed to have spaces between the names. For what it is worth,
+% this is a minor point as most people would not even notice if the said evil
+% space somehow managed to creep in.
+
+
+
+% The paper headers
+\DIFdelbegin %DIFDELCMD < \markboth{Journal of \LaTeX\ Class Files,~Vol.~14, No.~8, August~2015}%%%
+\DIFdelend \DIFaddbegin \markboth{IEEE Transactions on Games}\DIFaddend %
+{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Journals}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+%
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+
+
+
+
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\$00.00~\copyright~2015 IEEE}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark.
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract or keywords.
+\begin{abstract}
+\DIFdelbegin \DIFdel{The field of Brain Computer Interfaces (BCI) has seen a bloom in the past few years. One of its applications is the training of systems using signals originated from the human brain. Out of all the methods used to acquire information from the central nervous system, the one that has gained most popularity is Electroencephalography (EEG) , mainly because of its effectiveness, low cost and its noninvasive characteristic.  Event-related potential (ERP) are brain signals found on EEG that are time-locked to a particular event. }\DIFdelend \DIFaddbegin \DIFadd{In this study, we propose a simple game scenario that can be used to trigger a feedback response embedded in Electroencephalographic (EEG) signals of an observation human critic that observes an agent playing a game.  Based on a Reinforcement Learning (RL) model, the gaming agent receives rewards for their actions on the game and learns its optimal policy.  These rewards are obtained by implementing a Brain-Computer Interface (BCI) system that identifies signal components called }\DIFaddend Error-related \DIFdelbegin \DIFdel{potential }\DIFdelend \DIFaddbegin \DIFadd{Potentials }\DIFaddend (ErrP)\DIFdelbegin \DIFdel{are a particular type of ERP that  can be elicited by a person who attends }\DIFdelend \DIFaddbegin \DIFadd{, which occur when a person witnesses }\DIFaddend a recognizable error. \DIFdelbegin \DIFdel{When subjects observe an agent who makes a mistake this potential can be discerned by analyzing the signals which are directly related with the cognitive interpretation of an erroneous outcome or decision.
+Reinforcement Learning (RL) is an Artificial Intelligence approach where an agent tries to maximize rewards obtained while interacting with an unknown environment.  In this work, a gaming agent is trained using RL, and the feedback obtained from brainwaves of human critic observers.  Results show that there is an effective transfer of information and that the agent learns successfully to solve the game efficiently}\DIFdelend \DIFaddbegin \DIFadd{We perform an experiment where rewards are obtained from the ErrP signals from observational human critics watching an agent playing randomly a game. The agent is iteratively trained by receiving these rewards and updating its policy, improving its overall performance. Our results are expressed in threefold: (i) the structure of a simple grid-based game that can elicit the ErrP signal component; (ii) the verification that low classification accuracy of just above chance level that produces noisy rewards is enough to allow an agent to learn the optimal policy; (iii) collaborative rewards from multiple observational human critics can compensate the lack of accuracy or the limited scope of transfer learning schemes}\DIFaddend .
+\end{abstract}
+
+%DIF > When subjects observe the agent making a mistake this potential can be discerned by analyzing the signals which are directly related with the cognitive interpretation of an erroneous outcome or decision.
+\DIFaddbegin 
+
+\DIFaddend % Note that keywords are not normally used for peerreview papers.
+\begin{IEEEkeywords}
+ErrP, BCI, EEG, RL, Agent, AI
+\end{IEEEkeywords}
+
+%DIF > n this study into the player’s emotional theory of mind (ToM) of gameplaying agents, we investigate how an agent’s behaviour and the player’s own performance and emotions shape the recognition of a frustrated behaviour. We focus on the perception of frustration as it is a prevalent affective experience in human-computer interaction. We present a testbed game tailored towards this end, in which a player competes against an agent with a frustration model based on theory. We collect gameplay data, an annotated ground truth about the player’s appraisal of the agent’s frustration, and apply face recognition to estimate the player’s emotional state. We examine the collected data through correlation analysis and predictive machine learning models, and find that the player’s observable emotions are not correlated highly with the perceived frustration of the agent. This suggests that our subject’s ToM is a cognitive process based on the gameplay context. Our predictive models—using ranking support vector machines—corroborate these results, yielding moderately accurate predictors of players’ ToM.
+\DIFaddbegin 
+
+%DIF > In this work, we propose a Dynamic Difficulty Adjustment methodology to achieve automatic video game balance. The balance task is modeled as a meta game, a game where actions change the rules of another base game. Based on the model of Reinforcement Learning (RL), an agent assumes the role of a game master and learns its optimal policy by playing the meta game. In this new methodology we extend traditional RL by adding the existence of a meta environment whose state transition depends on the evolution of a base environment. In addition, we propose a Multi Agent System training model for the game master agent, where it plays against multiple agent opponents, each with a distinct behavior and proficiency level while playing the base game. Our experiment is conducted on an adaptive grid-world environment in singleplayer and multiplayer scenarios. Our results are expressed in twofold: (i) the resulting decision making by the game master through gameplay, which must comply in accordance to an established balance objective by the game designer; (ii) the initial conception of a framework for automatic game balance, where the balance task design is reduced to the modulation of a reward function (balance reward), an action space (balance strategies) and the definition of a balance space state.
+
+%DIF > In this study, we propose a simple game scenario that can be used to trigger a feedback response embedded in the Electroencephalographic (EEG) signals of an observation human critic that observes an agent playing a game.  Based on the model of Reinforcement Learning (RL), a gaming agent receives rewards based on their actions on the game and learns its optimal policy.  These rewards are obtained by implementing a Brain-Computer Interface (BCI) system that identifies signal components called Error-related Potentials (ErrP).  These are brain signals found on EEG that can be elicited by a person who attends a recognizable error. When subjects observe the agent making a mistake this potential can be discerned by analyzing the signals which are directly related with the cognitive interpretation of an erroneous outcome or decision.  Our experiment
+
+%DIF > In addition, we verified that the effective tagging of rewards could only be performed by using information from the same subject.
+
+%DIF > Our results are expressed in threefold: (i) a simple grid-based game can elicit the ErrP signal component; (ii) though ErrP identification accuracy is low and produces a noisy reward, an agent can learn the optimal policy and solve the simple game; (iii) collaborative rewards from multiple observational human observers can compensate the lack of accuracy obtained from specific subjects.
+
+
+%DIF > Therefore, in this work, we aim to use the information extracted from brainwaves to enhance the performance of a gaming agent.   The three contributions  are (1) a very simple game that can elicit the ErrP potential, (2) results that confirm that even when ErrP classification accuracy is low and produces a noisy reward signal, that provides enough information for an agent to learn the optimal policy and solve the simple game and (3) that collaborative rewards from multiple observational human observers can compensate the lack of accuracy obtained from specific subjects.
+
+
+
+%DIF > Each time the gaming agent plays this simple game, it takes on average around 100 steps to reach the target spot.   We asked an observational human critic to watch the gaming agent play the game, while we recorded their brainwaves.  We trained first a classifier to be able to recognize Error Potentials from these brainwaves.  We started the game again, and the gaming agent started to move around the board, but this time once an Error Potential was identified from the brainwaves, it was used as a negative reward to train a new Q-Table for the agent.  The game was iteratively repeated, but the gaming agent used the Q-Table that was updated in the previous experience.
+%DIF > We verified that by doing this experiment, the agent required less and less steps on average to reach the goal until it arrives to the optimal number of around 10 steps.  We found that although the number of training sessions depended on the accuracy of the classifier, even with very low values (just above chance level), the agent learns and the number of average number of steps is reduced.
+%DIF > We verified that if trained the agent with noise signals, completely uncorrelated with the reward, the agent learned nothing, and the average number of steps was not reduced at all.
+%DIF > Finally, we also verified that if we train a classifier with Error Potentials from one subject and used that classifier to provide the rewards for the experiment, the number of steps is not reduced, and that do not depend on the subjects, is an intrinsic result which is produced when mixing the classifiers.  Only the usage of a classifier from the same subject produces this improvement.
+%DIF > Finally, we verified that rewards obtained from different subjects, can be used to improve the performance of the gaming agent collaboratively.
+
+\DIFaddend % For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+
+%DIF > This work tackles this problem by exploring the use of brain signals as an interface between humans and computers, trying to provide information to the system without explicit communication from the user.
+\DIFaddbegin 
+
+
+\DIFaddend % You must have at least 2 lines in the paragraph with the drop letter
+% (should never be an issue)
+\IEEEPARstart{T}{he} effectiveness of today's human–machine interaction and artificial intelligence is limited by a communication bottleneck\DIFaddbegin \DIFadd{, }\DIFaddend as humans are required to translate high-level concepts into a machine-mandated sequence of instructions~\DIFdelbegin \DIFdel{\mbox{%DIFAUXCMD
+\cite{CURSOR-CONTROL-PAPER}}\hspace{0pt}%DIFAUXCMD
+.   This work tackles this problem by exploring the use of brain signals as an interface between human and computer, trying to provide information to the system without explicit communication from the user.  This information is used to make a gaming agent improves its operational performance using electroencephalography (EEG) signals as feedback of the performed task, }\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{Xu2020,CURSOR-CONTROL-PAPER}}\hspace{0pt}%DIFAUXCMD
+.   Hence, new interaction methods are required to increase the communication bandwidth between computers and humans or to produce alternative communications systems to increase the efficiency of this channel.  In this respect, video games have been widely used as test tools to assess new means of interactions~\mbox{%DIFAUXCMD
+\cite{Carter2014,Barr2007}}\hspace{0pt}%DIFAUXCMD
+. Video gaming agents are computer programs that can sense the computer game environment, process information, and react accordingly within the environment.  They are used in the context of testing and evaluating artificial intelligence algorithms that aim to win the game or to behave like a real user player~\mbox{%DIFAUXCMD
+\cite{Zhao2020}}\hspace{0pt}%DIFAUXCMD
+.
+In this work, the feedback }\DIFaddend obtained from an observational human critic \DIFdelbegin \DIFdel{. The idea is that }\DIFdelend \DIFaddbegin \DIFadd{(OHC) in the form of electroencephalographic (EEG) signals is used to evaluate the operational performance of a gaming agent.  Observational human critics are silent }\DIFaddend subjects observing a computer \DIFdelbegin \DIFdel{game playing , can train the gaming agent using only signals }\DIFdelend \DIFaddbegin \DIFadd{gaming agent playing the game.
+}
+
+%DIF >  Reescribí la primera oración porque el sujeto no tenía sentido con el predicado.  TODO
+\DIFadd{The feasibility of a distinct non-biological communication channel between the Central Nervous System (CNS) and a computer device has been previously proven with Brain Computer Interfaces (BCI) or Brain Machine Interfaces (BMI).~\mbox{%DIFAUXCMD
+\cite{Vasiljevic2020}}\hspace{0pt}%DIFAUXCMD
+.  BCI systems provide a new input modality that can be used in the context of a computer game~\mbox{%DIFAUXCMD
+\cite{Scherer2012,Nijholt2007}}\hspace{0pt}%DIFAUXCMD
+. This advancement is relevant in the context of the accessibility for video games~\mbox{%DIFAUXCMD
+\cite{Aguado-Delgado2020} }\hspace{0pt}%DIFAUXCMD
+and the growing area of e-sports~\mbox{%DIFAUXCMD
+\cite{Yakovlev2020}}\hspace{0pt}%DIFAUXCMD
+.
+}
+
+%DIF >  Observation human critic? Suena raro acá, puse Subject pero chequear! TODO
+\DIFadd{In this study, gaming agents are trained using only signal }\DIFaddend components called Error-related Potentials (ErrP) that can be identified \DIFdelbegin \DIFdel{from their }\DIFdelend \DIFaddbegin \DIFadd{in the observer's }\DIFaddend brain signals.  These \DIFaddbegin \DIFadd{types of signals }\DIFaddend can be found on EEG traces and are elicited when \DIFdelbegin \DIFdel{a subject is }\DIFdelend \DIFaddbegin \DIFadd{subjects are }\DIFaddend aware of the presence of an unexpected outcome, which \DIFdelbegin \DIFdel{she/he identifies }\DIFdelend \DIFaddbegin \DIFadd{they identify }\DIFaddend as an error.  \DIFdelbegin \DIFdel{It }\DIFdelend \DIFaddbegin \DIFadd{The analysis of ErrP signals }\DIFaddend is currently an extensive area of research in the neuroscience community~\cite{Holroyd2009}. Error-related Potentials can be detected by signal processing and machine learning techniques~\cite{EERP-PAPER} and \DIFdelbegin \DIFdel{they }\DIFdelend are also used in Brain-Computer Interfaces \DIFdelbegin \DIFdel{(BCI) }\DIFdelend to implement or enhance artificial communication channels~\cite{Chavarriaga2014}.
+
+\DIFdelbegin \DIFdel{In order to train the agent, RL~\mbox{%DIFAUXCMD
+\cite{Santos1999} }\hspace{0pt}%DIFAUXCMD
+comes }\DIFdelend \DIFaddbegin \DIFadd{Given the scenario, Reinforcement Learning (RL)~\mbox{%DIFAUXCMD
+\cite{Sutton2018} }\hspace{0pt}%DIFAUXCMD
+stands out }\DIFaddend as a natural \DIFdelbegin \DIFdel{solution for this scenario from the field of Artificial Intelligence.  RL is }\DIFdelend \DIFaddbegin \DIFadd{method to train the agent.  Reinforcement Learning refers to }\DIFaddend an algorithmic learning strategy \DIFdelbegin \DIFdel{that can be established by mimicking }\DIFdelend \DIFaddbegin \DIFadd{inspired on }\DIFaddend how biological agents learn \DIFdelbegin \DIFdel{from its environment by exploring it and getting feedback rewards, either }\DIFdelend \DIFaddbegin \DIFadd{by exploring their environment while getting }\DIFaddend negative or positive \DIFdelbegin \DIFdel{.  This strategy }\DIFdelend \DIFaddbegin \DIFadd{feedback rewards.  The method }\DIFaddend aims to maximize \DIFdelbegin \DIFdel{the amount of }\DIFdelend positive rewards while \DIFdelbegin \DIFdel{keeping the number of negative feedbacklow}\DIFdelend \DIFaddbegin \DIFadd{minimizing negative feedback}\DIFaddend .  Thus, the learning problem is posed as a \DIFdelbegin \DIFdel{mere }\DIFdelend stochastic optimization strategy~\DIFdelbegin \DIFdel{\mbox{%DIFAUXCMD
+\cite{sutton2018reinforcement}}\hspace{0pt}%DIFAUXCMD
+}\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{Santos1999}}\hspace{0pt}%DIFAUXCMD
+}\DIFaddend .  Recently, this technique has \DIFdelbegin \DIFdel{seen a come-back. Nonneglected is the }\DIFdelend \DIFaddbegin \DIFadd{been used extensively in the context of advances in artificial intelligence~\mbox{%DIFAUXCMD
+\cite{Nguyen2020}}\hspace{0pt}%DIFAUXCMD
+. The }\DIFaddend influence of DeepBrain's AlphaGo project \DIFdelbegin \DIFdel{, which }\DIFdelend \DIFaddbegin \DIFadd{cannot be neglected, since it }\DIFaddend was the first to reach a very high proficiency when it won the complex game Go against several world champions~\cite{ALPHA-GO}.
+
+%By using variants of this technique, in 2015 AlphaGo won 5 matches against 3-times European Champion, Mr Fan Hui. AlphaGo then went on to compete against Mr Lee Sedol, winner of 18 world titles and considered to be the greatest player until then, and won 4 out of 5 matches in 2016 \cite{ALPHA-GO}.
+
+Previous research has explored the usage of RL with reward signals based on brain activity, recorded by an EEG-based BCI system during task execution. The papers \cite{ROBOT-CONTROL-PAPER,Kim2017,Omedes2013} have successfully demonstrated that a robot can be controlled \DIFdelbegin \DIFdel{by obtaining a reward signal }\DIFdelend \DIFaddbegin \DIFadd{with brain signals }\DIFaddend from a person \DIFdelbegin \DIFdel{'s brain activity which is observing the }\DIFdelend \DIFaddbegin \DIFadd{that is observing a }\DIFaddend robot solve a task.  \DIFaddbegin \DIFadd{Moreover, a growing number of studies have demonstrated the feasibility of using ErrPs as rewards for RL schemes such as to enhance robotic behaviour~\mbox{%DIFAUXCMD
+\cite{Luo2019}}\hspace{0pt}%DIFAUXCMD
+, to assess air traffic controller's decisions~\mbox{%DIFAUXCMD
+\cite{Goh2019} }\hspace{0pt}%DIFAUXCMD
+or to categorize actions as errors~\mbox{%DIFAUXCMD
+\cite{Wirth2020}}\hspace{0pt}%DIFAUXCMD
+. }\DIFaddend Other approaches have used \DIFdelbegin \DIFdel{the signal as an }\DIFdelend \DIFaddbegin \DIFadd{these signals as }\DIFaddend important feedback for human-robot interaction or to implement shared-control strategies~\cite{Schiatti2018}.  Additionally, ErrPs have also been used in the context of games as an additional feedback channel that can be explored to \DIFdelbegin \DIFdel{enhance }\DIFdelend \DIFaddbegin \DIFadd{improve }\DIFaddend gaming experience~\cite{Plass-OudeBos2010,kober2018bci}.
+\DIFdelbegin \DIFdel{In this same line,  the objective of this work is }\DIFdelend \DIFaddbegin 
+
+\DIFadd{Therefore,  we aim }\DIFaddend to use the information extracted from brainwaves to enhance the performance of a gaming agent\DIFdelbegin \DIFdel{, replicating and extending the usage of this signal}\DIFdelend \DIFaddbegin \DIFadd{.  The three contributions are (1) a simple game that can elicit the ErrP potential, (2) results that confirm that even when ErrP classification accuracy is low and produces a noisy reward signal, enough information is generated for an agent to learn the optimal policy and solve a simple game and (3) collaborative rewards from multiple observational human observers can compensate the lack of classification accuracy or the inefficacy of transfer learning procedures for brainwaves signals}\DIFaddend .
+
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex,
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that the IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command,
+% and the \label for the overall figure must come after \caption.
+% \hfil is used as a separator to get equal spacing.
+% Watch out that the combined width of all the subfigures on a
+% line do not exceed the text width or a line break will occur.
+%
+%\begin{figure*}[!t]
+%\centering
+%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
+%\label{fig_second_case}}
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat[]), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
+% labels, the optional argument to \subfloat must be present. If a
+% subcaption is not desired, just leave its contents blank,
+% e.g., \subfloat[].
+
+
+% An example of a floating table. Note that, for IEEE style tables, the
+% \caption command should come BEFORE the table and, given that table
+% captions serve much like titles, are usually capitalized except for words
+% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
+% and up, which are usually not capitalized unless they are the first or
+% last word of the caption. Table text will default to \footnotesize as
+% the IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that the IEEE does not put floats in the very first column
+% - or typically anywhere on the first page for that matter. Also,
+% in-text middle ("here") positioning is typically not used, but it
+% is allowed and encouraged for Computer Society conferences (but
+% not Computer Society journals). Most IEEE journals/conferences use
+% top floats exclusively.
+% Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the
+% \fnbelowfloat command of the stfloats package.
+
+In Section \ref{section:materials} the general layout of the cognitive game is described. \DIFdelbegin \DIFdel{Section \ref{section:calibration} outlines the processing pipeline used to detect }\DIFdelend \DIFaddbegin \DIFadd{Sections \ref{brainwavesession} and \ref{cognitive_experiment_details} outline the cognitive game procedure used to obtain rewards in the form of }\DIFaddend ErrP components. \DIFdelbegin \DIFdel{The following Section \ref{learning} describes the agent learning phase.  Results and Conclusions }\DIFdelend \DIFaddbegin \DIFadd{Section \ref{q_learning_step_alg} describes the gaming agent learning procedure.  Lastly, results and conclusions }\DIFaddend are exposed in Sections \ref{results} and \ref{conclusions}.
+
+\section{Materials and Methods}
+\label{section:materials}
+
+\DIFaddbegin \DIFadd{The experimental procedure is summarized in Figure \ref{diag:complete_flow}. The proposed system has two distinct parts. }\DIFaddend This first part consists \DIFdelbegin \DIFdel{in collecting }\DIFdelend \DIFaddbegin \DIFadd{of the collection of brainwave }\DIFaddend signals from a person \DIFdelbegin \DIFdel{'s brainwaves while they are watching a game where the }\DIFdelend \DIFaddbegin \DIFadd{that is watching an agent play a game.  The }\DIFaddend agent knows the game rules but not how to win it. \DIFdelbegin \DIFdel{Hence, the agent }\DIFdelend \DIFaddbegin \DIFadd{The second part, the gaming agent learning phase, is where the agent }\DIFaddend can learn the winning strategy using the person's feedback to improve its own performance.
+\DIFdelbegin \DIFdel{This section describes the process of obtaining the person's brain signals that are used to make the agent more efficient.
+}\DIFdelend 
+
+\begin{figure*}
+    \centering
+    \includegraphics[width=\textwidth]{Images/complete_flow.png}
+    \caption{Overview of the experimental procedure. Brainwaves are obtained by the OpenVibe Acquisition Server.  The Game Manager is responsible for generating the game screen\DIFaddbeginFL \DIFaddFL{, the game mechanics, }\DIFaddendFL and \DIFaddbeginFL \DIFaddFL{the game movements performed by the gaming agent.  It }\DIFaddendFL is \DIFaddbeginFL \DIFaddFL{also }\DIFaddendFL connected to the Acquisition Server to send stimulus information.  The captured information is stored by the OpenVibe Designer.  Offline, EEG signals are classified and they are linked to each game movement calculated by the Game Manager to determine proper rewards for each action.  This information is used by a Reinforcement Learning algorithm to learn \DIFaddbeginFL \DIFaddFL{iteratively }\DIFaddendFL a Q-Table to improve the performance of the agent that plays the game.}
+    \label{diag:complete_flow}
+\end{figure*}
+
+\DIFdelbegin \DIFdel{The experimental procedure is summarized in Figure \ref{diag:complete_flow}. The central part is the }\DIFdelend \DIFaddbegin \subsection{\DIFadd{Brainwave Session}}
+\label{brainwavesession}
+
+\DIFadd{The }\DIFaddend retrieval of the \DIFdelbegin \DIFdel{subject}\DIFdelend \DIFaddbegin \DIFadd{OHC}\DIFaddend 's brain activity\DIFdelbegin \DIFdel{.  This process is called brainwave session}\DIFdelend \DIFaddbegin \DIFadd{, called the brainwave session, is one of the most critical parts of the study}\DIFaddend .  Subjects are recruited voluntarily \DIFdelbegin \DIFdel{. They are given a consent }\DIFdelend \DIFaddbegin \DIFadd{and given a }\DIFaddend form with questions regarding their health (previous health issues and particular visual sensitivity), habits (sleeping hours, caffeine and alcohol consumption), \DIFdelbegin \DIFdel{as well as an approval }\DIFdelend \DIFaddbegin \DIFadd{and a consent }\DIFaddend petition to collect the required data. The brainwave sessions are performed with 8 subjects, 5 males and 3 females, \DIFdelbegin \DIFdel{average age 25.125 years, standard deviation }\DIFdelend \DIFaddbegin \DIFadd{with an average age of 25.12 years, a standard deviation of }\DIFaddend 1.54 years, \DIFaddbegin \DIFadd{and a }\DIFaddend range of 22-28 years. All subjects have normal vision, are right-handed and \DIFdelbegin \DIFdel{have }\DIFdelend no history of neurological disorders.
+
+After the form is filled out, a short description of the procedure is given to each subject. They are only told that the objective of the agent is to reach the goal and the four movements that the agent can make. When this concludes, the subject is introduced to the wireless digital EEG device (g.Nautilus, g.Tec, Austria) that she/he has to wear during the brainwave session. It has eight electrodes (g.LADYbird, g.Tec, Austria) on the positions Fz, Cz, Pz, Oz, P3, P4, PO7\DIFaddbegin \DIFadd{, }\DIFaddend and PO8, identified according to the 10-20 International System, with a reference set to the right ear lobe and ground set as the AFz position. The electrode contact points are adjusted applying conductive gel until the impedance values displayed by the program g.NeedAccess (g.Tec, Austria) are within the desired range. This process takes between 10 to 15 minutes. After this step, the subject is instructed to close their eyes\DIFdelbegin \DIFdel{and the same program is used }\DIFdelend \DIFaddbegin \DIFadd{, make eye movements and muscle chew in order }\DIFaddend to check the \DIFaddbegin \DIFadd{program and guarantee that the }\DIFaddend live channel values \DIFdelbegin \DIFdel{so that there are no dead ones and the expected values are displayed for eye movements or muscle chewing}\DIFdelend \DIFaddbegin \DIFadd{are accurate}\DIFaddend .
+
+Once the headset is correctly applied, the OpenVibe Acquisition Server program, from the OpenVibe platform~\cite{OPEN-VIBE-PAPER}, is launched and configured with a sampling rate of $250$~Hz. A $50$~Hz notch filter is applied to filter out power line noise. An additional bandpass filter between $0.5$~Hz and $60$~Hz is applied\DIFdelbegin \DIFdel{as well}\DIFdelend . Data is handled and processed with the OpenVibe Designer, from the same platform, using 8 channels for the brain data (one channel per electrode) and an additional channel \DIFdelbegin \DIFdel{for }\DIFdelend \DIFaddbegin \DIFadd{to record }\DIFaddend the stimulus, which corresponds to a game movement performed by the agent.  After everything is connected, the subject \DIFdelbegin \DIFdel{seats }\DIFdelend \DIFaddbegin \DIFadd{is seated }\DIFaddend in a comfortable chair in front of a computer screen. The brightness of the screen is set to the maximum setting to avoid any visual inconvenience in which the subject can not distinguish the components of the game that appear on the screen.  This dataset has been published on the IEEE DataPort initiative~\cite{6emh-wb46-19}.
+
+The Acquisition Server \DIFdelbegin \DIFdel{has the responsibility of receiving and synchronizing }\DIFdelend \DIFaddbegin \DIFadd{receives and synchronizes }\DIFaddend the signal data from the headset and any event information from the game, and transfers it to the OpenVibe Designer application. When the subject is ready, the Game Manager and the OpenVibe Designer programs are launched and configured to communicate with the previously mentioned Acquisition Server. A brainwave session consists of several \DIFdelbegin \DIFdel{experiences}\DIFdelend \DIFaddbegin \DIFadd{matches}\DIFaddend , each one being a \DIFdelbegin \DIFdel{game run.  At }\DIFdelend \DIFaddbegin \DIFadd{gameplay.  In }\DIFaddend the end, the \DIFdelbegin \DIFdel{game state information }\DIFdelend \DIFaddbegin \DIFadd{sequence of game movements }\DIFaddend and the signal data \DIFdelbegin \DIFdel{with the game event information of each run }\DIFdelend \DIFaddbegin \DIFadd{generated for each match }\DIFaddend are saved for offline processing.
+
+%ACA For each run, the signals and stimulus information are then passed to the classification module that uses them to train the classifier.  After this step is finished, the game movements and the trained classifier are used to update a Q-Table for each experience. Lastly, the calculated Q-Table is used to test if the agent has boosted its performance while playing the game. This module is explained in Section \ref{q_learning_step}.
+
+\subsection{Cognitive Game Procedure}
+\label{cognitive_experiment_details}
+%This section details the game system characteristics, the brainwave session process and the retrieval and analysis of the generated data from the subjects interaction with the system.
+
+\label{cognitive_experiment_system}{
+The game parsimoniously consists of a $5x5$ grid of grey circular spots with a black background.  A blue spot indicates \DIFaddbegin \DIFadd{the }\DIFaddend current position of the agent \DIFdelbegin \DIFdel{whereas }\DIFdelend \DIFaddbegin \DIFadd{and }\DIFaddend a green spot represents the goal, as shown in Figure  \ref{fig:game_representation}. The agent's objective is to reach the goal. The circular spot representing the goal remains static at the bottom-right position of the grid, while the one representing the position of the agent \DIFdelbegin \DIFdel{always }\DIFdelend starts at the upper-left position of the grid \DIFaddbegin \DIFadd{and moves in each iteration}\DIFaddend .  When the agent reaches the goal, the position where the agent and the goal are located turns red, showing that the \DIFdelbegin \DIFdel{experience }\DIFdelend \DIFaddbegin \DIFadd{match }\DIFaddend has ended. There are four possible movements that the agent can perform: it can go upwards, downwards, towards the left and \DIFdelbegin \DIFdel{towards }\DIFdelend the right, and those movements are bounded to avoid the agent from leaving the grid. The movement direction is selected randomly and is executed once every 2 seconds.  \DIFdelbegin \DIFdel{At the end}\DIFdelend \DIFaddbegin \DIFadd{After each gameplay}\DIFaddend , there is a pause of 5 seconds \DIFdelbegin \DIFdel{before the next experience }\DIFdelend \DIFaddbegin \DIFadd{until the next match }\DIFaddend starts. Each time an agent moves, the Game Manager program sends an event marker to the Acquisition Server.  This is considered \DIFdelbegin \DIFdel{as }\DIFdelend a stimulus to the observational human critic.  The \DIFdelbegin \DIFdel{experience is designed for it }\DIFdelend \DIFaddbegin \DIFadd{game is designed as }\DIFaddend to be evident whenever there is an error (i.e. the agent moves away from the objective) so the subject can notice it immediately after the stimulus is presented, possibly triggering the expected cognitive response, which can be imprinted as an ErrP component within the EEG stream.
+
+\begin{figure}[h!]
+\begin{subfigure}{0.5\textwidth}
+\centering
+\includegraphics[scale=0.2]{Images/grid_initial_state.png}
+\includegraphics[scale=0.2]{Images/grid_end_state.png}
+\end{subfigure}
+\centering
+\caption{Grid system representation used in the \DIFdelbeginFL \DIFdelFL{Cognitive Game Experience}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{cognitive game}\DIFaddendFL . The blue spot represents the initial location while the green spot represents the target location. Once the agent reaches the target spot, its color turns red to indicate the end of the play.}
+\label{fig:game_representation}
+\end{figure}
+
+%\section{Calibration}
+%\label{section:calibration}
+
+%The first step in order to be able to find ErrP signals is to choose the most efficient algorithm, and the proper calibration. In order to do this different parameters are tested for a set of algorithms and for each individual subject. Initially a sub-selection of experiments is used to define a subset of parameters to test with, and then all the data is tested with this subset of parameters.
+
+\DIFdelbegin \section{\DIFdel{Signal Processing, Segmentation and Classification}}
+%DIFAUXCMD
+\addtocounter{section}{-1}%DIFAUXCMD
+\DIFdelend \DIFaddbegin \subsection{\DIFadd{Signal Processing, Segmentation and Classification}}
+\DIFaddend \label{section:calibration}
+
+To aid \DIFdelbegin \DIFdel{in detecting the }\DIFdelend \DIFaddbegin \DIFadd{the detection of the }\DIFaddend ErrP response, an offline processing pipeline and classifier is constructed to identify whether the action taken by the agent is an error or not, from the human observer\DIFaddbegin \DIFadd{'s }\DIFaddend point of view. It is developed in Python using the \DIFdelbegin \DIFdel{MNE }\DIFdelend \DIFaddbegin \DIFadd{"MNE" software }\DIFaddend platform \cite{MNE-PYTHON}, which is a package designed specifically for processing EEG and Magnetoencephalography data, and built upon the machine learning library Scikit-Learn~\cite{scikit-learn}.
+
+This pipeline consists of the offline processing of the collected signals \DIFdelbegin \DIFdel{in order }\DIFdelend \DIFaddbegin \DIFadd{used }\DIFaddend to train a classifier that can decide whether an error potential is triggered. Firstly, the output of a brainwave session is read and an additional \DIFdelbegin \DIFdel{band pass }\DIFdelend \DIFaddbegin \DIFadd{band-pass }\DIFaddend filter of 0.1-20.0 Hz is applied to the signal. Samples that correspond to the start of an event are tagged using the data from the stimulus channel.
+
+After the \DIFaddbegin \DIFadd{raw }\DIFaddend data is loaded and tagged, epochs are extracted\DIFdelbegin \DIFdel{from the raw data}\DIFdelend . Epochs consist of all the sample points that take place \DIFdelbegin \DIFdel{between the }\DIFdelend \DIFaddbegin \DIFadd{during the 2 seconds from the }\DIFaddend start of the event\DIFdelbegin \DIFdel{and }\DIFdelend \DIFaddbegin \DIFadd{, }\DIFaddend 2 seconds \DIFdelbegin \DIFdel{later (time }\DIFdelend \DIFaddbegin \DIFadd{corresponding to the time it takes }\DIFaddend for each action to take place\DIFdelbegin \DIFdel{)}\DIFdelend , resulting in 500 samples per channel, as the \DIFdelbegin \DIFdel{sample }\DIFdelend \DIFaddbegin \DIFadd{sampling }\DIFaddend frequency is 250 Hz. Thus, each epoch is composed of a matrix $500$ x $8$ \DIFaddbegin \DIFadd{channels}\DIFaddend .
+
+Samples that do not correspond to an epoch (located beyond the 2 seconds frame after the onset of the event) are not used. Also, epochs referring to the start or finish of \DIFdelbegin \DIFdel{the experience }\DIFdelend \DIFaddbegin \DIFadd{each match }\DIFaddend are excluded.
+\DIFdelbegin \DIFdel{This is done because the start and the end of the experience doesn't involve the agent taking an action.
+}\DIFdelend 
+
+In this way, the raw data of a brainwave session is processed into an array of \DIFdelbegin \DIFdel{experiences }\DIFdelend \DIFaddbegin \DIFadd{matches }\DIFaddend where each element is an array of epochs tagged with a number specifying the prediction of the classifier, i.e. if the epoch corresponds to an action that made the agent \DIFdelbegin \DIFdel{moves }\DIFdelend \DIFaddbegin \DIFadd{move }\DIFaddend further from the goal (hit) or an action that made the agent moves closer to the goal (no-hit). The ErrP is expected to be found in hits. To get the data ready for classification, the stimulus channel is removed \DIFdelbegin \DIFdel{in order }\DIFdelend to classify the signals using only the EEG data. Each epoch is regularized using a MinMaxScaler, i.e. \DIFdelbegin \DIFdel{substracting the minimun }\DIFdelend \DIFaddbegin \DIFadd{subtracting the minimum }\DIFaddend value in the epoch and dividing by the signal peak-to-peak amplitude\DIFaddbegin \DIFadd{~\mbox{%DIFAUXCMD
+\cite{Zhou2019}}\hspace{0pt}%DIFAUXCMD
+}\DIFaddend .  The eight channels are concatenated using the MNE Vectorizer function\DIFdelbegin \DIFdel{to transform }\DIFdelend \DIFaddbegin \DIFadd{, which transforms }\DIFaddend the data matrix into a single array sample. Lastly, this data is used by the classification module as information to train and test a classifier. \DIFdelbegin \DIFdel{Four }\DIFdelend \DIFaddbegin \DIFadd{Five }\DIFaddend different classification algorithms are used\DIFdelbegin \DIFdel{.  }\DIFdelend \DIFaddbegin \DIFadd{:  }\DIFaddend Logistic Regression, \DIFdelbegin \DIFdel{Multi-layer }\DIFdelend \DIFaddbegin \DIFadd{Multilayer }\DIFaddend Perceptron with a hidden layer of 100 neurons (i.e. default values for the Scikit-Learn MLPClassifier), Random Forest\DIFaddbegin \DIFadd{, KNeighbours with k=3 }\DIFaddend and finally a linear kernel Support Vector Classifier (i.e. SVM)~\cite{Lotte2018}.
+
+%Vectorized epochs are used in the final classification step.
+
+%and finally the logistic regression classifier.  Even tough the classification accuracy is low, the information is enough to have valid rewards that can be used to retrieve the information.
+
+%a classifier is trained for each subject and then epochs from their experiences are classified. These classifications are then used by a reinforcement learning algorithm to train the agent. This last algorithm is explained in detail in section \ref{q_learning_step}.
+
+\DIFdelbegin \section{\DIFdel{Reinforcement Learning}}
+%DIFAUXCMD
+\addtocounter{section}{-1}%DIFAUXCMD
+\DIFdelend \DIFaddbegin \subsection{\DIFadd{Reinforcement Learning}}
+\DIFaddend \label{learning}
+
+Each \DIFdelbegin \DIFdel{experience }\DIFdelend \DIFaddbegin \DIFadd{match }\DIFaddend consists of a list of game movement configurations and the associated epochs obtained from \DIFdelbegin \DIFdel{subject}\DIFdelend \DIFaddbegin \DIFadd{OHC}\DIFaddend 's brainwaves.  The set of \DIFdelbegin \DIFdel{experiences of each subject }\DIFdelend \DIFaddbegin \DIFadd{matches of each OHC }\DIFaddend is split into training and testing.  Training \DIFdelbegin \DIFdel{experiences }\DIFdelend \DIFaddbegin \DIFadd{matches }\DIFaddend are used to train the classifier \DIFdelbegin \DIFdel{, whereas test experiences are used to test its performance}\DIFdelend \DIFaddbegin \DIFadd{to identify the ErrP signal}\DIFaddend .  After a classifier is trained, the epochs \DIFdelbegin \DIFdel{of the experience }\DIFdelend \DIFaddbegin \DIFadd{extracted from the test matches }\DIFaddend are classified as hit or no-hit.  A reward for each movement in the \DIFdelbegin \DIFdel{game run is produced, }\DIFdelend \DIFaddbegin \DIFadd{match is generated }\DIFaddend based on the \DIFdelbegin \DIFdel{classification of the epoch that correspond to that }\DIFdelend \DIFaddbegin \DIFadd{prediction from the classifier for that }\DIFaddend movement.  The reward can either be -1 when the event is classified as a hit or 0 when it is classified as a no-hit. The accuracy of \DIFdelbegin \DIFdel{this }\DIFdelend \DIFaddbegin \DIFadd{these }\DIFaddend rewards depends on the performance of the classifier. The list of game movements and their associated reward information \DIFdelbegin \DIFdel{are }\DIFdelend \DIFaddbegin \DIFadd{is }\DIFaddend used to train the agent by a variant of Reinforcement Learning called Q-Learning algorithm.
+
+%The set of experiences of each subject is split into training and testing, so that the results of the classification can then be used to improve the performance of the agent. Each experience includes an ordered list of extracted epochs for each movement that the agent carried out plus the game state information, i.e. the movement specification.
+
+%After a classifier is trained, the epochs of the experience are classified as hit or no-hit.  With the game state information and the classification of the test data of an experience, a reward file is composed. This file specifies a reward for each movement in the game run, based on the classification of the event that corresponds to that movement. The reward can either be -1 when the event is classified as a hit or 0 when it is classified as a no-hit. The accuracy of this rewards depends on the performance of the classifier. This reward file is used by the a variant of a Reinforcement Learning algorithm called Q-Learning algorithm.
+
+
+\subsection{Q-Learning}{
+\label{q_learning_step}
+
+Q-Learning~\cite{Watkins1992} is a form of model-free reinforcement learning\DIFdelbegin \DIFdel{algorithm }\DIFdelend \DIFaddbegin \DIFadd{, }\DIFaddend where an agent tries an action at a particular state and \DIFdelbegin \DIFdel{evaluate }\DIFdelend \DIFaddbegin \DIFadd{evaluates }\DIFaddend its consequences in terms of the reward or penalty it receives.  \DIFdelbegin \DIFdel{In order to }\DIFdelend \DIFaddbegin \DIFadd{To }\DIFaddend represent rewards, a matrix $Q(s,a)$ is used, where rows correspond to all the possible states, \DIFdelbegin \DIFdel{whereas }\DIFdelend \DIFaddbegin \DIFadd{and }\DIFaddend columns represent all possible actions.  This matrix is known as \DIFdelbegin \DIFdel{a }\DIFdelend \DIFaddbegin \DIFadd{the }\DIFaddend Q-Table.  The algorithm proceeds by randomly choosing what action to do and \DIFdelbegin \DIFdel{updating iteratively }\DIFdelend \DIFaddbegin \DIFadd{iteratively updating }\DIFaddend the Q-Table based on the received reward $r$ by the following equation
+
+\begin{equation}
+    Q(s,a) \leftarrow Q(s,a) + \alpha[r+\gamma* \max_{\tilde{a}} Q(\tilde{s}, \tilde{a})-Q(s, a) ]
+    \label{equ:update_q_table}
+\end{equation}
+
+\noindent where $s$ is the current state, $a$ \DIFdelbegin \DIFdel{is }\DIFdelend the action, $\alpha$ \DIFdelbegin \DIFdel{represents }\DIFdelend the learning rate and $\gamma$ \DIFdelbegin \DIFdel{represents }\DIFdelend the discount factor, a value between 0 and 1 that determines the importance of long term results versus immediate rewards.  Hence, $Q(s,a)$ is the expected value of the sum of discounted rewards that the agent will receive if in the $s$ state, it takes the action $a$ according to this policy.  Once the environment has been extensively explored and the Q-Table has been \DIFdelbegin \DIFdel{obtained}\DIFdelend \DIFaddbegin \DIFadd{optimized}\DIFaddend , the action chosen for a given state is the one that maximizes the expected reward according to the Q-Table matrix.
+
+The algorithm is developed in Python and uses the OpenAI Gym toolkit~\cite{openai}. Gym is a toolkit for developing and comparing reinforcement learning algorithms. It makes no assumptions about the structure of an agent, and is compatible with any numerical computation library, such as TensorFlow or Theano~\cite{tensorflow2015-whitepaper}.
+
+\subsection{\DIFaddbegin \DIFadd{Gaming }\DIFaddend Agent Learning \DIFaddbegin \DIFadd{Procedure}\DIFaddend }
+\label{q_learning_step_alg}
+\DIFdelbegin \DIFdel{The Q-Table is initialized with zeros, unless a preexisting }\DIFdelend \DIFaddbegin 
+
+\DIFadd{The gaming agent learning procedure uses the testing matches from brainwave sessions produced during the cognitive game procedure phase, and their components are schematized in Figure~\ref{diag:complete_flow}.
+}
+
+\DIFadd{This phase is divided into a sequence of run sessions and a gaming agent training match.  During the run session, the agent plays 200 matches guided by a specific Q-Table with a 5\% chance of randomly selecting a movement, to reduce deadlocks and loops.  Following the run session, the agent performs a single gaming agent training match.  The gaming agent starts first with a }\DIFaddend Q-Table \DIFdelbegin \DIFdel{is passed as a parameter}\DIFdelend \DIFaddbegin \DIFadd{initialized with zeros, so the initial policy for the agent is randomized}\DIFaddend .  For the agent \DIFdelbegin \DIFdel{, in order }\DIFdelend to learn from the feedback generated by the \DIFdelbegin \DIFdel{subject, the Q-Table is not used to determine the action to take at a given state. Instead, the policy which determines which action to take in a particular state is given by the }\DIFdelend \DIFaddbegin \DIFadd{OHC, movement actions are determined by the reply of the }\DIFaddend agent's actions \DIFdelbegin \DIFdel{taken from the brainwave session results}\DIFdelend \DIFaddbegin \DIFadd{that were taken during one brainwave session match, in an offline reinforcement learning scheme~\mbox{%DIFAUXCMD
+\cite{Levine2020}}\hspace{0pt}%DIFAUXCMD
+}\DIFaddend . This allows \DIFdelbegin \DIFdel{to learn }\DIFdelend the Q-Table \DIFaddbegin \DIFadd{to be built }\DIFaddend based on the \DIFdelbegin \DIFdel{subject}\DIFdelend \DIFaddbegin \DIFadd{OHC}\DIFaddend 's feedback from the movements the agent took, which \DIFdelbegin \DIFdel{are chosen }\DIFdelend \DIFaddbegin \DIFadd{were executed }\DIFaddend pseudo-randomly \DIFdelbegin \DIFdel{, while executing }\DIFdelend \DIFaddbegin \DIFadd{during }\DIFaddend the brainwave session.  The previously mentioned feedback is not explicit as it comes from the interpreted brain signal data. This implies that the reward is determined by the \DIFdelbegin \DIFdel{subject}\DIFdelend \DIFaddbegin \DIFadd{OHC}\DIFaddend 's brain activity.
+
+Hence, following the iterative procedure based on Equation~\ref{equ:update_q_table}, the Q-Table is updated in each \DIFdelbegin \DIFdel{iteration}\DIFdelend \DIFaddbegin \DIFadd{gaming agent training match}\DIFaddend . After the algorithm finishes \DIFdelbegin \DIFdel{iterating through all the training episodes}\DIFdelend \DIFaddbegin \DIFadd{replicating all the steps from the brainwave session match}\DIFaddend , the Q-Table is stored \DIFdelbegin \DIFdel{to test the performance of the agent }\DIFdelend \DIFaddbegin \DIFadd{and used by the agent in the next run session}\DIFaddend .
+
+
+\section{Results}
+\label{results}
+
+\DIFdelbegin \DIFdel{Figures~\ref{fig:classifiers} and~\ref{fig:logisticregression} show }\DIFdelend \DIFaddbegin \DIFadd{Figure~\ref{fig:classifiers} shows }\DIFaddend the binary classification accuracy obtained for the eight \DIFdelbegin \DIFdel{subjects for the four }\DIFdelend \DIFaddbegin \DIFadd{OHCs using five }\DIFaddend different classification algorithms \DIFaddbegin \DIFadd{and }\DIFaddend using a 10-fold \DIFdelbegin \DIFdel{cross validation }\DIFdelend \DIFaddbegin \DIFadd{cross-validation }\DIFaddend procedure.  The best overall performance is obtained using Logistic Regression.  \DIFaddbegin \DIFadd{In addition, the classification accuracy obtained averaging 5 epochs is shown as well.  Although the signal averaging procedure improves the Signal-To-Noise-Radio (SNR) of the ErrP response, it reduces the number of data samples, producing a clear improvement only for the OHCs that contain more samples (1, 3 and 7).
+}\DIFaddend 
+
+\begin{figure}[ht]
+    \centering
+    \DIFdelbeginFL %DIFDELCMD < \includegraphics[scale=0.4]{Images/algorithm_calibration/Total_calib.png}
+%DIFDELCMD <     %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[scale=0.12]{revisedimages/cross_val.eps}
+    \DIFaddendFL \caption{Binary \DIFdelbeginFL \DIFdelFL{Classification Score }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{single trial classification score }\DIFaddendFL using \DIFaddbeginFL \DIFaddFL{five }\DIFaddendFL different classifiers while recognizing ErrP potentials for the eight \DIFdelbeginFL \DIFdelFL{subjects}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{OHCs}\DIFaddendFL .  \DIFaddbeginFL \DIFaddFL{The classification score using an ensemble average of 5 epochs is shown as well (GrandAvg). Chance Level is 0.5.}\DIFaddendFL }
+    \label{fig:classifiers}
+\end{figure}
+
+\DIFdelbegin %DIFDELCMD < \begin{figure}[ht]
+%DIFDELCMD <     \centering
+%DIFDELCMD <     \includegraphics[scale=0.4]{Images/algorithm_calibration/LR_calib.png}
+%DIFDELCMD <     %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdelFL{Binary Classification Score using Logistic Regression for the eight subjects.}}
+    %DIFAUXCMD
+%DIFDELCMD < \label{fig:logisticregression}
+%DIFDELCMD < \end{figure}
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend On the other hand, Figure \ref{fig:avg_steps} shows \DIFdelbegin \DIFdel{for each subject }\DIFdelend the average amount of steps \DIFdelbegin \DIFdel{the agent takes }\DIFdelend \DIFaddbegin \DIFadd{it takes for the agent }\DIFaddend to reach the goal \DIFaddbegin \DIFadd{for each OHC, }\DIFaddend as the Q-Table is progressively trained using the reward information obtained from \DIFdelbegin \DIFdel{their classified experiences}\DIFdelend \DIFaddbegin \DIFadd{the prediction of the trained classifier}\DIFaddend . Each point corresponds to \DIFaddbegin \DIFadd{a run session where }\DIFaddend the average number of steps \DIFdelbegin \DIFdel{in 200 repetitions that it takes }\DIFdelend for the agent to reach the goal \DIFdelbegin \DIFdel{for }\DIFdelend \DIFaddbegin \DIFadd{using }\DIFaddend a specific Q-Table \DIFaddbegin \DIFadd{is specified, for 200 repetitions}\DIFaddend . The first point\DIFdelbegin \DIFdel{represents the amount }\DIFdelend \DIFaddbegin \DIFadd{, at the x-value 0, represents the number }\DIFaddend of steps the agent takes to reach the goal \DIFdelbegin \DIFdel{for a }\DIFdelend \DIFaddbegin \DIFadd{with an untrained }\DIFaddend Q-Table\DIFdelbegin \DIFdel{that hasn't been trained at all}\DIFdelend , where movements are decided randomly. The next point corresponds to the amount of steps it takes to reach the goal using a policy derived from a Q-Table trained \DIFdelbegin \DIFdel{with one experience}\DIFdelend \DIFaddbegin \DIFadd{after one brainwave session match}\DIFaddend , and so on.
+
+\begin{figure}[h!]
+\begin{subfigure}{0.5\textwidth}
+\centering
+\includegraphics[scale=0.27]{Images/Average_steps/a.png}
+\includegraphics[scale=0.27]{Images/Average_steps/b.png}
+\centering
+\includegraphics[scale=0.27]{Images/Average_steps/c.png}
+ \includegraphics[scale=0.27]{Images/Average_steps/d.png}
+ \centering
+  \includegraphics[scale=0.27]{Images/Average_steps/e.png}
+  \includegraphics[scale=0.27]{Images/Average_steps/f.png}
+  \centering
+  \includegraphics[scale=0.27]{Images/Average_steps/g.png}
+  \includegraphics[scale=0.27]{Images/Average_steps/h.png}
+\end{subfigure}
+\caption{Average number of steps for the agent \DIFaddbeginFL \DIFaddFL{to reach the goal }\DIFaddendFL when trained with \DIFdelbeginFL \DIFdelFL{experiences }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{rewards generated }\DIFaddendFL from \DIFdelbeginFL \DIFdelFL{subjects 1(A)-8(H)}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{brainwaves from OHCs 1-8}\DIFaddendFL . Y axis show the averaged number of steps \DIFaddbeginFL \DIFaddFL{for a run session}\DIFaddendFL , while x axis show the number of \DIFdelbeginFL \DIFdelFL{experiences }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{game matches }\DIFaddendFL used to cumulative train the Q-Table.}
+\label{fig:avg_steps}
+\end{figure}
+
+
+The results show that as the Q-Table is progressively trained the average amount of steps decreases, meaning that the agent learns. However, the rate at which it learns varies per \DIFdelbegin \DIFdel{subject}\DIFdelend \DIFaddbegin \DIFadd{OHC}\DIFaddend , depending on the classification accuracy of the extracted brainwaves.  For example results for \DIFdelbegin \DIFdel{subject }\DIFdelend \DIFaddbegin \DIFadd{OHC }\DIFaddend 1 \DIFdelbegin \DIFdel{(Figure \ref{fig:avg_steps} A) }\DIFdelend show faster learning than those of \DIFdelbegin \DIFdel{subject }\DIFdelend \DIFaddbegin \DIFadd{OHC }\DIFaddend 8 (Figure \ref{fig:avg_steps}\DIFdelbegin \DIFdel{H}\DIFdelend ).
+
+In the case for \DIFdelbegin \DIFdel{subject }\DIFdelend \DIFaddbegin \DIFadd{OHC }\DIFaddend 5 and 6, the reward information obtained from the brainwaves is not enough to train the agent effectively. Figures \ref{fig:avg_steps} \DIFdelbegin \DIFdel{E and \ref{fig:avg_steps} F }\DIFdelend \DIFaddbegin \DIFadd{for OHC 5 and 6 }\DIFaddend show no apparent learning, as the amount of steps to reach the goal doesn't decrease when trained.  These results are also consistent with their classification ROC curves, shown on Figures~\ref{fig:rocsubjects} obtained for both \DIFdelbegin \DIFdel{subjects}\DIFdelend \DIFaddbegin \DIFadd{OHCs}\DIFaddend , where the area under the curve are close to chance level.  Both \DIFdelbegin \DIFdel{subjects }\DIFdelend \DIFaddbegin \DIFadd{OHCs }\DIFaddend have less recorded data from the sessions in comparison to the rest of the \DIFdelbegin \DIFdel{subjects}\DIFdelend \DIFaddbegin \DIFadd{OHCs}\DIFaddend .  This variation in performance for different \DIFdelbegin \DIFdel{subjects }\DIFdelend \DIFaddbegin \DIFadd{OHCs }\DIFaddend has been studied extensively in BCI\DIFaddbegin \DIFadd{~\mbox{%DIFAUXCMD
+\cite{Chavarriaga2014}}\hspace{0pt}%DIFAUXCMD
+}\DIFaddend .  Besides low data samples\DIFaddbegin \DIFadd{, }\DIFaddend there are other reasons affecting the classification accuracy:  cognitive reasons \DIFdelbegin \DIFdel{, this being the subject }\DIFdelend \DIFaddbegin \DIFadd{(i.e. the OHC }\DIFaddend not paying extensively attention to the game dynamics\DIFaddbegin \DIFadd{)}\DIFaddend , very low \DIFdelbegin \DIFdel{Signal-To-Noise Ratio (SNR ) }\DIFdelend \DIFaddbegin \DIFadd{SNR }\DIFaddend of the ErrP component or even the BCI-illiteracy phenomena where the specific \DIFdelbegin \DIFdel{subject}\DIFdelend \DIFaddbegin \DIFadd{OHC}\DIFaddend 's signals do not contain the expected component response~\cite{Yousefi2019}.
+
+\begin{figure}[h!]
+\captionsetup[subfigure]{justification=centering}
+\DIFdelbeginFL %DIFDELCMD < \begin{subfigure}{0.25\textwidth}
+%DIFDELCMD <     %%%
+\DIFdelendFL \DIFaddbeginFL \begin{subfigure}{0.5\textwidth}
+\DIFaddendFL \centering
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[scale=0.2]{Images/Classification_test/roc_e.png}
+%DIFDELCMD < \end{subfigure}
+%DIFDELCMD < \begin{subfigure}{0.25\textwidth}
+%DIFDELCMD <     %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[scale=0.09]{revisedimages/roc_1.eps}   \DIFaddFL{\hspace{-1.5em}
+}\includegraphics[scale=0.09]{revisedimages/roc_2.eps} \\
+%DIF > \vspace{-1.3em}
+\DIFaddendFL \centering
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[scale=0.2]{Images/Classification_test/roc_f.png}  
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[scale=0.09]{revisedimages/roc_3.eps}   \DIFaddFL{\hspace{-1.5em}
+ }\includegraphics[scale=0.09]{revisedimages/roc_4.eps} \\
+ \centering
+  \includegraphics[scale=0.09]{revisedimages/roc_5.eps}   \DIFaddFL{\hspace{-1.5em}
+  }\includegraphics[scale=0.09]{revisedimages/roc_6.eps} \\
+  \centering
+  \includegraphics[scale=0.09]{revisedimages/roc_7.eps}    \DIFaddFL{\hspace{-1.5em}
+  }\includegraphics[scale=0.09]{revisedimages/roc_8.eps} \\
+\DIFaddendFL \end{subfigure}
+\caption{ROC Curves for \DIFdelbeginFL \DIFdelFL{subjects 5 (up) }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{OHCs 1-8. True positive rate is on the vertical axis }\DIFaddendFL and \DIFdelbeginFL \DIFdelFL{6 (down)}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{false positive rate on the horizontal axis.}\DIFaddendFL }
+\label{fig:rocsubjects}
+\end{figure}
+
+%These results are consistent with fig. \ref{fig:roc:e} and fig. \ref{fig:roc:f}, which show that the signal classification for these subjects hasn't been particularly successful.
+
+Figure~\ref{fig:avg_steps_noise} shows the result of an agent successively trained with \DIFdelbegin \DIFdel{experiences obtained from a brainwave session , generated with sham }\DIFdelend \DIFaddbegin \DIFadd{brainwave session matches where the EEG is generated with random }\DIFaddend signals.  In this case, random EEG signals \DIFdelbegin \DIFdel{were }\DIFdelend \DIFaddbegin \DIFadd{are }\DIFaddend generated using OpenVibe Acquisition Server signal generator for all channels, as if they were \DIFdelbegin \DIFdel{generated from a human observer }\DIFdelend \DIFaddbegin \DIFadd{produced by an OHC }\DIFaddend who doesn't pay attention to the game.  \DIFdelbegin \DIFdel{As it can be seen, the }\DIFdelend \DIFaddbegin \DIFadd{The }\DIFaddend agent learns nothing, and regardless of the \DIFdelbegin \DIFdel{amount of experiences }\DIFdelend \DIFaddbegin \DIFadd{number of matches }\DIFaddend that are used to learn the Q-Table, the number of steps required to reach the goal does not decrease.  This pattern is also obtained when the \DIFdelbegin \DIFdel{experiences from subjects }\DIFdelend \DIFaddbegin \DIFadd{game matches from OHCs }\DIFaddend 5 and 6 are used, showing that the reward labeling predicted by the trained classifier for those \DIFdelbegin \DIFdel{subjects }\DIFdelend \DIFaddbegin \DIFadd{cases }\DIFaddend worked like a random classifier.
+
+\begin{figure}[h!]
+\centering
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[scale=0.4]{Images/Average_steps/noise.png}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[scale=0.4]{Images/Average_steps/noise.eps}
+\DIFaddendFL \caption{Average \DIFaddbeginFL \DIFaddFL{number of }\DIFaddendFL steps \DIFdelbeginFL \DIFdelFL{using Q-Table }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{for the agent to reach the goal when }\DIFaddendFL trained with a \DIFdelbeginFL \DIFdelFL{noisy signal}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{classifier produced from sham EEG signals}\DIFaddendFL . \DIFaddbeginFL \DIFaddFL{X axis show the number of gaming agent training matches used to train the Q-Table.}\DIFaddendFL }
+\label{fig:avg_steps_noise}
+\end{figure}
+
+Electroencephalographic signals have high inter-subject variability~\cite{Chavarriaga2014}.  This is evidenced in Figure~\ref{fig:transferlearning} where the agent training is performed \DIFdelbegin \DIFdel{by using }\DIFdelend \DIFaddbegin \DIFadd{with }\DIFaddend rewards obtained by classifying epochs from one \DIFdelbegin \DIFdel{subject, but using a classifier which }\DIFdelend \DIFaddbegin \DIFadd{Tester OHC and a classifier that }\DIFaddend was trained using the brainwaves from a different \DIFdelbegin \DIFdel{subject.  Not }\DIFdelend \DIFaddbegin \DIFadd{Trainer OHC.  The figure shows the cumulative variation for all run sessions on the average number of steps required to reach the goal after training the agent with all the available matches from the brainwave session.  Enhancements are shown as negative values.  Only the diagonal of the heatmap matrix shows a clear improvement in terms of the reduction of the required number of steps to reach the goal (averaged per 200 runs) which corresponds to the same information for each OHC shown in Figure~\ref{fig:avg_steps}.  For the transfer learning experiment~\mbox{%DIFAUXCMD
+\cite{Wu2016}}\hspace{0pt}%DIFAUXCMD
+, no }\DIFaddend performance gain is evidenced, the agents learn nothing \DIFdelbegin \DIFdel{which }\DIFdelend \DIFaddbegin \DIFadd{and this }\DIFaddend implies that the reward information is useless.
+
+
+\begin{figure}[h!]
+\begin{subfigure}{0.5\textwidth}
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[scale=0.27]{Images/Average_steps/Ax.png}
+%DIFDELCMD < \includegraphics[scale=0.27]{Images/Average_steps/Bx.png}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[scale=0.60]{revisedimages/transfer_learning_heatmap.eps}
+\DIFaddendFL \end{subfigure}
+\caption{\DIFdelbeginFL \DIFdelFL{(A) Average }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Heatmap for the transfer learning experiment. Values represent the reduction in the average number of }\DIFaddendFL steps \DIFdelbeginFL \DIFdelFL{using Q-table trained with experiences from subject 8 classified with a classifier trained with data from subject 6.  (B) Average steps using Q-table trained with experiences from subject 1 classified with a classifier trained with data from subject 3.}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{required to reach the goal.  Negative values represent net improvements.}\DIFaddendFL }
+\label{fig:transferlearning}
+\end{figure}
+
+Finally, Figure~\ref{fig:avg_steps_all} shows the result of training an agent with \DIFdelbegin \DIFdel{accumulative experiences from subjects }\DIFdelend \DIFaddbegin \DIFadd{cumulative brainwave session matches from OHCs }\DIFaddend 1, 2, 3, 4, 7, and 8.  It can be seen that the overall performance of the agent improves as long as there \DIFdelbegin \DIFdel{are more experiences to be used to train it, regardless if }\DIFdelend \DIFaddbegin \DIFadd{is information to produce rewards, regardless of the fact that }\DIFaddend they were generated from \DIFdelbegin \DIFdel{the brainwaves classification from different subjects}\DIFdelend \DIFaddbegin \DIFadd{classifiers trained with different OHC's signals}\DIFaddend .
+
+
+\begin{figure}[h!]
+\centering
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[scale=0.4]{Images/Average_steps/all.png}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[scale=0.4]{Images/Average_steps/all.eps}
+\DIFaddendFL \caption{Average steps using Q-Table trained with \DIFdelbeginFL \DIFdelFL{6 experiences }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{brainwave session matches }\DIFaddendFL from \DIFaddbeginFL \DIFaddFL{six }\DIFaddendFL different \DIFdelbeginFL \DIFdelFL{subjects}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{OHCs}\DIFaddendFL . \DIFaddbeginFL \DIFaddFL{X axis show the progressive number of gaming agent training matches used to train the Q-Table.}\DIFaddendFL }
+\label{fig:avg_steps_all}
+\end{figure}
+
+\section{Conclusion}
+\label{conclusions}
+
+%Enfatizar la idea de que la mejor métrica de la propia detección está dada por la propia capacidad del agente de minimizar su tarea, que hay un flujo de información que involucra la propia percepción de la persona.
+
+This work aims to \DIFdelbegin \DIFdel{state whether ErrP signals could be used }\DIFdelend \DIFaddbegin \DIFadd{propose a simple game that can use the ErrP component }\DIFaddend to train a gaming agent using \DIFdelbegin \DIFdel{reinforcement learning}\DIFdelend \DIFaddbegin \DIFadd{a RL model}\DIFaddend . The collected data \DIFdelbegin \DIFdel{show }\DIFdelend \DIFaddbegin \DIFadd{shows }\DIFaddend that ErrP signals can in fact be classified and used to train an agent effectively.
+
+This proposal tries to keep the system as simple as possible, emphasizing information flow from the subjective error perception of the human critic\DIFdelbegin \DIFdel{, through the reward generation }\DIFdelend \DIFaddbegin \DIFadd{. Rewards are generated }\DIFaddend using the signal processing and classification pipeline, and \DIFdelbegin \DIFdel{finally }\DIFdelend the Q-Table \DIFdelbegin \DIFdel{updating  to enhance }\DIFdelend \DIFaddbegin \DIFadd{updates, enhancing }\DIFaddend the performance of the gaming agent.
+
+%DIF < Enfatizar la idea de que la mejor métrica de la propia detección está dada por la propia capacidad del agente de minimizar su tarea, que hay un flujo de información que involucra la propia percepción de la persona.
+\DIFdelbegin %DIFDELCMD < 
+
+%DIFDELCMD < %%%
+%DIF < While classifying, the better performing classifier is Logistic Regression. One important aspect of the classification results is the low percentage of false positives (Figure~\ref{fig:confusionmatrix}), showing a high specificity.  It is not common that the agent learns that an action is wrong when in fact it is an action that takes it closer to the goal. On the other hand, the percentage of false negatives is generally higher, but this is not a serious issue since missing out on learning that an action is wrong does not lower the performance of the agent, but only means it will take more experiences to learn a correct path.
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{While classifying, the better performing classifier is Logistic Regression.  One }\DIFdelend \DIFaddbegin \DIFadd{One additional aspect to remark is the robustness of the learning strategy based on Q-Learning~\mbox{%DIFAUXCMD
+\cite{Bauer2015,Rubin2012}}\hspace{0pt}%DIFAUXCMD
+.  The obtained accuracy to discriminate ErrPs is low.  However, even with such low accuracy values, the RL algorithm was able to extract meaningful information from rewards that were helpful to improve, and often maximize, the agent's performance.  Additionally, one }\DIFaddend important aspect of the classification results is the low percentage of false positives (Figure~\ref{fig:confusionmatrix}), showing a high specificity. \DIFdelbegin \DIFdel{It is not common that the agent learns that an action is wrong when in fact it is an action that takes it closer to the goal. }\DIFdelend On the other hand, the percentage of false negatives is generally higher.  However, even though this implies that the agent misses frequently \DIFdelbegin \DIFdel{that an action taken is wrong }\DIFdelend \DIFaddbegin \DIFadd{when a wrong action takes place}\DIFaddend , this is not hindering the overall performance and the agent is still learning. \DIFdelbegin %DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \DIFadd{Though scarce, accurate rewards are very useful for the RL algorithm.
+}\DIFaddend %However, even though this imply that the agent misses frequently that an action taken is wrong, this do not seems to be a serious issue because the agent improves its performance.
+
+
+
+\begin{figure}[h!]
+\begin{subfigure}{0.5\textwidth}
+\centering
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[scale=0.12]{Images/Classification_test/matrix_a.png}
+%DIFDELCMD < \includegraphics[scale=0.12]{Images/Classification_test/matrix_c.png}%%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[scale=0.14]{revisedimages/matrix_1.eps}
+\includegraphics[scale=0.14]{revisedimages/matrix_2.eps}\DIFaddendFL \\
+\DIFdelbeginFL %DIFDELCMD < \includegraphics[scale=0.12]{Images/Classification_test/matrix_d.png}
+%DIFDELCMD < \includegraphics[scale=0.12]{Images/Classification_test/matrix_h.png}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[scale=0.14]{revisedimages/matrix_3.eps}
+\includegraphics[scale=0.14]{revisedimages/matrix_4.eps}\\
+\includegraphics[scale=0.14]{revisedimages/matrix_5.eps}
+\includegraphics[scale=0.14]{revisedimages/matrix_6.eps}\\
+\includegraphics[scale=0.14]{revisedimages/matrix_7.eps}
+\includegraphics[scale=0.14]{revisedimages/matrix_8.eps}\\
+\DIFaddendFL \end{subfigure}
+\caption{Confusion Matrix for \DIFdelbeginFL \DIFdelFL{subjects 1,3,4 and 8. }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{OHCs 1-8. }\DIFaddendFL Darker colors show higher values.  It can be seen the lower percentage of false positives (upper right corner of each chart).}
+\label{fig:confusionmatrix}
+\end{figure}
+
+\DIFdelbegin \DIFdel{Once ErrP signals are identified they can be used to train an agent using a reinforcement learning algorithm. Brainwave sessions have a low amount of experiences in order to reduce fatigue from subjects. However data suggests that longer sessions are required in order to reach better classification scores, since more data is available in order to train the classifier. It can be seen that subjects with the largest amounts of data have the best classification. This can also be achieved designing a bigger game system that generates more samples with every session.
+}\DIFdelend %DIF > Brainwave sessions have a low amount of matches in order to reduce fatigue from OHCs. However data suggests that longer sessions are required in order to reach better classification scores, since more data is available in order to train the classifier. Matches from OHCs with the largest amounts of data have the best classification scores and produced more accurate rewards. This can also be achieved designing a bigger game system that generates more samples with every session.  While classifying, the better performing classifier is Logistic Regression.
+
+At the same time, effective agent training depends on the \DIFdelbegin \DIFdel{subject's data that was used to train it. Results show that }\DIFdelend \DIFaddbegin \DIFadd{OHC's training data. Results confirm the futility or complexity of using Transfer Learning~\mbox{%DIFAUXCMD
+\cite{Wu2016}}\hspace{0pt}%DIFAUXCMD
+: }\DIFaddend training a classifier with data \DIFdelbegin \DIFdel{of one subject, but using it to classify the events of experiences of another subject does not lead to an improvement on }\DIFdelend \DIFaddbegin \DIFadd{obtained from one OHC, and using }\DIFaddend the \DIFaddbegin \DIFadd{same classifier to identify ErrPs for another OHC does not increases the }\DIFaddend performance of the agent.  Despite that, the rewards generated from different \DIFdelbegin \DIFdel{subjects }\DIFdelend \DIFaddbegin \DIFadd{subject's classifiers }\DIFaddend can be used to train the same Q-Table to improve its performance, which may lead to strategies where the overall performance is \DIFdelbegin \DIFdel{improved }\DIFdelend \DIFaddbegin \DIFadd{enhanced }\DIFaddend based on the information from different human critics at the same time.  \DIFdelbegin %DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{One additional aspect to remark is the robustness of the learning strategy based on Q-Learning~\mbox{%DIFAUXCMD
+\cite{Bauer2015,Rubin2012}}\hspace{0pt}%DIFAUXCMD
+.
+The obtained accuracy to discriminate ErrPs is low.  However, even with such a lower accuracy values, the RL algorithm was able to extract meaningful information from rewards that were helpful to improve the agent performance}\DIFdelend \DIFaddbegin \DIFadd{There seems to be an agreement in terms of the subjective interpretation of what may be an appropriate movement to reach the goal.
+}
+
+\DIFadd{The simple setup of the grid-based game allows further experimentation, using the reduction on the number of average steps to reach the goal as a validation of the achieved information transfer.  It will be of research interest to verify if the smooth progression towards the end alters the shape of the ErrP response, how the ErrP response is triggered in relation with different shapes and colors of the board markers~\mbox{%DIFAUXCMD
+\cite{EIMER1997143}}\hspace{0pt}%DIFAUXCMD
+, or if there is a differential ErrP signal component in relation to up, down, left and right movements.  In addition, the outcome of manipulating the stimulus could be further studied as well as the influence on the results if incentives are given to participants}\DIFaddend .
+
+Further work will be conducted in order to increase the complexity of the game to allow the possibility that the target position \DIFdelbegin \DIFdel{be }\DIFdelend \DIFaddbegin \DIFadd{is }\DIFaddend dynamically changed.  \DIFdelbegin \DIFdel{In that case the agent would start to learn to follow the target, instead of learning to go to a specific static destination spot.  Additionally, the }\DIFdelend \DIFaddbegin \DIFadd{Although we found that the best performing classifier is Logistic Regression, there is room for improvement.  The }\DIFaddend classifier could be enhanced to recognize \DIFdelbegin \DIFdel{more effectively }\DIFdelend the Error Potential~\cite{Iwane2017} \DIFdelbegin \DIFdel{.
+}\DIFdelend \DIFaddbegin \DIFadd{more effectively or could be pre-trained to allow higher accuracy~\mbox{%DIFAUXCMD
+\cite{Spuler2012}}\hspace{0pt}%DIFAUXCMD
+.
+}\DIFaddend 
+
+\DIFdelbegin \DIFdel{Concluding, this research show evidence that brain signals can be used as an interface between human and a gaming computer enabling an alternative communication with the system without explicit input from the user.
+}\DIFdelend %DIF > Concluding, this research shows evidence that brain signals can be used as an interface between human and a gaming computer enabling an alternative communication with the system without explicit input from the user.
+
+
+% if have a single appendix:
+%\appendix[Proof of the Zonklar Equations]
+% or
+%\appendix  % for no appendix heading
+% do not use \section anymore after \appendix, only \section*
+% is possibly needed
+
+% use appendices with more than one appendix
+% then use \section to start each appendix
+% you must declare a \section before using any
+% \subsection or using \label (\appendices by itself
+% starts a section numbered zero.)
+%
+
+% use section* for acknowledgment
+\section*{Acknowledgment}
+
+The authors would like to thank the Laboratory Centro de Inteligencia Computacional and to ITBA University.
+
+\section*{Funding}
+This work was supported by the grant ITBACyT-15 issued by ITBA University.
+
+% Can use something like this to put references on a page
+% by themselves when using endfloat and the captionsoff option.
+\ifCLASSOPTIONcaptionsoff
+  \newpage
+\fi
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+\bibliographystyle{IEEEtran}
+\bibliography{References}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+% biography section
+%
+% If you have an EPS/PDF photo (graphicx package needed) extra braces are
+% needed around the contents of the optional argument to biography to prevent
+% the LaTeX parser from getting confused when it sees the complicated
+% \includegraphics command within an optional argument. (You could create
+% your own custom macro containing the \includegraphics command to make things
+% simpler here.)
+%\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
+% or if you just want to reserve a space for a photo:
+
+%\begin{IEEEbiography}{Michael Shell}
+%Biography text here.
+%\end{IEEEbiography}
+
+% if you will not have a photo at all:
+%\begin{IEEEbiographynophoto}{John Doe}
+%Biography text here.
+%\end{IEEEbiographynophoto}
+
+% insert where needed to balance the two columns on the last page with
+% biographies
+%\newpage
+
+%\begin{IEEEbiographynophoto}{Jane Doe}
+%Biography text here.
+%\end{IEEEbiographynophoto}
+
+% You can push biographies down or up by placing
+% a \vfill before or after them. The appropriate
+% use of \vfill depends on what kind of text is
+% on the last page and whether or not the columns
+% are being equalized.
+
+%\vfill
+
+% Can be used to pull up biographies so that the bottom of the last one
+% is flush with the other column.
+%\enlargethispage{-5in}
+
+
+
+% that's all folks
+\end{document}

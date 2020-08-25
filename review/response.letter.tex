@@ -129,7 +129,7 @@ Nevertheless, the paper could be improved in many ways. An obvious point would b
 
 \begin{quotation}
 {\color{blue}
-We added a new classifier and performed two more experiments.  First we included kNeighbours as a new classification algorithm.  This can be seen in Section C and in Figure 3.  In that same Figure, we also added results obtained while performing signal averaging to enhance the SNR of the ErrP component. Moreover, we performed a complete transfer learning experiment, verifying if it was possible to improve the efficiency of the gaming agent and verified that the best results for the improvement (i.e. reduction) on the average number of steps, required to reach the target in 200 plays, is achieved when a classifier is trained with ErrP signals from the same subject that is used to identify the ErrP.    This is added in Section IV and in Figure 7.
+We added a new classifier and performed two more experiments.  First we included kNeighbours as a new classification algorithm.  This can be seen in Section C and in Figure 3.  In that same Figure, we also added results obtained while performing signal averaging to enhance the SNR of the ErrP component. Moreover, we performed a complete transfer learning experiment, verifying if it was possible to improve the efficiency of the gaming agent and verified that the best results for the improvement (i.e. reduction) on the average number of steps, required to reach the target in 200 plays, is achieved when a classifier is trained with ErrP signals from the same subject that is used to identify the ErrP.    This is added in Section III and in Figure 7.
 On the other hand, the structure of the game scenario allows to easily extend the experiments to verify what is the outcome of manipulating the stimulus, their presentation or the influence on the results if incentives are given to participants.  We added this compelling ideas to the Section IV.
 }
 \end{quotation}
@@ -239,7 +239,7 @@ P3, 41 define MNE
 \vspace{2em}
 \begin{quotation}
 {\color{blue}
-Historically MNE standed for Minimum Error Estimate, a software package developed in Martinos Center of Harvard University.  Now MNE  is the name of a entire software platform to perform analysis of several type of brain signals like Magnetoencephalograpy and Electroencephalography.  We added a clarification about this on Section II.C.
+Historically MNE stands for Minimum Error Estimate, a software package developed in Martinos Center of Harvard University.  Now MNE  is the name of a entire software platform to perform analysis of several type of brain signals like Magnetoencephalograpy and Electroencephalography.  We added a clarification about this on Section II.C.
 }
 \end{quotation}
 \vspace{2em}
@@ -249,7 +249,7 @@ P3, 56 Thus, each epoch is composed of a matrix 500 x 8. // add channels
 \vspace{2em}
 \begin{quotation}
 {\color{blue}
-Excellent.  We added that information.
+Excellent.  We added that information on Page 3.
 }
 \end{quotation}
 \vspace{2em}
@@ -262,7 +262,7 @@ P4, 32 Hence, following the iterative procedure based on Equation 1, the Q-Table
 {\color{blue}
 
 When the gaming agent moves randomly on the board of Figure 2, it takes on average 100 steps to arrive to the final location on the grid.  Each step, the movement direction is performed once every 2 seconds, so on average it takes around 200 seconds to finish the game.  After training during \textit{run sessions} (check new Section II.F), the agent starts to use the Q-Table to decide the next movement.  However, the Q-Table could potentially end up producing endless loops or deadlocks so if the steps count arrives to 200 the game is interrupted and it starts all over again.
-So far we didn't test if the Error Potential is affected by the smooth progression toward the end, which is indeed something interesting to verify in this simple scenario.  We added this very interesting extension in Section IV.
+So far we didn't test if the Error Potential is affected by the smooth progression toward the end, which is indeed something interesting to verify in this simple scenario.  We added this very appealing extension in Section IV.
 
 }
 \end{quotation}
@@ -351,7 +351,7 @@ Page 6, 40
 \vspace{2em}
 \begin{quotation}
 {\color{blue}
-Yes, the Reviewer is correct.  We modified this sentence to state more clearly the message that we wanted to convey, which is, that results are completely subject dependent.  But that even when many action should be tagged as "wrong" (triggering an ErrP) only with a few of them right, it is enough to train the agent towards the optimal solution.
+Yes, the Reviewer is correct.  We modified this sentence to state more clearly the message that we wanted to convey, which is, that results are completely subject dependent, and that even when many actions should be tagged as "wrong" (triggering an ErrP) only with a few of them accurate, it is enough to train the agent towards the optimal solution.
 }
 \end{quotation}
 \vspace{2em}
@@ -367,7 +367,7 @@ Are there differential err potential for up, down, left, right?
 \vspace{2em}
 \begin{quotation}
 {\color{blue}
-The statement is absolutely right.  We extended this experience per Reviewer's suggestion and we verified that effectively the only combination of training/testing in the recognition of ErrP that produces an improvement on the performance of the agent is the one that uses information from the same subject (check new Figure 7).   We think a generic-classifier to identify ErrP potentials for any subject (i.e. without calibration) is a research goal of the BCI community because this will allow to have more robust, easier to use, with shorter setups  BCI devices (Suller 2012,\textit{Online use of error-related potentials in healthy users and people with severe motor impairment increases performance of a P300-BCI}).  If such a generic pre-trained classifier could be conceived, this simple game can be used to verify if the number of training sessions required is reduced and this will confirm that the pre-trained classifier is helping to do it more quickly.  We didn't verify if the error potential for up, down, left, right per se produces a different error potential, though we verified that in general getting farther from the target (in Manhattan distance) produces a signal which is slightly different from the one that is produced when the gaming agent moves closer to the target.  We added these very interesting lines of further exploration in Section IV.
+The statement is absolutely right.  We extended this experience per Reviewer's suggestion and we verified that effectively the only combination of training/testing in the identification of ErrP that produces an improvement on the performance of the agent is the one that uses information from the same subject (check new Figure 7).   We think a generic-classifier to identify ErrP potentials for any subject (i.e. without calibration) is a research goal of the BCI community because this will allow to have more robust, easier to use, with shorter setups  BCI devices (Suller 2012,\textit{Online use of error-related potentials in healthy users and people with severe motor impairment increases performance of a P300-BCI}).  If such a generic pre-trained classifier could be conceived, this simple game can be used to verify if the number of training sessions required is reduced and this will confirm that the pre-trained classifier is helping to do it more quickly.  We didn't verify if the error potential for up, down, left, right per se produces a different error potential, though we verified that in general getting farther from the target (in Manhattan distance) produces a signal which is slightly different from the one that is produced when the gaming agent moves closer to the target.  We added these very interesting lines of further exploration in Section IV.
 }
 \end{quotation}
 \vspace{2em}
@@ -393,7 +393,7 @@ It is unclear to me the benefit of evaluating single subject to single subject o
 
 \begin{quotation}
 {\color{blue}
-We tested many variants of simple games and we found that only the one proposed here produced a distinctive  ErrP response. The single subject accuracy that is presented on Figure 5(now) shows the level of ErrP single trial identification that we achieved for different subjects (which is low).  We wanted to emphasize the finding that even with such low levels of identification, it was possible for the agent to learn an efficient strategy.
+We tested many variants of simple games and we found that only the one proposed here produced a distinctive  ErrP response. The single subject accuracy that is presented on Figure 5(now) shows the level of ErrP single trial identification that we achieved for different subjects (which is low).  We wanted to emphasize the finding that even with such low levels of identification, it was possible for the agent to learn an efficient strategy.  The accuracy obtained in each single subject is representing the ability of the classifier to identify the ErrP response and to produce accurate rewards for the reinforcement learning scheme.
 }
 \end{quotation}
 
@@ -409,7 +409,7 @@ Maybe classification accuracy could be reported at different steps (depending on
 
 \begin{quotation}
 {\color{blue}
-The classification accuracy obtained for all subject is now being shown on Figure 5 with ROC curves.  What is shown progressively is the experiment itself, where after each gaming agent training match, a new Q-Table is generated based on the rewards tagged from the brainwave session.  The agent improves their efficiency by reaching the target in a progressively less number of steps on average for each run session.
+The classification accuracy obtained for all subject is now being shown on Figure 5 with ROC curves.  We shown progressively the experiment itself, where after each gaming agent training match, a new Q-Table is generated based on the rewards tagged from the brainwave session.  The agent improves their efficiency by reaching the target in a progressively less number of steps on average for each run session.
 }
 \end{quotation}
 
@@ -419,7 +419,7 @@ What is the ratio of hit/no hit segments of action (epochs)?
 
 \begin{quotation}
 {\color{blue}
-The ratio hit/no-hit segments is 50/50, so for each brainwave session match, as the average number of steps is around 100, it will be 50 segments of hit (moving further from the target) and 50 of no-hit (moving closer).  
+The ratio hit/no-hit segments is 50/50, so for each brainwave session match, as the average number of steps is around 100, it will be 50 segments of hit (moving farther from the target) and 50 of no-hit (moving closer).  
 }
 \end{quotation}
 
