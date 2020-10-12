@@ -517,10 +517,11 @@ Given the scenario, Reinforcement Learning (RL)~\cite{Sutton2018} stands out as 
 
 %By using variants of this technique, in 2015 AlphaGo won 5 matches against 3-times European Champion, Mr Fan Hui. AlphaGo then went on to compete against Mr Lee Sedol, winner of 18 world titles and considered to be the greatest player until then, and won 4 out of 5 matches in 2016 \cite{ALPHA-GO}.
 
-Previous research has explored the usage of RL with reward signals based on brain activity, recorded by an EEG-based BCI system during task execution. The papers \cite{ROBOT-CONTROL-PAPER,Kim2017,Omedes2013} have successfully demonstrated that a robot can be controlled with brain signals from a person who is observing a robot solve a task.  Moreover, a growing number of studies have demonstrated the feasibility of using ErrPs as rewards for RL schemes such as to enhance robotic behaviour~\cite{Luo2019}, to assess air traffic controller's decisions~\cite{Goh2019} or to categorize actions as errors~\cite{Wirth2020}. Other approaches have used these signals as important feedback for human-robot interaction or to implement shared-control strategies~\cite{Schiatti2018}.  Additionally, ErrPs have also been used in the context of games as an additional feedback channel that can be explored to improve gaming experience~\cite{Plass-OudeBos2010,kober2018bci}.
+Previous research has explored the usage of RL with reward signals based on brain activity, recorded by an EEG-based BCI system during task execution. The papers \cite{ROBOT-CONTROL-PAPER,Kim2017,Omedes2013} have successfully demonstrated that a robot can be controlled with brain signals from a person who is observing a robot solve a task.  Moreover, a growing number of studies have demonstrated the feasibility of using ErrPs as rewards for RL schemes such as to enhance robotic behaviour~\cite{Luo2019}, to assess air traffic controller's decisions~\cite{Goh2019} or to categorize actions as errors~\cite{Wirth2020}. Other approaches have used these signals as important feedback for human-robot interaction or to implement shared-control strategies~\cite{Schiatti2018}.  Additionally, ErrPs have also been used in the context of games as an additional feedback channel that can be explored to improve gaming experience~\cite{Plass-OudeBos2010,kober2018bci}.   The game is similar to this one \cite{Iturrate2013}.
 
-Therefore,  we aim to use the information extracted from brainwaves to enhance the performance of a gaming agent.  The three contributions are (1) a simple game that can elicit the ErrP potential, (2) results that confirm that even when ErrP classification accuracy is low and produces a noisy reward signal, enough information is generated for an agent to learn the optimal policy and solve a simple game and (3) collaborative rewards from multiple observational human observers can compensate the lack of classification accuracy or the inefficacy of transfer learning procedures for brainwaves signals.
+Therefore,  we aim to use the information extracted from brainwaves to enhance the performance of a gaming agent.  The three contributions are (1) a simple game mechanics and agent that can elicit the ErrP potential, (2) results that confirm that even when ErrP classification accuracy is low but with a high specificity and produces a noisy reward signal, enough information is generated for an agent to learn the optimal policy and solve a simple game and (3) collaborative rewards from multiple observational human observers can compensate the lack of classification accuracy or the inefficacy of transfer learning procedures for brainwaves signals.
 
+%However, even though this implies that the agent misses frequently that an action taken is wrong, this is not hindering the overall performance and the agent is still learning
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
@@ -648,7 +649,7 @@ The Acquisition Server receives and synchronizes the signal data from the headse
 %This section details the game system characteristics, the brainwave session process and the retrieval and analysis of the generated data from the subjects interaction with the system.
 
 \label{cognitive_experiment_system}{
-The game parsimoniously consists of a $5x5$ grid of grey circular spots with a black background.  A blue spot indicates the current position of the agent and a green spot represents the goal, as shown in Figure  \ref{fig:game_representation}. The agent's objective is to reach the goal. The circular spot representing the goal remains static at the bottom-right position of the grid, while the one representing the position of the agent starts at the upper-left position of the grid and moves in each iteration.  When the agent reaches the goal, the position where the agent and the goal are located turns red, showing that the match has ended. There are four possible movements that the agent can perform: it can go upwards, downwards, towards the left and the right, and those movements are bounded to avoid the agent from leaving the grid. The movement direction is selected randomly and is executed once every 2 seconds.  After each gameplay, there is a pause of 5 seconds until the next match starts. Each time an agent moves, the Game Manager program sends an event marker to the Acquisition Server.  This is considered a stimulus to the observational human critic.  The game is designed as to be evident whenever there is an error (i.e. the agent moves away from the objective) so the subject can notice it immediately after the stimulus is presented, possibly triggering the expected cognitive response, which can be imprinted as an ErrP component within the EEG stream.
+The game parsimoniously consists of a $5x5$ grid of grey circular spots with a black background.  It is similar to the one proposed by~\cite{Iturrate2013}.  A blue spot indicates the current position of the agent and a green spot represents the goal, as shown in Figure  \ref{fig:game_representation}. The agent's objective is to reach the goal. The circular spot representing the goal remains static at the bottom-right position of the grid, while the one representing the position of the agent starts at the upper-left position of the grid and moves in each iteration.  When the agent reaches the goal, the position where the agent and the goal are located turns red, showing that the match has ended. There are four possible movements that the agent can perform: it can go upwards, downwards, towards the left and the right, and those movements are bounded to avoid the agent from leaving the grid. The movement direction is selected randomly and is executed once every 2 seconds.  After each gameplay, there is a pause of 5 seconds until the next match starts. Each time an agent moves, the Game Manager program sends an event marker to the Acquisition Server.  This is considered a stimulus to the observational human critic.  The game is designed as to be evident whenever there is an error (i.e. the agent moves away from the objective) so the subject can notice it immediately after the stimulus is presented, possibly triggering the expected cognitive response, which can be imprinted as an ErrP component within the EEG stream.
 
 \begin{figure}[h!]
 \begin{subfigure}{0.5\textwidth}
@@ -725,8 +726,8 @@ Hence, following the iterative procedure based on Equation~\ref{equ:update_q_tab
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.6\textwidth]{revisedimages/avg_closer.eps}
-    \includegraphics[width=0.6\textwidth]{revisedimages/avg_further.eps}
+    \includegraphics[width=0.5\textwidth]{revisedimages/avg_closer.eps}
+    \includegraphics[width=0.5\textwidth]{revisedimages/avg_further.eps}
     \caption{Grand Average for all OHCs for the closer and further condition.  It can be seen the bump around 300 ms.}
     \label{fig:classifiers}
 \end{figure}
@@ -736,7 +737,7 @@ Figure~\ref{fig:classifiers} shows the binary classification accuracy obtained f
 \begin{figure}[ht]
     \centering
     \includegraphics[scale=0.11]{revisedimages/cross_val.eps}
-    \includegraphics[height=40pt,width=1.20\textwidth]{revisedimages/avg_5_segments.eps}
+    \includegraphics[scale=0.21]{revisedimages/avg_5_segments.eps}
     \caption{Binary single trial classification score using five different classifiers while recognizing ErrP potentials for the eight OHCs.  The classification score using an ensemble average of 5 epochs is shown as well (GrandAvg). Chance Level is 0.5.}
     \label{fig:classifiers}
 \end{figure}
@@ -800,7 +801,7 @@ Figure~\ref{fig:avg_steps_noise} shows the result of an agent successively train
 \label{fig:avg_steps_noise}
 \end{figure}
 
-Electroencephalographic signals have high inter-subject variability~\cite{Chavarriaga2014}.  This is evidenced in Figure~\ref{fig:transferlearning} where the agent training is performed with rewards obtained by classifying epochs from one Tester OHC and a classifier that was trained using the brainwaves from a different Trainer OHC.  The figure shows the cumulative variation for all run sessions on the average number of steps required to reach the goal after training the agent with all the available matches from the brainwave session.  Enhancements are shown as negative values.  Only the diagonal of the heatmap matrix shows a clear improvement in terms of the reduction of the required number of steps to reach the goal (averaged per 200 runs) which corresponds to the same information for each OHC shown in Figure~\ref{fig:avg_steps}.  For the transfer learning experiment~\cite{Wu2016}, no performance gain is evidenced, the agents learn nothing and this implies that the reward information is useless.
+Electroencephalographic signals have high inter-subject variability~\cite{Chavarriaga2014}.  This is evidenced in Figure~\ref{fig:transferlearning} where the agent training is performed with rewards obtained by classifying epochs from one Tester OHC and a classifier that was trained using the brainwaves from a different Trainer OHC.  The figure shows the cumulative variation for all run sessions on the average number of steps required to reach the goal after training the agent with all the available matches from the brainwave session.  Enhancements are shown as negative values.  Only the diagonal of the heatmap matrix shows a clear improvement in terms of the reduction of the required number of steps to reach the goal (averaged per 200 runs) which corresponds to the same information for each OHC shown in Figure~\ref{fig:avg_steps}.  For the transfer learning experiment~\cite{Wu2016}, no performance gain is evidenced, the agents learn nothing and this implies that the reward information provides no value.
 
 
 \begin{figure}[h!]
@@ -826,16 +827,11 @@ Finally, Figure~\ref{fig:avg_steps_all} shows the result of training an agent wi
 
 %Enfatizar la idea de que la mejor métrica de la propia detección está dada por la propia capacidad del agente de minimizar su tarea, que hay un flujo de información que involucra la propia percepción de la persona.
 
-This work aims to propose a simple game that can use the ErrP component to train a gaming agent using a RL model. The collected data shows that ErrP signals can in fact be classified and used to train an agent effectively.
+This work aims to propose a simple game mechanics that can use the ErrP component to train a gaming agent using a RL model. The collected data and the shows that ErrP signals can in fact be classified and used to train an agent effectively.
 
 This proposal tries to keep the system as simple as possible, emphasizing information flow from the subjective error perception of the human critic. Rewards are generated using the signal processing and classification pipeline, and the Q-Table updates, enhancing the performance of the gaming agent.
 
-One additional aspect to remark is the robustness of the learning strategy based on Q-Learning~\cite{Bauer2015,Rubin2012}.  
-
-The obtained accuracy to discriminate ErrPs is low, similar results were obtained in  \cite{Ehrlich2016}.
-
-
-However, even with such low accuracy values, the RL algorithm was able to extract meaningful information from rewards that were helpful to improve, and often maximize, the agent's performance.  Additionally, one important aspect of the classification results is the low percentage of false positives (Figure~\ref{fig:confusionmatrix}), showing a high specificity. On the other hand, the percentage of false negatives is generally higher.  However, even though this implies that the agent misses frequently when a wrong action takes place, this is not hindering the overall performance and the agent is still learning. Though scarce, accurate rewards are very useful for the RL algorithm.
+One additional aspect to remark is the robustness of the learning strategy based on Q-Learning~\cite{Bauer2015,Rubin2012}.   The obtained accuracy to discriminate ErrPs is low, though on the same level to other similar results~\cite{Iturrate2013,Ehrlich2016}.  In this regard, dispite of the subjectivity of the ErrP response in terms of the proposed experiment, levels of 90\% of accuracy are reported~\cite{Chavarriaga2014}.  However, even with such low accuracy values, the RL algorithm was able to extract meaningful information from rewards that were helpful to improve, and often maximize, the agent's performance.  Additionally, one important aspect of the classification results is the low percentage of false positives (Figure~\ref{fig:confusionmatrix}), showing a high specificity. On the other hand, the percentage of false negatives is generally higher.  However, even though this implies that the agent misses frequently when a wrong action takes place, this is not hindering the overall performance and the agent is still learning. Though scarce, accurate rewards are very useful for the RL algorithm.
 %However, even though this imply that the agent misses frequently that an action taken is wrong, this do not seems to be a serious issue because the agent improves its performance.
 
 
