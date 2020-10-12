@@ -375,9 +375,17 @@
 % was not built to handle multiple paragraphs
 %
 
-\author{Bartolomé Francisco, Moreno Juan,  Navas Natalia, Vitali José, \\
-Ramele~Rodrigo,~\IEEEmembership{Member,~IEEE,}
-        Santos~Juan~Miguel% <-this % stops a space
+\author{
+\IEEEauthorblockN{%
+  Bartolomé~Francisco\textsuperscript{\textsection}, 
+  Moreno~Juan\textsuperscript{\textsection},  
+  Navas~Natalia\textsuperscript{\textsection}, 
+  Vitali~José\textsuperscript{\textsection}, \\
+  Ramele~Rodrigo,~\IEEEmembership{Member,~IEEE,}
+  Santos~Juan~Miguel% <-this % stops a space
+  }%
+  
+
 \thanks{R. Ramele and J.M.Santos are with the Department
 of Computer Engineering, Instituto Tecnológico de Buenos Aires(ITBA), Argentina,
 e-mail: rramele@itba.edu.ar.}% <-this % stops a space
@@ -426,6 +434,9 @@ e-mail: rramele@itba.edu.ar.}% <-this % stops a space
 
 % make the title area
 \maketitle
+\begingroup\renewcommand\thefootnote{\textsection}
+\footnotetext{Equal contribution}
+\endgroup
 
 % As a general rule, do not put math, special symbols or citations
 % in the abstract or keywords.
@@ -711,14 +722,25 @@ Hence, following the iterative procedure based on Equation~\ref{equ:update_q_tab
 \section{Results}
 \label{results}
 
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{revisedimages/avg_closer.eps}
+    \includegraphics[width=0.6\textwidth]{revisedimages/avg_further.eps}
+    \caption{Grand Average for all OHCs for the closer and further condition.  It can be seen the bump around 300 ms.}
+    \label{fig:classifiers}
+\end{figure}
+
 Figure~\ref{fig:classifiers} shows the binary classification accuracy obtained for the eight OHCs using five different classification algorithms and using a 10-fold cross-validation procedure.  The best overall performance is obtained using Logistic Regression.  In addition, the classification accuracy obtained averaging 5 epochs is shown as well.  Although the signal averaging procedure improves the Signal-To-Noise-Radio (SNR) of the ErrP response, it reduces the number of data samples, producing a clear improvement only for the OHCs that contain more samples (1, 3 and 7).
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[scale=0.12]{revisedimages/cross_val.eps}
+    \includegraphics[scale=0.11]{revisedimages/cross_val.eps}
+    \includegraphics[height=40pt,width=1.20\textwidth]{revisedimages/avg_5_segments.eps}
     \caption{Binary single trial classification score using five different classifiers while recognizing ErrP potentials for the eight OHCs.  The classification score using an ensemble average of 5 epochs is shown as well (GrandAvg). Chance Level is 0.5.}
     \label{fig:classifiers}
 \end{figure}
+
 
 On the other hand, Figure \ref{fig:avg_steps} shows the average amount of steps it takes for the agent to reach the goal for each OHC, as the Q-Table is progressively trained using the reward information obtained from the prediction of the trained classifier. Each point corresponds to a run session where the average number of steps for the agent to reach the goal using a specific Q-Table is specified, for 200 repetitions. The first point, at the x-value 0, represents the number of steps the agent takes to reach the goal with an untrained Q-Table, where movements are decided randomly. The next point corresponds to the amount of steps it takes to reach the goal using a policy derived from a Q-Table trained after one brainwave session match, and so on.
 
