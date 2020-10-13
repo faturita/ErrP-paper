@@ -732,12 +732,19 @@ Hence, following the iterative procedure based on Equation~\ref{equ:update_q_tab
     \label{fig:classifiers}
 \end{figure}
 
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=1.0]{revisedimages/electrodes.png}
+    \caption{Grand Average for all OHCs for the closer and further condition.  It can be seen the bump around 300 ms.}
+    \label{fig:classifiers}
+\end{figure}
+
 Figure~\ref{fig:classifiers} shows the binary classification accuracy obtained for the eight OHCs using five different classification algorithms and using a 10-fold cross-validation procedure.  The best overall performance is obtained using Logistic Regression.  In addition, the classification accuracy obtained averaging 5 epochs is shown as well.  Although the signal averaging procedure improves the Signal-To-Noise-Radio (SNR) of the ErrP response, it reduces the number of data samples, producing a clear improvement only for the OHCs that contain more samples (1, 3 and 7).
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[scale=0.11]{revisedimages/cross_val.eps}
-    \includegraphics[scale=0.21]{revisedimages/avg_5_segments.eps}
+    \includegraphics[width=0.5\textwidth,height=70pt]{revisedimages/cross_val.eps}
+    %\includegraphics[width=290pt,height=90pt]{revisedimages/avg_5_segments.eps}
     \caption{Binary single trial classification score using five different classifiers while recognizing ErrP potentials for the eight OHCs.  The classification score using an ensemble average of 5 epochs is shown as well (GrandAvg). Chance Level is 0.5.}
     \label{fig:classifiers}
 \end{figure}
