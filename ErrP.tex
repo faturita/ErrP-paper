@@ -517,7 +517,7 @@ Given the scenario, Reinforcement Learning (RL)~\cite{Sutton2018} stands out as 
 
 %By using variants of this technique, in 2015 AlphaGo won 5 matches against 3-times European Champion, Mr Fan Hui. AlphaGo then went on to compete against Mr Lee Sedol, winner of 18 world titles and considered to be the greatest player until then, and won 4 out of 5 matches in 2016 \cite{ALPHA-GO}.
 
-Previous research has explored the usage of RL with reward signals based on brain activity, recorded by an EEG-based BCI system during task execution. The papers \cite{ROBOT-CONTROL-PAPER,Kim2017,Omedes2013} have successfully demonstrated that a robot can be controlled with brain signals from a person who is observing a robot solve a task.  Moreover, a growing number of studies have demonstrated the feasibility of using ErrPs as rewards for RL schemes such as to enhance robotic behaviour~\cite{Luo2019}, to assess air traffic controller's decisions~\cite{Goh2019} or to categorize actions as errors~\cite{Wirth2020}. Other approaches have used these signals as important feedback for human-robot interaction or to implement shared-control strategies~\cite{Schiatti2018}.  Additionally, ErrPs have also been used in the context of games as an additional feedback channel that can be explored to improve gaming experience~\cite{Plass-OudeBos2010,kober2018bci}.   The game is similar to this one \cite{Iturrate2013}.
+Previous research has explored the usage of RL with reward signals based on brain activity, recorded by an EEG-based BCI system during task execution. The papers \cite{ROBOT-CONTROL-PAPER,Kim2017,Omedes2013} have successfully demonstrated that a robot can be controlled with brain signals from a person who is observing a robot solve a task.  Moreover, a growing number of studies have demonstrated the feasibility of using ErrPs as rewards for RL schemes such as to enhance robotic behaviour~\cite{Luo2019}, to assess air traffic controller's decisions~\cite{Goh2019} or to categorize actions as errors~\cite{Wirth2020}. Other approaches have used these signals as important feedback for human-robot interaction or to implement shared-control strategies~\cite{Schiatti2018,Iturrate2013}.  Additionally, ErrPs have also been used in the context of games as an additional feedback channel that can be explored to improve gaming experience~\cite{Plass-OudeBos2010,kober2018bci}. 
 
 Therefore,  we aim to use the information extracted from brainwaves to enhance the performance of a gaming agent.  The three contributions are (1) a simple game mechanics and agent that can elicit the ErrP potential, (2) results that confirm that even when ErrP classification accuracy is low but with a high specificity and produces a noisy reward signal, enough information is generated for an agent to learn the optimal policy and solve a simple game and (3) collaborative rewards from multiple observational human observers can compensate the lack of classification accuracy or the inefficacy of transfer learning procedures for brainwaves signals.
 
@@ -724,28 +724,24 @@ Hence, following the iterative procedure based on Equation~\ref{equ:update_q_tab
 \label{results}
 
 
+
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.5\textwidth]{revisedimages/avg_closer.eps}
     \includegraphics[width=0.5\textwidth]{revisedimages/avg_further.eps}
-    \caption{Grand Average for all OHCs for the closer and further condition.  It can be seen the bump around 300 ms.}
+        \includegraphics[scale=1.0]{revisedimages/electrodes.png}
+    \caption{Grand Average of 2-seconds segments for all OHCs for the "move closer" (top) and "move further" (middle) condition.  The increased height of the first peak around 0.4 seconds reflects the Error Potential response particularly on Pz, based on the electrode layout (bottom).}
     \label{fig:classifiers}
 \end{figure}
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[scale=1.0]{revisedimages/electrodes.png}
-    \caption{Grand Average for all OHCs for the closer and further condition.  It can be seen the bump around 300 ms.}
-    \label{fig:classifiers}
-\end{figure}
 
-Figure~\ref{fig:classifiers} shows the binary classification accuracy obtained for the eight OHCs using five different classification algorithms and using a 10-fold cross-validation procedure.  The best overall performance is obtained using Logistic Regression.  In addition, the classification accuracy obtained averaging 5 epochs is shown as well.  Although the signal averaging procedure improves the Signal-To-Noise-Radio (SNR) of the ErrP response, it reduces the number of data samples, producing a clear improvement only for the OHCs that contain more samples (1, 3 and 7).
+Figure~\ref{fig:classifiers} shows the binary classification accuracy obtained for the eight OHCs using five different classification algorithms and using a 10-fold cross-validation procedure.  The best overall performance is obtained using Logistic Regression.  
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.5\textwidth,height=70pt]{revisedimages/cross_val.eps}
     %\includegraphics[width=290pt,height=90pt]{revisedimages/avg_5_segments.eps}
-    \caption{Binary single trial classification score using five different classifiers while recognizing ErrP potentials for the eight OHCs.  The classification score using an ensemble average of 5 epochs is shown as well (GrandAvg). Chance Level is 0.5.}
+    \caption{Binary single trial classification score using five different classifiers while recognizing ErrP potentials for the eight OHCs.   Chance Level is 0.5.}
     \label{fig:classifiers}
 \end{figure}
 
@@ -793,7 +789,7 @@ In the case for OHC 5 and 6, the reward information obtained from the brainwaves
   \includegraphics[scale=0.09]{revisedimages/roc_7.eps}    \hspace{-1.5em}
   \includegraphics[scale=0.09]{revisedimages/roc_8.eps} \\
 \end{subfigure}
-\caption{ROC Curves for OHCs 1-8. True positive rate is on the vertical axis and false positive rate on the horizontal axis.}
+\caption{ROC Curves for OHCs 1-8. True positive rate is on the vertical axis and false positive rate on the horizontal axis.  The ROC curves for ErrP identification for Subjects 5 and 6 show low classification scores.}
 \label{fig:rocsubjects}
 \end{figure}
 
@@ -831,6 +827,10 @@ Finally, Figure~\ref{fig:avg_steps_all} shows the result of training an agent wi
 
 \section{Conclusion}
 \label{conclusions}
+
+Each time the gaming agent plays this simple game, it takes on average around 100 steps to reach the target spot.  We trained a classifier to recognize Error Potential from observational human critics that watch the agent playing the game.  We let the agent play again and we mark movements that trigger an error potential from the human critic.  We used those movements as rewards in a Reinforcement Learning scheme, and use them to train a Q-Table.  When we let the agent plays the game again, the number of steps that requires to solve the game is now reduced.  If we provide feedback based on random signals, we verified that no reduction is achieved and the average number of steps does not change.   This shows that there is an effective transfer of information from the brainwaves to the agent.   As this process is repeated, the agent keeps improving solving the game effectively, i.e. performing the minimum number of required steps to reach the goal.
+
+
 
 %Enfatizar la idea de que la mejor métrica de la propia detección está dada por la propia capacidad del agente de minimizar su tarea, que hay un flujo de información que involucra la propia percepción de la persona.
 

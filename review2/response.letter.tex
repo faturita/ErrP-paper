@@ -172,7 +172,7 @@ The abstract still reads like an introduction until the last sentence.  I would 
 
 \begin{quotation}
 {\color{blue}
-We started the abstract as suggested, thank you very much for it.  We rewrote the abstract detailing the obtained results.
+We started the abstract as suggested, and rewrote it detailing the obtained results.   Thank you very much for your suggestion.
 }
 \end{quotation}
 
@@ -183,7 +183,10 @@ Both the underlined terms need to cite evidence from the paper.
 
 \begin{quotation}
 {\color{blue}
-We included this information in the abstract and added it in the Conclusions Section (IV).
+We included the following information in the abstract and added it in the Conclusions Section (IV), showing evidence from the paper.
+
+Each time the gaming agent plays this simple game, it takes on average around 100 steps to reach the target spot.  We trained a classifier to recognize Error Potential from observational human critics that watch the agent playing the game.  We let the agent play again and we mark movements that trigger an error potential from the human critic.  We used those movements as rewards in a Reinforcement Learning scheme, and use them to train a Q-Table.  When we let the agent plays the game again, the number of steps that requires to solve the game is now reduced.  If we provide feedback based on random signals, we verified that no reduction is achieved and the average number of steps does not change.   This shows that there is an effective transfer of information from the brainwaves to the agent.   As this process is repeated, the agent keeps improving solving the game effectively, i.e. performing the minimum number of required steps to reach the goal.
+
 }
 \end{quotation}
 
@@ -191,7 +194,7 @@ Line 40 “This information is used to make a gaming agent $<$that$>$ improves .
 
 \begin{quotation}
 {\color{blue}
-This text is no longer contained in the manuscript.  We verified along the Manuscript to avoid similar mistakes.
+This text is no longer contained in the manuscript.  We verified throughout the Manuscript to avoid similar mistakes.
 }
 \end{quotation}
 
@@ -199,7 +202,7 @@ Line 11 col 2 “how biological agents learn from its $<$their$>$ environment by
 
 \begin{quotation}
 {\color{blue}
-This text is no longer contained in the manuscript.  We verified along the Manuscript to avoid similar mistakes.
+This text is no longer contained in the manuscript.  We verified throughout the Manuscript to avoid similar mistakes.
 }
 \end{quotation}
 
@@ -232,7 +235,7 @@ Line 56 “Data \sout{is} $<$are$>$ handled and processed with the OpenVibe Desi
 
 \begin{quotation}
 {\color{blue}
-Fixed issue for every appearances of \textbf{data is}.
+Fixed issue for every appearances of \textbf{data}.
 }
 \end{quotation}
 
@@ -258,7 +261,7 @@ Line 50 “The best overall performance is obtained using Logistic Regression.�
 
 \begin{quotation}
 {\color{blue}
-On Section IV, third paragraph we tackled this issue.  The overall performance of 0.672 is low.  Although a comparison can be misleading in the context of the ErrP experiment, we added a brief comparison to other similar works.  We also emphasized this point in future works where there is room for improvement in terms of the classification and processing pipeline.
+On Section IV, third paragraph we tackled this issue.  The overall performance of 0.672 is low.  Although a comparison can be misleading in the context of the ErrP experiment, we added a brief comparison to other similar works.  We also emphasized this point in future  works at the end of the Conclusions section.
 }
 \end{quotation}
 
@@ -266,7 +269,7 @@ Line 42 col 2 “These results are also consistent with their classification ROC
 
 \begin{quotation}
 {\color{blue}
-We emphasize on the Figure 6 caption which ROC curves where good which were not so good.  We added this in the text and the important finding that we could not provide an enhencement of the agent for those subjects where the obtained ROC curves were not good.
+Due to previous Reviewer's requests, we added all the ROC curves on the new Figure 7.  We now emphasized on this figure's caption which ROC curves where showing an effective identification of the ErrP potential and which did not.  We added this in the text emphasizing the important finding that we could not provide an enhancement of the agent performance based on the rewards from subjects where the obtained ROC curves were not good.
 }
 \end{quotation}
 
@@ -330,10 +333,10 @@ The authors have satisfactorily addressed my concerns. I have a minor comment re
 
 \begin{quotation}
 {\color{blue}
-We think we misunderstood previous Reviewer suggestions.  We added the brown bar on the previous Figure 3 (now Figure 5) because we assumed the Reviewer was referring to perform a classification using epoched averaged signal segments.  We used 5-segments to obtain an averaged signal with an enhanced signal-to-noise ratio (Wim van Drongelen, 4 - Signal Averaging, Editor(s): Wim van Drongelen, Signal Processing for Neuroscientists, Academic Press, 2007, Pages 55-70,) per Participant, and perfomed the classification of ErrP components based on those averaged signals for each Participant.  We used only Logistic Regression as classificiaton algorithm, as it was the one where we achieved better performance for single signal segments.   We think this is now confusing and decided to remove those brown bars.   
-We have now included a new Figure 3, where we plotted the Grand Average signals over participants for the two experimental conditions.  The top subfigure shows the signals for the "move closer to the target" condition, whereas the bottom subfigure represents the grand average for the "move closer" condition.  
-On the other hand, Figure 9 shows the results of using information to train a classifier with data from one Participant and use it to identify rewards for another participant.  This is performed in a single-trial, without any signal averaging.  
-We apologize for the Reviewer for our misunderstanding and ask back for more information if it feels like the misunderstanding persisted.
+We think we misunderstood previous Reviewer's suggestions.  We added the brown bar on the previous Figure 3 (now Figure 5) because we assumed the Reviewer was referring to perform a classification using epoched averaged signal segments.  We used 5-segments to obtain an averaged signal with an enhanced signal-to-noise ratio (Wim van Drongelen, 4 - Signal Averaging, Editor(s): Signal Processing for Neuroscientists, Academic Press, 2007, Pages 55-70,) per Participant, and performed the classification of ErrP components based on those averaged signals for each Participant.  We used only Logistic Regression as classification algorithm, as it was the one with which we achieved better performance for single signal segments.   It is clear now that the brown bars were confusing and we have decided to remove them.  
+Instead, we have now included a new Figure 3, where we plotted the \textbf{Grand Average} signals over all the participants for the two experimental conditions.  The top subfigure shows the signals for the "move closer to the target" condition, whereas the bottom subfigure represents the grand average for the "move further" condition.  
+On the other hand, Figure 9 shows the results of using information to train a classifier with data from one Participant and use it to identify rewards for another participant.  This is performed in a single-trial approach from individual segments without any signal averaging.  
+We apologize to the Reviewer for our misunderstanding and ask back for more information if it feels like the misunderstanding persisted.
 }
 \end{quotation}
 
