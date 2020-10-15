@@ -36,11 +36,16 @@ AE's Comments to Author:
 
 Associate Editor
 Comments to the Author:
+
 The paper is improved but would benefit from a further update to
-- improve abstract
-- provide further interpretation/discussion of findings
-- fix minor errors/typos
-- address the grand average recommendation
+
+\begin{itemize}
+\item improve abstract
+\item provide further interpretation/discussion of findings
+\item fix minor errors/typos
+\item address the grand average recommendation
+\end{itemize}
+
 
 \section*{\fbox{Reviewer \#1 Transcript:}}
 
@@ -126,21 +131,21 @@ AE's Comments to Author:
 
 Associate Editor
 Comments to the Author:
-The paper is improved but would benefit from a further update to
+The paper is improved but would benefit from a further update to 
+
 - improve abstract
 
 \begin{quotation}
 {\color{blue}
-We rewrote the abstract explaining in further details the obtained results.  
+We have rewrote the abstract explaining in further details the obtained results.  
 }
 \end{quotation}
-
 
 - provide further interpretation/discussion of findings
 
 \begin{quotation}
 {\color{blue}
-We included extra information and verified the contributions/findings.  The abstract was modified as well as the Conclusion (Section IV).
+We included extra information and verified the contributions/findings.  This information was included in the abstract as well as in the Conclusion (Section IV).
 }
 \end{quotation}
 
@@ -165,7 +170,6 @@ We addressed this issue.  We think there could be a misunderstanding from our si
 Comments to the Author
 The paper is improved. The contribution is clearer. Thank you for the reply to comments. I attach some further comments.
 
-Training a Gaming Agent on Brainwaves
 The paper has been improved. IMO, there are still areas that need further attention to improve the paper further.
 Page 1
 The abstract still reads like an introduction until the last sentence.  I would begin with sentence: “Error-related potential (ErrP) are a particular type of ERP that can be elicited by a person who attends a recognizable error.”
@@ -202,7 +206,7 @@ Line 11 col 2 “how biological agents learn from its $<$their$>$ environment by
 
 \begin{quotation}
 {\color{blue}
-This text is no longer contained in the manuscript.  We verified throughout the Manuscript to avoid similar mistakes.
+We fixed this grammatical error.  Thank you very much for noticing it.
 }
 \end{quotation}
 
@@ -261,7 +265,7 @@ Line 50 “The best overall performance is obtained using Logistic Regression.�
 
 \begin{quotation}
 {\color{blue}
-On Section IV, third paragraph we tackled this issue.  The overall performance of 0.672 is low.  Although a comparison can be misleading in the context of the ErrP experiment, we added a brief comparison to other similar works.  We also emphasized this point in future  works at the end of the Conclusions section.
+On Section IV, third paragraph we tackled this issue.  The overall performance of 0.672 is low.  Although a straightforward comparison could be misleading in the context of the ErrP experiment, we added a brief recount of the values obtained for other similar works.  We also emphasized this point in future works at the end of the Conclusions section.
 }
 \end{quotation}
 
@@ -269,7 +273,7 @@ Line 42 col 2 “These results are also consistent with their classification ROC
 
 \begin{quotation}
 {\color{blue}
-Due to previous Reviewer's requests, we added all the ROC curves on the new Figure 7.  We now emphasized on this figure's caption which ROC curves where showing an effective identification of the ErrP potential and which did not.  We added this in the text emphasizing the important finding that we could not provide an enhancement of the agent performance based on the rewards from subjects where the obtained ROC curves were not good.
+Due to previous Reviewer's requests, we added all the ROC curves on the new Figure 6.  We now emphasized on this figure's caption which ROC curves where showing an effective identification of the ErrP potential and which did not.  We added this in the text highlighting the important finding that we could not provide an enhancement of the agent performance based on the rewards from subjects where the obtained ROC curves were not good (Section III, page 5).
 }
 \end{quotation}
 
@@ -290,7 +294,7 @@ Line 55 “It can be seen that the overall performance of the agent improves as 
 
 \begin{quotation}
 {\color{blue}
-This is a great question.  Traditional Transfer Learning strategies focus on the procedure to enrich a classifier training it with a vast dataset and using it to generalize to new data or unseen scenarios.  While deaing with EEG data, this strategy tends to fail, and other approaches are required.  We found in this work, that even when that strategy fails, if the system is coupled with a basic reinforcement learning algorithm, the cumulative rewards from different subjects, can be used to effectively transmit information and improve the agent performance.  We agree with the Reviewer that this may be due to the average effect of positive or learners with a higher accuracy, but we think it may be related to the fact that the RL algorithm is quite robust and if we can get a higher specificity it will lead to eventually learn, and the usage of various OHCs help to increase the available data to do so.
+This is a great question.  Traditional transfer learning strategies focus on the procedure to enrich a classifier training it with a vast dataset and using it to generalize to new data from unseen scenarios.  While dealing with EEG data, this strategy tends to fail, and other approaches are required.  We found in this work, that even when that strategy fails, if the system is coupled with a basic reinforcement learning algorithm, the cumulative rewards from different subjects, can be used to effectively transmit information and improve the agent performance.  We agree with the Reviewer that this may be due to the average effect of positive or learners with a higher accuracy, but we think it may be related to the fact that the RL algorithm is quite robust and if we can get a higher specificity it will lead to eventually learn, and the cumulative usage of data from various OHCs help to overcome this issue and improve the agent performance.
 }
 \end{quotation}
 
@@ -298,7 +302,9 @@ This work aims to state whether ErrP signals could be used to train a gaming age
 
 \begin{quotation}
 {\color{blue}
-We believe this result is quite supported in the literature.  You can check here here here here here.  Our novel approach is to use the rewards to train an agent that can perform on its own after the training has been performed, and the game mechanics to verify the flow of information.  This information was added in the Conclusion Section IV.
+
+These results are supported by the literature. As we mention in the Introduction, similar experiments have been performed (R. Chavarriaga, A. Sobolewski, and J. d. R. Millán, "Errare machinale est: The use of error-related potentials in brain-machine interfaces," Frontiers in Neuroscience,2014).  Our novel approach is to use the rewards to train a gaming agent. 
+We have added this confirmation in the Conclusion Section IV.
 }
 \end{quotation}
 
@@ -307,7 +313,7 @@ Fig 8 – why use data from subject 6 (a non-learner)?
 
 \begin{quotation}
 {\color{blue}
-Subject 5 and 6 aren't used to train the algorithm in this instance. This information was emphasized on the Figure's caption and on the main text in the Result Section.
+The experiment that we performed to generate the Figure 9 doesn't include data from Subject 5 and 6. This is emphasized on the Figure's caption and on the main text in the Result Section.  In the Figure 9, the X axis show the progressive number of gaming agent training matches used to update the Q-Table (in this case they are from different subjects).
 }
 \end{quotation}
 
@@ -318,7 +324,7 @@ Line 20 col 2 Despite that, the rewards generated from different subjects can be
 
 \begin{quotation}
 {\color{blue}
-We added it because is a very interesting results to overcome issues in transfer learning while dealing with biological data.  We appreciate the reviewer for this very important point.
+We included the both finding in the abstract and we emphasized them  in Section IV. 
 }
 \end{quotation}
 
