@@ -273,7 +273,7 @@ Line 42 col 2 “These results are also consistent with their classification ROC
 
 \begin{quotation}
 {\color{blue}
-Due to previous Reviewer's requests, we added all the ROC curves on the new Figure 6.  We now emphasized on this figure's caption which ROC curves where showing an effective identification of the ErrP potential and which did not.  We added this in the text highlighting the important finding that we could not provide an enhancement of the agent performance based on the rewards from subjects where the obtained ROC curves were not good (Section III, page 5).
+Due to previous Reviewer's requests, we added all the ROC curves on the new Figure 6.  We now emphasized on this figure's caption which ROC curves where showing an effective identification of the ErrP potential and which did not.  We added this in the text, highlighting the important finding that we could not provide an enhancement of the agent performance based on the rewards from subjects where the obtained ROC curves were not good (Section III, page 5).
 }
 \end{quotation}
 
@@ -285,8 +285,11 @@ Line 51 “No\sout{t} performance gain is evidenced, the agents learn nothing wh
 
 \begin{quotation}
 {\color{blue}
-We fixed the inappropriate wording, and appreciate the Reviewer for pointing this out.  
-Figure 5, for Subject 5 (in the first version of the manuscript it was labeled E) has only two sets of data because that Participant (OHC) couldn't complete more sessions.  Hence we used two training sessions to calculate the Q-Table and subsequently performed the run session (i.e. the agent performs movements randomly based on the trained QTable for 200 iterations).
+We fixed the inappropriate wording, and appreciate the Reviewer for pointing this out. 
+
+ 
+Figure 5, for Subject 5 (in the first version of the manuscript it was labeled E) has only two sets of testing data because that Participant (OHC) couldn't complete more sessions.  Hence we used two training sessions to calculate the Q-Table and subsequently performed the run session (i.e. the agent performs movements randomly based on the trained QTable for 200 iterations).
+On the other hand, we hypothesize that the smaller change obtained from 1-2 for Subject 5 (as well as for Subject 6), may be due to the fact that the ROC curves for those Subjects also display very low classification accuracy.  This could be for reasons related to BCI-illeteracy issues, or the Participant (OHC) not being  concentrated at all during the experiment.  This information was explained in Section III, page 5.
 }
 \end{quotation}
 
@@ -294,7 +297,7 @@ Line 55 “It can be seen that the overall performance of the agent improves as 
 
 \begin{quotation}
 {\color{blue}
-This is a great question.  Traditional transfer learning strategies focus on the procedure to enrich a classifier training it with a vast dataset and using it to generalize to new data from unseen scenarios.  While dealing with EEG data, this strategy tends to fail, and other approaches are required.  We found in this work, that even when that strategy fails, if the system is coupled with a basic reinforcement learning algorithm, the cumulative rewards from different subjects, can be used to effectively transmit information and improve the agent performance.  We agree with the Reviewer that this may be due to the average effect of positive or learners with a higher accuracy, but we think it may be related to the fact that the RL algorithm is quite robust and if we can get a higher specificity it will lead to eventually learn, and the cumulative usage of data from various OHCs help to overcome this issue and improve the agent performance.
+This is a great question.  Traditional transfer learning strategies focus on the procedure to enrich a classifier training it with a vast dataset and using it to generalize to new data from unseen scenarios.  While dealing with EEG data, this strategy tends to fail, and other approaches are required.  We found in this work, that even when that strategy fails, if the system is coupled with a basic reinforcement learning algorithm, the cumulative rewards from different subjects, can be used to effectively transmit information and improve the agent performance.  We agree with the Reviewer that this may be due to the average effect of positive or learners with a higher accuracy, but we think it may be related to the fact that the RL algorithm is quite robust and if we can get a higher specificity, the cumulative usage of data from various OHCs help to overcome this issue and improve the agent performance.
 }
 \end{quotation}
 
@@ -324,7 +327,7 @@ Line 20 col 2 Despite that, the rewards generated from different subjects can be
 
 \begin{quotation}
 {\color{blue}
-We included the both finding in the abstract and we emphasized them  in Section IV. 
+We included both finding in the abstract and we emphasized them  in Section IV. 
 }
 \end{quotation}
 
@@ -339,9 +342,9 @@ The authors have satisfactorily addressed my concerns. I have a minor comment re
 
 \begin{quotation}
 {\color{blue}
-We think we misunderstood previous Reviewer's suggestions.  We added the brown bar on the previous Figure 3 (now Figure 5) because we assumed the Reviewer was referring to perform a classification using epoched averaged signal segments.  We used 5-segments to obtain an averaged signal with an enhanced signal-to-noise ratio (Wim van Drongelen, 4 - Signal Averaging, Editor(s): Signal Processing for Neuroscientists, Academic Press, 2007, Pages 55-70,) per Participant, and performed the classification of ErrP components based on those averaged signals for each Participant.  We used only Logistic Regression as classification algorithm, as it was the one with which we achieved better performance for single signal segments.   It is clear now that the brown bars were confusing and we have decided to remove them.  
+We think we misunderstood previous Reviewer's suggestions.  We added the brown bar on the previous Figure 3 (now Figure 4) because we assumed the Reviewer was referring to a classification performed using epoched averaged signal segments.  We used 5-segments to obtain an averaged signal with an enhanced signal-to-noise ratio (Wim van Drongelen, 4 - Signal Averaging, Editor(s): Signal Processing for Neuroscientists, Academic Press, 2007, Pages 55-70,) per Participant, and performed the classification of ErrP components based on those averaged signals for each Participant.  We used only Logistic Regression as classification algorithm, as it was the one with which we achieved better performance for single signal segments.   It is clear now that the brown bars were confusing and we have decided to remove them.  
 Instead, we have now included a new Figure 3, where we plotted the \textbf{Grand Average} signals over all the participants for the two experimental conditions.  The top subfigure shows the signals for the "move closer to the target" condition, whereas the bottom subfigure represents the grand average for the "move further" condition.  
-On the other hand, Figure 9 shows the results of using information to train a classifier with data from one Participant and use it to identify rewards for another participant.  This is performed in a single-trial approach from individual segments without any signal averaging.  
+On the other hand, Figure 9 shows the results, in terms of the decrease in the number of steps for the agent to reach the goal, of using information to train a classifier with data from one Participant and use it to identify rewards for another participant.  This is performed in a single-trial approach from individual segments without any signal averaging.  
 We apologize to the Reviewer for our misunderstanding and ask back for more information if it feels like the misunderstanding persisted.
 }
 \end{quotation}
