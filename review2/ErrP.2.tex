@@ -1,7 +1,4 @@
 
-%DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL ErrP.2.tex   Mon Oct 19 14:10:33 2020
-%DIF ADD ErrP.tex     Mon Oct 19 14:08:27 2020
 %% bare_jrnl.tex
 %% V1.4b
 %% 2015/08/26
@@ -356,87 +353,7 @@
 
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
-%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
-%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
-\RequirePackage[normalem]{ulem} %DIF PREAMBLE
-\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
-\providecommand{\DIFaddtex}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
-\providecommand{\DIFdeltex}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
-%DIF SAFE PREAMBLE %DIF PREAMBLE
-\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
-\providecommand{\DIFaddend}{} %DIF PREAMBLE
-\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
-\providecommand{\DIFdelend}{} %DIF PREAMBLE
-\providecommand{\DIFmodbegin}{} %DIF PREAMBLE
-\providecommand{\DIFmodend}{} %DIF PREAMBLE
-%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
-\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
-\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
-\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
-\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
-\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
-\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
-%DIF HYPERREF PREAMBLE %DIF PREAMBLE
-\providecommand{\DIFadd}[1]{\texorpdfstring{\DIFaddtex{#1}}{#1}} %DIF PREAMBLE
-\providecommand{\DIFdel}[1]{\texorpdfstring{\DIFdeltex{#1}}{}} %DIF PREAMBLE
-\newcommand{\DIFscaledelfig}{0.5}
-%DIF HIGHLIGHTGRAPHICS PREAMBLE %DIF PREAMBLE
-\RequirePackage{settobox} %DIF PREAMBLE
-\RequirePackage{letltxmacro} %DIF PREAMBLE
-\newsavebox{\DIFdelgraphicsbox} %DIF PREAMBLE
-\newlength{\DIFdelgraphicswidth} %DIF PREAMBLE
-\newlength{\DIFdelgraphicsheight} %DIF PREAMBLE
-% store original definition of \includegraphics %DIF PREAMBLE
-\LetLtxMacro{\DIFOincludegraphics}{\includegraphics} %DIF PREAMBLE
-\newcommand{\DIFaddincludegraphics}[2][]{{\color{blue}\fbox{\DIFOincludegraphics[#1]{#2}}}} %DIF PREAMBLE
-\newcommand{\DIFdelincludegraphics}[2][]{% %DIF PREAMBLE
-\sbox{\DIFdelgraphicsbox}{\DIFOincludegraphics[#1]{#2}}% %DIF PREAMBLE
-\settoboxwidth{\DIFdelgraphicswidth}{\DIFdelgraphicsbox} %DIF PREAMBLE
-\settoboxtotalheight{\DIFdelgraphicsheight}{\DIFdelgraphicsbox} %DIF PREAMBLE
-\scalebox{\DIFscaledelfig}{% %DIF PREAMBLE
-\parbox[b]{\DIFdelgraphicswidth}{\usebox{\DIFdelgraphicsbox}\\[-\baselineskip] \rule{\DIFdelgraphicswidth}{0em}}\llap{\resizebox{\DIFdelgraphicswidth}{\DIFdelgraphicsheight}{% %DIF PREAMBLE
-\setlength{\unitlength}{\DIFdelgraphicswidth}% %DIF PREAMBLE
-\begin{picture}(1,1)% %DIF PREAMBLE
-\thicklines\linethickness{2pt} %DIF PREAMBLE
-{\color[rgb]{1,0,0}\put(0,0){\framebox(1,1){}}}% %DIF PREAMBLE
-{\color[rgb]{1,0,0}\put(0,0){\line( 1,1){1}}}% %DIF PREAMBLE
-{\color[rgb]{1,0,0}\put(0,1){\line(1,-1){1}}}% %DIF PREAMBLE
-\end{picture}% %DIF PREAMBLE
-}\hspace*{3pt}}} %DIF PREAMBLE
-} %DIF PREAMBLE
-\LetLtxMacro{\DIFOaddbegin}{\DIFaddbegin} %DIF PREAMBLE
-\LetLtxMacro{\DIFOaddend}{\DIFaddend} %DIF PREAMBLE
-\LetLtxMacro{\DIFOdelbegin}{\DIFdelbegin} %DIF PREAMBLE
-\LetLtxMacro{\DIFOdelend}{\DIFdelend} %DIF PREAMBLE
-\DeclareRobustCommand{\DIFaddbegin}{\DIFOaddbegin \let\includegraphics\DIFaddincludegraphics} %DIF PREAMBLE
-\DeclareRobustCommand{\DIFaddend}{\DIFOaddend \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
-\DeclareRobustCommand{\DIFdelbegin}{\DIFOdelbegin \let\includegraphics\DIFdelincludegraphics} %DIF PREAMBLE
-\DeclareRobustCommand{\DIFdelend}{\DIFOaddend \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
-\LetLtxMacro{\DIFOaddbeginFL}{\DIFaddbeginFL} %DIF PREAMBLE
-\LetLtxMacro{\DIFOaddendFL}{\DIFaddendFL} %DIF PREAMBLE
-\LetLtxMacro{\DIFOdelbeginFL}{\DIFdelbeginFL} %DIF PREAMBLE
-\LetLtxMacro{\DIFOdelendFL}{\DIFdelendFL} %DIF PREAMBLE
-\DeclareRobustCommand{\DIFaddbeginFL}{\DIFOaddbeginFL \let\includegraphics\DIFaddincludegraphics} %DIF PREAMBLE
-\DeclareRobustCommand{\DIFaddendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
-\DeclareRobustCommand{\DIFdelbeginFL}{\DIFOdelbeginFL \let\includegraphics\DIFdelincludegraphics} %DIF PREAMBLE
-\DeclareRobustCommand{\DIFdelendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
-%DIF LISTINGS PREAMBLE %DIF PREAMBLE
-\RequirePackage{listings} %DIF PREAMBLE
-\RequirePackage{color} %DIF PREAMBLE
-\lstdefinelanguage{DIFcode}{ %DIF PREAMBLE
-%DIF DIFCODE_UNDERLINE %DIF PREAMBLE
-  moredelim=[il][\color{red}\sout]{\%DIF\ <\ }, %DIF PREAMBLE
-  moredelim=[il][\color{blue}\uwave]{\%DIF\ >\ } %DIF PREAMBLE
-} %DIF PREAMBLE
-\lstdefinestyle{DIFverbatimstyle}{ %DIF PREAMBLE
-	language=DIFcode, %DIF PREAMBLE
-	basicstyle=\ttfamily, %DIF PREAMBLE
-	columns=fullflexible, %DIF PREAMBLE
-	keepspaces=true %DIF PREAMBLE
-} %DIF PREAMBLE
-\lstnewenvironment{DIFverbatim}{\lstset{style=DIFverbatimstyle}}{} %DIF PREAMBLE
-\lstnewenvironment{DIFverbatim*}{\lstset{style=DIFverbatimstyle,showspaces=true}}{} %DIF PREAMBLE
-%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+
 
 \begin{document}
 %
@@ -458,23 +375,10 @@
 % was not built to handle multiple paragraphs
 %
 
-\author{\DIFdelbegin \DIFdel{Bartolomé Francisco, Moreno Juan,  Navas Natalia, Vitali José, }%DIFDELCMD < \\
-%DIFDELCMD < %%%
-\DIFdel{Ramele~Rodrigo,~}%DIFDELCMD < \IEEEmembership{Member,~IEEE,}
-%DIFDELCMD <         %%%
-\DIFdel{Santos~Juan~Miguel%DIF <  <-this % stops a space
-}\DIFdelend 
-\DIFaddbegin \IEEEauthorblockN{%
-  Bartolomé~Francisco\textsuperscript{\textsection}, 
-  Moreno~Juan\textsuperscript{\textsection},  
-  Navas~Natalia\textsuperscript{\textsection}, 
-  Vitali~José\textsuperscript{\textsection}, \\
-  Ramele~Rodrigo,~\IEEEmembership{Member,~IEEE,}
-  Santos~Juan~Miguel% <-this % stops a space
-  }%DIF > 
-
-
-\DIFaddend \thanks{R. Ramele and J.M.Santos are with the Department
+\author{Bartolomé Francisco, Moreno Juan,  Navas Natalia, Vitali José, \\
+Ramele~Rodrigo,~\IEEEmembership{Member,~IEEE,}
+        Santos~Juan~Miguel% <-this % stops a space
+\thanks{R. Ramele and J.M.Santos are with the Department
 of Computer Engineering, Instituto Tecnológico de Buenos Aires(ITBA), Argentina,
 e-mail: rramele@itba.edu.ar.}% <-this % stops a space
 \thanks{Manuscript received December 9, 2019; revised August 25, 2020.}}
@@ -511,36 +415,30 @@ e-mail: rramele@itba.edu.ar.}% <-this % stops a space
 % you desire.
 
 
+
+
 % If you want to put a publisher's ID mark on the page you can do it like
 % this:
 %\IEEEpubid{0000--0000/00\$00.00~\copyright~2015 IEEE}
 % Remember, if you use this you must call \IEEEpubidadjcol in the second
 % column for its text to clear the IEEEpubid mark.
 
+
+
 % use for special paper notices
 %\IEEEspecialpapernotice{(Invited Paper)}
 
+
+
+
 % make the title area
 \maketitle
-\DIFaddbegin \begingroup\renewcommand\thefootnote{\textsection}
-\footnotetext{\DIFadd{Equal contribution}}
-\endgroup
-\DIFaddend 
 
 % As a general rule, do not put math, special symbols or citations
 % in the abstract or keywords.
 \begin{abstract}
-\DIFdelbegin \DIFdel{In this study, we propose a simple game scenario that can be used to trigger a feedback response embedded in }\DIFdelend %DIF > objective
-\DIFaddbegin \DIFadd{Error-related potential (ErrP) are a particular type of Event-Related Potential (ERP) elicited by a person attending a recognizable error.  These }\DIFaddend Electroencephalographic (EEG)  signals \DIFdelbegin \DIFdel{of an observation human critic that observes an agent playing a game.  Based on a }\DIFdelend \DIFaddbegin \DIFadd{can be used to train a gaming agent by a }\DIFaddend Reinforcement Learning (RL) \DIFdelbegin \DIFdel{model, the gaming agent receives rewards for their actions on the game and learns its }\DIFdelend \DIFaddbegin \DIFadd{algorithm to learn an }\DIFaddend optimal policy.  \DIFdelbegin \DIFdel{These rewards are obtained by implementing a Brain-Computer Interface (BCI) system that identifies signal components called Error-related Potentials (ErrP), which occur when a person witnesses a recognizable error.  We perform an experiment where rewards are obtained from the ErrP signals from observational human critics watching an agent playing randomly a game . The agent is iteratively trained by receiving these rewards and updating its policy, improving its overall performance}\DIFdelend \DIFaddbegin \DIFadd{The experimental process consists of an observational human critic (OHC) observing a simple game scenario while their brain signals are captured. The game consists of a grid, where a green spot has to reach a desired target in the fewest amount of steps.  Results show that there is an effective transfer of information and that the agent successfully learns to solve the game efficiently, from the initial 97 steps on average required to reach the target to the optimal number of 8 steps}\DIFaddend .  Our results are expressed in threefold: (i) the \DIFdelbegin \DIFdel{structure }\DIFdelend \DIFaddbegin \DIFadd{mechanics }\DIFaddend of a simple grid-based game that can elicit the ErrP signal component\DIFdelbegin \DIFdel{; }\DIFdelend \DIFaddbegin \DIFadd{, }\DIFaddend (ii) the verification that \DIFdelbegin \DIFdel{low classification accuracy of just above chance level that produces noisy rewards is enough to allow an agent to learn the optimal policy}\DIFdelend \DIFaddbegin \DIFadd{the reward function only penalizes wrong steps, which means that type II error (not properly identifying a wrong movement) does not affect significantly the agent learning process}\DIFaddend ; (iii) collaborative rewards from multiple observational human critics can \DIFdelbegin \DIFdel{compensate the lack of accuracy or the }\DIFdelend \DIFaddbegin \DIFadd{be used to train the algorithm effectively and can compensate low classification accuracies and a }\DIFaddend limited scope of transfer learning schemes.
-%DIF > Results
-%DIF >  Expand the results of the paper as this is the contribution. “Results show that there is an effective transfer of information and that the agent learns successfully to solve the game eﬀiciently. Both the underlined terms need to cite evidence from the paper.
-%DIF >  The rewards generated from different subjects can be used to train the same Q- Table to improve its performance, which may lead to strategies where the overall performance is improved based on the information from different human critics at the same time. //These are key findings, worth more discussion/interpretation and inclusion in abstract.
-%DIF > The algorithm can be trained with information from different OHCs, since the resulting dataset is composed of rewards for each corresponding step, independent of who they were generated from. This shows that the error classification accuracy (approximately 0.67) is good enough for the algorithm to learn. The reward function only penalizes wrong steps, which means that type II error (not properly identifying a wrong movement) does not affect the accuracy, they only make the learning process slower.
-%DIF > conclusions
-%DIF > Our results are expressed in threefold (i) the structure of a simple grid-based game that can elicit the ErrP signal component; (ii) the verification that low classification accuracy of just above chance level that produces noisy rewards is enough to allow an agent to learn the optimal policy; (iii) collaborative rewards from multiple observational human critics can compensate the lack of accuracy or the limited scope of transfer learning schemes.
-\DIFaddbegin 
-
-\DIFaddend \end{abstract}
+In this study, we propose a simple game scenario that can be used to trigger a feedback response embedded in Electroencephalographic (EEG) signals of an observation human critic that observes an agent playing a game.  Based on a Reinforcement Learning (RL) model, the gaming agent receives rewards for their actions on the game and learns its optimal policy.  These rewards are obtained by implementing a Brain-Computer Interface (BCI) system that identifies signal components called Error-related Potentials (ErrP), which occur when a person witnesses a recognizable error. We perform an experiment where rewards are obtained from the ErrP signals from observational human critics watching an agent playing randomly a game. The agent is iteratively trained by receiving these rewards and updating its policy, improving its overall performance. Our results are expressed in threefold: (i) the structure of a simple grid-based game that can elicit the ErrP signal component; (ii) the verification that low classification accuracy of just above chance level that produces noisy rewards is enough to allow an agent to learn the optimal policy; (iii) collaborative rewards from multiple observational human critics can compensate the lack of accuracy or the limited scope of transfer learning schemes.
+\end{abstract}
 
 %When subjects observe the agent making a mistake this potential can be discerned by analyzing the signals which are directly related with the cognitive interpretation of an erroneous outcome or decision.
 
@@ -593,27 +491,21 @@ ErrP, BCI, EEG, RL, Agent, AI
 In this work, the feedback obtained from an observational human critic (OHC) in the form of electroencephalographic (EEG) signals is used to evaluate the operational performance of a gaming agent.  Observational human critics are silent subjects observing a computer gaming agent playing the game.
 
 % Reescribí la primera oración porque el sujeto no tenía sentido con el predicado.  TODO
-The feasibility of a distinct non-biological communication channel between the Central Nervous System (CNS) and a computer device has been previously proven with Brain Computer Interfaces (BCI) or Brain Machine Interfaces (BMI).~\cite{Vasiljevic2020}.  BCI systems provide a new input modality that can be used in \DIFdelbegin \DIFdel{the context of a }\DIFdelend computer game~\cite{Scherer2012,Nijholt2007}. This advancement is relevant in the context of the accessibility for video games~\cite{Aguado-Delgado2020} and the growing area of e-sports~\cite{Yakovlev2020}.
+The feasibility of a distinct non-biological communication channel between the Central Nervous System (CNS) and a computer device has been previously proven with Brain Computer Interfaces (BCI) or Brain Machine Interfaces (BMI).~\cite{Vasiljevic2020}.  BCI systems provide a new input modality that can be used in the context of a computer game~\cite{Scherer2012,Nijholt2007}. This advancement is relevant in the context of the accessibility for video games~\cite{Aguado-Delgado2020} and the growing area of e-sports~\cite{Yakovlev2020}.
 
 % Observation human critic? Suena raro acá, puse Subject pero chequear! TODO
-In this study, gaming agents are trained using only signal components called Error-related Potentials (ErrP) that can be identified in the observer's \DIFdelbegin \DIFdel{brain signals}\DIFdelend \DIFaddbegin \DIFadd{brainwaves}\DIFaddend .  These types of signals can be found on EEG traces and are elicited when subjects are aware of the presence of an unexpected outcome, which they identify as an error.  The analysis of ErrP signals is currently an extensive area of research in the neuroscience community~\cite{Holroyd2009}. Error-related Potentials can be detected by signal processing and machine learning techniques~\cite{EERP-PAPER} and are also used in Brain-Computer Interfaces to implement or enhance artificial communication channels~\cite{Chavarriaga2014}.
+In this study, gaming agents are trained using only signal components called Error-related Potentials (ErrP) that can be identified in the observer's brain signals.  These types of signals can be found on EEG traces and are elicited when subjects are aware of the presence of an unexpected outcome, which they identify as an error.  The analysis of ErrP signals is currently an extensive area of research in the neuroscience community~\cite{Holroyd2009}. Error-related Potentials can be detected by signal processing and machine learning techniques~\cite{EERP-PAPER} and are also used in Brain-Computer Interfaces to implement or enhance artificial communication channels~\cite{Chavarriaga2014}.
 
 Given the scenario, Reinforcement Learning (RL)~\cite{Sutton2018} stands out as a natural method to train the agent.  Reinforcement Learning refers to an algorithmic learning strategy inspired on how biological agents learn by exploring their environment while getting negative or positive feedback rewards.  The method aims to maximize positive rewards while minimizing negative feedback.  Thus, the learning problem is posed as a stochastic optimization strategy~\cite{Santos1999}.  Recently, this technique has been used extensively in the context of advances in artificial intelligence~\cite{Nguyen2020}. The influence of DeepBrain's AlphaGo project cannot be neglected, since it was the first to reach a very high proficiency when it won the complex game Go against several world champions~\cite{ALPHA-GO}.
 
 %By using variants of this technique, in 2015 AlphaGo won 5 matches against 3-times European Champion, Mr Fan Hui. AlphaGo then went on to compete against Mr Lee Sedol, winner of 18 world titles and considered to be the greatest player until then, and won 4 out of 5 matches in 2016 \cite{ALPHA-GO}.
 
-Previous research has explored the usage of RL with reward signals based on brain activity, recorded by an EEG-based BCI system during task execution. The papers \cite{ROBOT-CONTROL-PAPER,Kim2017,Omedes2013} have successfully demonstrated that a robot can be controlled with brain signals from a person \DIFdelbegin \DIFdel{that }\DIFdelend \DIFaddbegin \DIFadd{who }\DIFaddend is observing a robot \DIFaddbegin \DIFadd{to }\DIFaddend solve a task.  Moreover, a growing number of studies have demonstrated the feasibility of using ErrPs as rewards for RL schemes such as to enhance robotic behaviour~\cite{Luo2019}, to assess air traffic controller's decisions~\cite{Goh2019} or to categorize actions as errors~\cite{Wirth2020}. Other approaches have used these signals as important feedback for human-robot interaction or to implement shared-control strategies~\DIFdelbegin \DIFdel{\mbox{%DIFAUXCMD
-\cite{Schiatti2018}}\hspace{0pt}%DIFAUXCMD
-}\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
-\cite{Schiatti2018,Iturrate2013}}\hspace{0pt}%DIFAUXCMD
-}\DIFaddend .  Additionally, ErrPs have also been used in \DIFdelbegin \DIFdel{the context of }\DIFdelend games as an additional feedback channel that can be explored to improve gaming experience~\cite{Plass-OudeBos2010,kober2018bci}. 
+Previous research has explored the usage of RL with reward signals based on brain activity, recorded by an EEG-based BCI system during task execution. The papers \cite{ROBOT-CONTROL-PAPER,Kim2017,Omedes2013} have successfully demonstrated that a robot can be controlled with brain signals from a person that is observing a robot solve a task.  Moreover, a growing number of studies have demonstrated the feasibility of using ErrPs as rewards for RL schemes such as to enhance robotic behaviour~\cite{Luo2019}, to assess air traffic controller's decisions~\cite{Goh2019} or to categorize actions as errors~\cite{Wirth2020}. Other approaches have used these signals as important feedback for human-robot interaction or to implement shared-control strategies~\cite{Schiatti2018}.  Additionally, ErrPs have also been used in the context of games as an additional feedback channel that can be explored to improve gaming experience~\cite{Plass-OudeBos2010,kober2018bci}.
 
-Therefore,  we aim to use the information extracted from brainwaves to enhance the performance of a gaming agent.  The three contributions are (1) a simple game \DIFaddbegin \DIFadd{mechanics and agent }\DIFaddend that can elicit the ErrP potential, (2) results that confirm that even when ErrP classification accuracy is low \DIFdelbegin \DIFdel{and produces a noisy reward signal}\DIFdelend \DIFaddbegin \DIFadd{but with a high specificity}\DIFaddend , enough information is generated for an agent to learn the optimal policy and solve a simple game and (3) collaborative rewards from multiple observational human observers can compensate the lack of classification accuracy or the inefficacy of transfer learning procedures for brainwaves signals.
+Therefore,  we aim to use the information extracted from brainwaves to enhance the performance of a gaming agent.  The three contributions are (1) a simple game that can elicit the ErrP potential, (2) results that confirm that even when ErrP classification accuracy is low and produces a noisy reward signal, enough information is generated for an agent to learn the optimal policy and solve a simple game and (3) collaborative rewards from multiple observational human observers can compensate the lack of classification accuracy or the inefficacy of transfer learning procedures for brainwaves signals.
 
-%DIF > However, even though this implies that the agent misses frequently that an action taken is wrong, this is not hindering the overall performance and the agent is still learning
-\DIFaddbegin 
 
-\DIFaddend % An example of a floating figure using the graphicx package.
+% An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
 % For figures, \caption should occur after the \includegraphics.
 % Note that IEEEtran v1.7 and later has special internal code that
@@ -707,7 +599,7 @@ Therefore,  we aim to use the information extracted from brainwaves to enhance t
 % footnotes above bottom floats. This can be corrected via the
 % \fnbelowfloat command of the stfloats package.
 
-\DIFdelbegin \DIFdel{In }\DIFdelend \DIFaddbegin \DIFadd{This work unfold as follows: in }\DIFaddend Section \ref{section:materials} the general layout of the cognitive game is described. Sections \ref{brainwavesession} and \ref{cognitive_experiment_details} outline the cognitive game procedure used to obtain rewards in the form of ErrP components. Section \ref{q_learning_step_alg} describes the gaming agent learning procedure.  Lastly, results and conclusions are exposed in Sections \ref{results} and \ref{conclusions}.
+In Section \ref{section:materials} the general layout of the cognitive game is described. Sections \ref{brainwavesession} and \ref{cognitive_experiment_details} outline the cognitive game procedure used to obtain rewards in the form of ErrP components. Section \ref{q_learning_step_alg} describes the gaming agent learning procedure.  Lastly, results and conclusions are exposed in Sections \ref{results} and \ref{conclusions}.
 
 \section{Materials and Methods}
 \label{section:materials}
@@ -717,26 +609,20 @@ The experimental procedure is summarized in Figure \ref{diag:complete_flow}. The
 \begin{figure*}
     \centering
     \includegraphics[width=\textwidth]{Images/complete_flow.png}
-    \caption{Overview of the experimental procedure. Brainwaves are obtained by the OpenVibe Acquisition Server.  The Game Manager is responsible for generating the game screen, the game mechanics, and the game movements performed by the gaming agent.  It is also connected to the Acquisition Server to send stimulus information.  The captured information is stored by the OpenVibe Designer.  Offline, EEG signals are classified and they are linked to each game movement calculated by the Game Manager to determine proper rewards for each action.  This information is used by a Reinforcement Learning algorithm \DIFdelbeginFL \DIFdelFL{to learn }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{that }\DIFaddendFL iteratively \DIFaddbeginFL \DIFaddFL{trains }\DIFaddendFL a Q-Table \DIFaddbeginFL \DIFaddFL{in order }\DIFaddendFL to improve the performance of the agent that plays the game.}
+    \caption{Overview of the experimental procedure. Brainwaves are obtained by the OpenVibe Acquisition Server.  The Game Manager is responsible for generating the game screen, the game mechanics, and the game movements performed by the gaming agent.  It is also connected to the Acquisition Server to send stimulus information.  The captured information is stored by the OpenVibe Designer.  Offline, EEG signals are classified and they are linked to each game movement calculated by the Game Manager to determine proper rewards for each action.  This information is used by a Reinforcement Learning algorithm to learn iteratively a Q-Table to improve the performance of the agent that plays the game.}
     \label{diag:complete_flow}
 \end{figure*}
 
 \subsection{Brainwave Session}
 \label{brainwavesession}
 
-The retrieval of the OHC's brain activity, called the brainwave session, is one of the most critical parts of the study.  Subjects are recruited voluntarily and given a form with questions regarding their health (previous health issues and particular visual sensitivity), habits (sleeping hours, caffeine and alcohol consumption), and a \DIFaddbegin \DIFadd{written informed }\DIFaddend consent petition to collect the required data.  The \DIFaddbegin \DIFadd{experiment is conducted anonymously in accordance with the Declaration of Helsinki published by the World Health Organization. No monetary compensation is handed out. This study is approved by the Departamento de Investigación y Doctorado, Instituto Tecnológico de Buenos Aires (ITBA).  The }\DIFaddend brainwave sessions are performed with 8 subjects, 5 males and 3 females, with an average age of 25.12 years, a standard deviation of 1.54 years, and a range of 22-28 years. All subjects have normal vision, are right-handed and no history of neurological disorders.
+The retrieval of the OHC's brain activity, called the brainwave session, is one of the most critical parts of the study.  Subjects are recruited voluntarily and given a form with questions regarding their health (previous health issues and particular visual sensitivity), habits (sleeping hours, caffeine and alcohol consumption), and a consent petition to collect the required data. The brainwave sessions are performed with 8 subjects, 5 males and 3 females, with an average age of 25.12 years, a standard deviation of 1.54 years, and a range of 22-28 years. All subjects have normal vision, are right-handed and no history of neurological disorders.
 
 After the form is filled out, a short description of the procedure is given to each subject. They are only told that the objective of the agent is to reach the goal and the four movements that the agent can make. When this concludes, the subject is introduced to the wireless digital EEG device (g.Nautilus, g.Tec, Austria) that she/he has to wear during the brainwave session. It has eight electrodes (g.LADYbird, g.Tec, Austria) on the positions Fz, Cz, Pz, Oz, P3, P4, PO7, and PO8, identified according to the 10-20 International System, with a reference set to the right ear lobe and ground set as the AFz position. The electrode contact points are adjusted applying conductive gel until the impedance values displayed by the program g.NeedAccess (g.Tec, Austria) are within the desired range. This process takes between 10 to 15 minutes. After this step, the subject is instructed to close their eyes, make eye movements and muscle chew in order to check the program and guarantee that the live channel values are accurate.
 
-Once the headset is correctly applied, the OpenVibe Acquisition Server program, from the OpenVibe platform~\cite{OPEN-VIBE-PAPER}, is launched and configured with a sampling rate of $250$~Hz. A $50$~Hz notch filter is applied to filter out power line noise. An additional bandpass filter between $0.5$~Hz and $60$~Hz is applied. Data \DIFdelbegin \DIFdel{is }\DIFdelend \DIFaddbegin \DIFadd{are }\DIFaddend handled and processed with the OpenVibe Designer, from the same platform, using 8 channels for the brain data (one channel per electrode) and an additional channel to record the stimulus, which corresponds to a game movement performed by the agent.  After everything is connected, the subject is seated in a comfortable chair in front of a computer screen. The brightness of the screen is set to the maximum setting to avoid any visual inconvenience in which the subject can not distinguish the components of the game that appear on the screen.
-\DIFdelbegin \DIFdel{This dataset has been published on the IEEE DataPort initiative~\mbox{%DIFAUXCMD
-\cite{6emh-wb46-19}}\hspace{0pt}%DIFAUXCMD
-.
-}\DIFdelend 
+Once the headset is correctly applied, the OpenVibe Acquisition Server program, from the OpenVibe platform~\cite{OPEN-VIBE-PAPER}, is launched and configured with a sampling rate of $250$~Hz. A $50$~Hz notch filter is applied to filter out power line noise. An additional bandpass filter between $0.5$~Hz and $60$~Hz is applied. Data is handled and processed with the OpenVibe Designer, from the same platform, using 8 channels for the brain data (one channel per electrode) and an additional channel to record the stimulus, which corresponds to a game movement performed by the agent.  After everything is connected, the subject is seated in a comfortable chair in front of a computer screen. The brightness of the screen is set to the maximum setting to avoid any visual inconvenience in which the subject can not distinguish the components of the game that appear on the screen.  This dataset has been published on the IEEE DataPort initiative~\cite{6emh-wb46-19}.
 
-The Acquisition Server receives and synchronizes the signal data from the headset and any event information from the game, and transfers it to the OpenVibe Designer application. When the subject is ready, the Game Manager and the OpenVibe Designer programs are launched and configured to communicate with the previously mentioned Acquisition Server. A brainwave session consists of several matches, each one being a gameplay.  In the end, the sequence of game movements and the signal data generated for each match are saved for offline processing \DIFaddbegin \footnote{\DIFadd{The brainwave dataset has been published on the IEEE DataPort initiative~\mbox{%DIFAUXCMD
-\cite{6emh-wb46-19}}\hspace{0pt}%DIFAUXCMD
-.}}\DIFaddend .
+The Acquisition Server receives and synchronizes the signal data from the headset and any event information from the game, and transfers it to the OpenVibe Designer application. When the subject is ready, the Game Manager and the OpenVibe Designer programs are launched and configured to communicate with the previously mentioned Acquisition Server. A brainwave session consists of several matches, each one being a gameplay.  In the end, the sequence of game movements and the signal data generated for each match are saved for offline processing.
 
 %ACA For each run, the signals and stimulus information are then passed to the classification module that uses them to train the classifier.  After this step is finished, the game movements and the trained classifier are used to update a Q-Table for each experience. Lastly, the calculated Q-Table is used to test if the agent has boosted its performance while playing the game. This module is explained in Section \ref{q_learning_step}.
 
@@ -745,9 +631,7 @@ The Acquisition Server receives and synchronizes the signal data from the headse
 %This section details the game system characteristics, the brainwave session process and the retrieval and analysis of the generated data from the subjects interaction with the system.
 
 \label{cognitive_experiment_system}{
-The game parsimoniously consists of a $5x5$ grid of grey circular spots with a black background.  \DIFaddbegin \DIFadd{It is similar to the one proposed by~\mbox{%DIFAUXCMD
-\cite{Iturrate2013}}\hspace{0pt}%DIFAUXCMD
-.  }\DIFaddend A blue spot indicates the current position of the agent and a green spot represents the goal, as shown in Figure  \ref{fig:game_representation}. The agent's objective is to reach the goal. The circular spot representing the goal remains static at the bottom-right position of the grid, while the one representing the position of the agent starts at the upper-left position of the grid and moves in each iteration.  When the agent reaches the goal, the position where the agent and the goal are located turns red, showing that the match has ended. There are four possible movements that the agent can perform: it can go upwards, downwards, towards the left and the right, and those movements are bounded to avoid the agent from leaving the grid. The movement direction is selected randomly and is executed once every 2 seconds.  After each gameplay, there is a pause of 5 seconds until the next match starts. Each time an agent moves, the Game Manager program sends an event marker to the Acquisition Server.  This is considered a stimulus to the observational human critic.  The game is designed as to be evident whenever there is an error (i.e. the agent moves away from the objective) so the subject can notice it immediately after the stimulus is presented, possibly triggering the expected cognitive response, which can be imprinted as an ErrP component within the EEG stream.
+The game parsimoniously consists of a $5x5$ grid of grey circular spots with a black background.  A blue spot indicates the current position of the agent and a green spot represents the goal, as shown in Figure  \ref{fig:game_representation}. The agent's objective is to reach the goal. The circular spot representing the goal remains static at the bottom-right position of the grid, while the one representing the position of the agent starts at the upper-left position of the grid and moves in each iteration.  When the agent reaches the goal, the position where the agent and the goal are located turns red, showing that the match has ended. There are four possible movements that the agent can perform: it can go upwards, downwards, towards the left and the right, and those movements are bounded to avoid the agent from leaving the grid. The movement direction is selected randomly and is executed once every 2 seconds.  After each gameplay, there is a pause of 5 seconds until the next match starts. Each time an agent moves, the Game Manager program sends an event marker to the Acquisition Server.  This is considered a stimulus to the observational human critic.  The game is designed as to be evident whenever there is an error (i.e. the agent moves away from the objective) so the subject can notice it immediately after the stimulus is presented, possibly triggering the expected cognitive response, which can be imprinted as an ErrP component within the EEG stream.
 
 \begin{figure}[h!]
 \begin{subfigure}{0.5\textwidth}
@@ -763,8 +647,7 @@ The game parsimoniously consists of a $5x5$ grid of grey circular spots with a b
 %\section{Calibration}
 %\label{section:calibration}
 
-%DIF < The first step in order to be able to find ErrP signals is to choose the most efficient algorithm, and the proper calibration. In order to do this different parameters are tested for a set of algorithms and for each individual subject. Initially a sub-selection of experiments is used to define a subset of parameters to test with, and then all the data is tested with this subset of parameters.
-%DIF > The first step in order to be able to find ErrP signals is to choose the most efficient algorithm, and the proper calibration. In order to do this different parameters are tested for a set of algorithms and for each individual subject. Initially a sub-selection of experiments is used to define a subset of parameters to test with, and then all the data are tested with this subset of parameters.
+%The first step in order to be able to find ErrP signals is to choose the most efficient algorithm, and the proper calibration. In order to do this different parameters are tested for a set of algorithms and for each individual subject. Initially a sub-selection of experiments is used to define a subset of parameters to test with, and then all the data is tested with this subset of parameters.
 
 \subsection{Signal Processing, Segmentation and Classification}
 \label{section:calibration}
@@ -773,11 +656,11 @@ To aid the detection of the ErrP response, an offline processing pipeline and cl
 
 This pipeline consists of the offline processing of the collected signals used to train a classifier that can decide whether an error potential is triggered. Firstly, the output of a brainwave session is read and an additional band-pass filter of 0.1-20.0 Hz is applied to the signal. Samples that correspond to the start of an event are tagged using the data from the stimulus channel.
 
-After the raw data \DIFdelbegin \DIFdel{is }\DIFdelend \DIFaddbegin \DIFadd{are }\DIFaddend loaded and tagged, epochs are extracted. Epochs consist of all the sample points that take place during the 2 seconds from the start of the event, 2 seconds corresponding to the time it takes for each action to take place, resulting in 500 samples per channel, as the sampling frequency is 250 Hz. Thus, each epoch is composed of a matrix $500$ x $8$ channels.
+After the raw data is loaded and tagged, epochs are extracted. Epochs consist of all the sample points that take place during the 2 seconds from the start of the event, 2 seconds corresponding to the time it takes for each action to take place, resulting in 500 samples per channel, as the sampling frequency is 250 Hz. Thus, each epoch is composed of a matrix $500$ x $8$ channels.
 
 Samples that do not correspond to an epoch (located beyond the 2 seconds frame after the onset of the event) are not used. Also, epochs referring to the start or finish of each match are excluded.
 
-In this way, the raw data of a brainwave session \DIFdelbegin \DIFdel{is }\DIFdelend \DIFaddbegin \DIFadd{are }\DIFaddend processed into an array of matches where each element is an array of epochs tagged with a number specifying the prediction of the classifier, i.e. if the epoch corresponds to an action that made the agent move further from the goal (hit) or an action that made the agent moves closer to the goal (no-hit). The ErrP is expected to be found in hits. To get the data ready for classification, the stimulus channel is removed to classify the signals using only the EEG data. Each epoch is regularized using a MinMaxScaler, i.e. subtracting the minimum value in the epoch and dividing by the signal peak-to-peak amplitude~\cite{Zhou2019}.  The eight channels are concatenated using the MNE Vectorizer function, which transforms the data matrix into a single array sample. Lastly, \DIFdelbegin \DIFdel{this data is }\DIFdelend \DIFaddbegin \DIFadd{these data are }\DIFaddend used by the classification module as information to train and test a classifier. Five different classification algorithms are used:  Logistic Regression, Multilayer Perceptron with a hidden layer of 100 neurons (i.e. default values for the Scikit-Learn MLPClassifier), Random Forest, KNeighbours with k=3 and finally a linear kernel Support Vector Classifier (i.e. SVM)~\cite{Lotte2018}.
+In this way, the raw data of a brainwave session is processed into an array of matches where each element is an array of epochs tagged with a number specifying the prediction of the classifier, i.e. if the epoch corresponds to an action that made the agent move further from the goal (hit) or an action that made the agent moves closer to the goal (no-hit). The ErrP is expected to be found in hits. To get the data ready for classification, the stimulus channel is removed to classify the signals using only the EEG data. Each epoch is regularized using a MinMaxScaler, i.e. subtracting the minimum value in the epoch and dividing by the signal peak-to-peak amplitude~\cite{Zhou2019}.  The eight channels are concatenated using the MNE Vectorizer function, which transforms the data matrix into a single array sample. Lastly, this data is used by the classification module as information to train and test a classifier. Five different classification algorithms are used:  Logistic Regression, Multilayer Perceptron with a hidden layer of 100 neurons (i.e. default values for the Scikit-Learn MLPClassifier), Random Forest, KNeighbours with k=3 and finally a linear kernel Support Vector Classifier (i.e. SVM)~\cite{Lotte2018}.
 
 %Vectorized epochs are used in the final classification step.
 
@@ -814,7 +697,7 @@ The algorithm is developed in Python and uses the OpenAI Gym toolkit~\cite{opena
 
 The gaming agent learning procedure uses the testing matches from brainwave sessions produced during the cognitive game procedure phase, and their components are schematized in Figure~\ref{diag:complete_flow}.
 
-This phase is divided into a sequence of run sessions and \DIFdelbegin \DIFdel{a }\DIFdelend gaming agent training \DIFdelbegin \DIFdel{match}\DIFdelend \DIFaddbegin \DIFadd{matches}\DIFaddend .  During the run session, the agent plays 200 matches guided by a specific Q-Table with a 5\% chance of randomly selecting a movement, to reduce deadlocks and loops.  Following the run session, the agent performs a single gaming agent training match.  The gaming agent starts first with a Q-Table initialized with zeros, so the initial policy for the agent is randomized.  For the agent to learn from the feedback generated by the OHC, movement actions are determined by the reply of the agent's actions that were taken during one brainwave session match, in an offline reinforcement learning scheme~\cite{Levine2020}. This allows the Q-Table to be \DIFdelbegin \DIFdel{built }\DIFdelend \DIFaddbegin \DIFadd{learned }\DIFaddend based on the OHC's feedback from the movements the agent took, which were executed pseudo-randomly during the brainwave session.  The previously mentioned feedback is not explicit as it comes from the interpreted brain signal data. This implies that the reward is determined by the OHC's brain activity.
+This phase is divided into a sequence of run sessions and a gaming agent training match.  During the run session, the agent plays 200 matches guided by a specific Q-Table with a 5\% chance of randomly selecting a movement, to reduce deadlocks and loops.  Following the run session, the agent performs a single gaming agent training match.  The gaming agent starts first with a Q-Table initialized with zeros, so the initial policy for the agent is randomized.  For the agent to learn from the feedback generated by the OHC, movement actions are determined by the reply of the agent's actions that were taken during one brainwave session match, in an offline reinforcement learning scheme~\cite{Levine2020}. This allows the Q-Table to be built based on the OHC's feedback from the movements the agent took, which were executed pseudo-randomly during the brainwave session.  The previously mentioned feedback is not explicit as it comes from the interpreted brain signal data. This implies that the reward is determined by the OHC's brain activity.
 
 Hence, following the iterative procedure based on Equation~\ref{equ:update_q_table}, the Q-Table is updated in each gaming agent training match. After the algorithm finishes replicating all the steps from the brainwave session match, the Q-Table is stored and used by the agent in the next run session.
 
@@ -822,35 +705,16 @@ Hence, following the iterative procedure based on Equation~\ref{equ:update_q_tab
 \section{Results}
 \label{results}
 
-\DIFdelbegin \DIFdel{Figure~\ref{fig:classifiers} }\DIFdelend \DIFaddbegin \DIFadd{Grand averaged time-locked signal segments of 2-seconds length for all the OHCs can be seen in Figure~\ref{fig:grandaverage}.  The ErrP can be noticed more clearly on parieto-central areas (Pz electrode), around 0.4~s with a more prominent positive peak.
-}
+Figure~\ref{fig:classifiers} shows the binary classification accuracy obtained for the eight OHCs using five different classification algorithms and using a 10-fold cross-validation procedure.  The best overall performance is obtained using Logistic Regression.  In addition, the classification accuracy obtained averaging 5 epochs is shown as well.  Although the signal averaging procedure improves the Signal-To-Noise-Radio (SNR) of the ErrP response, it reduces the number of data samples, producing a clear improvement only for the OHCs that contain more samples (1, 3 and 7).
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\textwidth]{revisedimages/avg_closer.eps}
-    \includegraphics[width=0.5\textwidth]{revisedimages/avg_further.eps}
-        \includegraphics[scale=1.0]{revisedimages/electrodes.png}
-    \caption{\DIFaddFL{Grand average of 2-seconds time-locked segments for all OHCs for the "move closer" (top) and "move further" (middle) condition. Zero corresponds to the onset of the stimulus, i.e. when the gaming agent moves. The increased height of the first peak around 0.4 seconds reflects the ErrP response particularly on Pz, based on the electrode layout (bottom).}}
-    \label{fig:grandaverage}
-\end{figure}
-
-
-\DIFadd{Figure~\ref{fig:classifiers}, on the other hand, }\DIFaddend shows the binary classification accuracy obtained for the eight OHCs using five different classification algorithms and using a 10-fold cross-validation procedure.  The best overall performance is obtained using Logistic Regression.  
-\DIFdelbegin \DIFdel{In addition, the classification accuracy obtained averaging 5 epochs is shown as well.  Although the signal averaging procedure improves the Signal-To-Noise-Radio (SNR) of the ErrP response, it reduces the number of data samples, producing a clear improvement only for the OHCs that contain more samples (1, 3 and 7).
-}\DIFdelend 
-
-\begin{figure}[ht]
-    \centering
-    \DIFdelbeginFL %DIFDELCMD < \includegraphics[scale=0.12]{revisedimages/cross_val.eps}
-%DIFDELCMD <     %%%
-\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.5\textwidth,height=70pt]{revisedimages/cross_val.eps}
-    %DIF > \includegraphics[width=290pt,height=90pt]{revisedimages/avg_5_segments.eps}
-    \DIFaddendFL \caption{Binary single trial classification score using five different classifiers while recognizing ErrP potentials for the eight OHCs.   \DIFdelbeginFL \DIFdelFL{The classification score using an ensemble average of 5 epochs is shown as well (GrandAvg). }\DIFdelendFL Chance Level is 0.5.}
+    \includegraphics[scale=0.12]{revisedimages/cross_val.eps}
+    \caption{Binary single trial classification score using five different classifiers while recognizing ErrP potentials for the eight OHCs.  The classification score using an ensemble average of 5 epochs is shown as well (GrandAvg). Chance Level is 0.5.}
     \label{fig:classifiers}
 \end{figure}
 
-
-\DIFdelbegin \DIFdel{On the other hand}\DIFdelend \DIFaddbegin \DIFadd{Complementary}\DIFaddend , Figure \ref{fig:avg_steps} shows the average amount of steps it takes for the agent to reach the goal for each OHC, as the Q-Table is progressively trained using the reward information obtained from the prediction of the trained classifier.  Each point corresponds to a run session \DIFdelbegin \DIFdel{where }\DIFdelend \DIFaddbegin \DIFadd{of 200 game play repetitions.  The y-value represent }\DIFaddend the average number of steps \DIFdelbegin \DIFdel{for the agent }\DIFdelend \DIFaddbegin \DIFadd{the agent takes }\DIFaddend to reach the goal using a specific Q-Table \DIFdelbegin \DIFdel{is specified, for 200 repetitions}\DIFdelend \DIFaddbegin \DIFadd{for a run session}\DIFaddend . The first point, at the x-value 0, represents the number of steps the agent takes to reach the goal with an untrained Q-Table, where movements are decided randomly. The next point corresponds to the amount of steps it takes to reach the goal using a policy derived from a Q-Table trained after one brainwave session match, and so on.
+On the other hand, Figure \ref{fig:avg_steps} shows the average amount of steps it takes for the agent to reach the goal for each OHC, as the Q-Table is progressively trained using the reward information obtained from the prediction of the trained classifier. Each point corresponds to a run session where the average number of steps for the agent to reach the goal using a specific Q-Table is specified, for 200 repetitions. The first point, at the x-value 0, represents the number of steps the agent takes to reach the goal with an untrained Q-Table, where movements are decided randomly. The next point corresponds to the amount of steps it takes to reach the goal using a policy derived from a Q-Table trained after one brainwave session match, and so on.
 
 \begin{figure}[h!]
 \begin{subfigure}{0.5\textwidth}
@@ -874,7 +738,7 @@ Hence, following the iterative procedure based on Equation~\ref{equ:update_q_tab
 
 The results show that as the Q-Table is progressively trained the average amount of steps decreases, meaning that the agent learns. However, the rate at which it learns varies per OHC, depending on the classification accuracy of the extracted brainwaves.  For example results for OHC 1 show faster learning than those of OHC 8 (Figure \ref{fig:avg_steps}).
 
-In the case for OHC 5 and 6, the reward information obtained from the brainwaves is not enough to train the agent effectively. Figures \ref{fig:avg_steps} for OHC 5 and 6 show no apparent learning, as the amount of steps to reach the goal doesn't decrease when trained.  These results are also consistent with \DIFdelbegin \DIFdel{their }\DIFdelend \DIFaddbegin \DIFadd{the }\DIFaddend classification ROC curves, shown \DIFdelbegin \DIFdel{on }\DIFdelend \DIFaddbegin \DIFadd{in }\DIFaddend Figures~\ref{fig:rocsubjects}\DIFdelbegin \DIFdel{obtained for both OHCs}\DIFdelend , where the area under the curve \DIFaddbegin \DIFadd{for OHCs 5 and 6 }\DIFaddend are close to chance level.  Both OHCs have less recorded data from the sessions in comparison to the rest of the OHCs.  This variation in performance for different OHCs has been studied extensively in BCI~\cite{Chavarriaga2014}.  Besides low data samples, there are other reasons affecting the classification accuracy:  cognitive reasons (i.e. the OHC not paying extensively attention to the game dynamics), very low SNR of the ErrP component or even the BCI-illiteracy phenomena where the specific OHC's signals do not contain the expected component response~\cite{Yousefi2019}.
+In the case for OHC 5 and 6, the reward information obtained from the brainwaves is not enough to train the agent effectively. Figures \ref{fig:avg_steps} for OHC 5 and 6 show no apparent learning, as the amount of steps to reach the goal doesn't decrease when trained.  These results are also consistent with their classification ROC curves, shown on Figures~\ref{fig:rocsubjects} obtained for both OHCs, where the area under the curve are close to chance level.  Both OHCs have less recorded data from the sessions in comparison to the rest of the OHCs.  This variation in performance for different OHCs has been studied extensively in BCI~\cite{Chavarriaga2014}.  Besides low data samples, there are other reasons affecting the classification accuracy:  cognitive reasons (i.e. the OHC not paying extensively attention to the game dynamics), very low SNR of the ErrP component or even the BCI-illiteracy phenomena where the specific OHC's signals do not contain the expected component response~\cite{Yousefi2019}.
 
 \begin{figure}[h!]
 \captionsetup[subfigure]{justification=centering}
@@ -893,7 +757,7 @@ In the case for OHC 5 and 6, the reward information obtained from the brainwaves
   \includegraphics[scale=0.09]{revisedimages/roc_7.eps}    \hspace{-1.5em}
   \includegraphics[scale=0.09]{revisedimages/roc_8.eps} \\
 \end{subfigure}
-\caption{ROC Curves for OHCs 1-8. True positive rate is on the vertical axis and false positive rate on the horizontal axis.  \DIFaddbeginFL \DIFaddFL{The ROC curves for ErrP identification for Subjects 5 and 6 show low classification scores.}\DIFaddendFL }
+\caption{ROC Curves for OHCs 1-8. True positive rate is on the vertical axis and false positive rate on the horizontal axis.}
 \label{fig:rocsubjects}
 \end{figure}
 
@@ -908,7 +772,7 @@ Figure~\ref{fig:avg_steps_noise} shows the result of an agent successively train
 \label{fig:avg_steps_noise}
 \end{figure}
 
-Electroencephalographic signals have high inter-subject variability~\cite{Chavarriaga2014}.  This is evidenced in Figure~\ref{fig:transferlearning} where the agent training is performed with rewards obtained by classifying epochs from one Tester OHC \DIFdelbegin \DIFdel{and }\DIFdelend \DIFaddbegin \DIFadd{with }\DIFaddend a classifier that was trained using the brainwaves from a different Trainer OHC.  The figure shows the cumulative variation for all run sessions on the average number of steps required to reach the goal after training the agent with all the available matches from the brainwave session.  Enhancements are shown as negative values.  Only the diagonal of the heatmap matrix shows a clear improvement in terms of the reduction of the required number of steps to reach the goal (averaged per 200 runs) which corresponds to the same information for each OHC shown in Figure~\ref{fig:avg_steps}.  For \DIFdelbegin \DIFdel{the }\DIFdelend \DIFaddbegin \DIFadd{this }\DIFaddend transfer learning experiment~\cite{Wu2016}, no performance gain is evidenced, the agents learn nothing and this implies that the reward information \DIFdelbegin \DIFdel{is useless}\DIFdelend \DIFaddbegin \DIFadd{provides no value}\DIFaddend .
+Electroencephalographic signals have high inter-subject variability~\cite{Chavarriaga2014}.  This is evidenced in Figure~\ref{fig:transferlearning} where the agent training is performed with rewards obtained by classifying epochs from one Tester OHC and a classifier that was trained using the brainwaves from a different Trainer OHC.  The figure shows the cumulative variation for all run sessions on the average number of steps required to reach the goal after training the agent with all the available matches from the brainwave session.  Enhancements are shown as negative values.  Only the diagonal of the heatmap matrix shows a clear improvement in terms of the reduction of the required number of steps to reach the goal (averaged per 200 runs) which corresponds to the same information for each OHC shown in Figure~\ref{fig:avg_steps}.  For the transfer learning experiment~\cite{Wu2016}, no performance gain is evidenced, the agents learn nothing and this implies that the reward information is useless.
 
 
 \begin{figure}[h!]
@@ -925,34 +789,21 @@ Finally, Figure~\ref{fig:avg_steps_all} shows the result of training an agent wi
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{Images/Average_steps/all.eps}
-\caption{Average steps using Q-Table trained with brainwave session matches from six different OHCs. X axis show the progressive number of gaming agent training matches used to train the Q-Table. \DIFaddbeginFL \DIFaddFL{These matches correspond to all subjects, excluding subjects 5 and 6 which individually show no significant learning progress.}\DIFaddendFL }
+\caption{Average steps using Q-Table trained with brainwave session matches from six different OHCs. X axis show the progressive number of gaming agent training matches used to train the Q-Table.}
 \label{fig:avg_steps_all}
 \end{figure}
 
 \section{Conclusion}
 \label{conclusions}
 
-\DIFaddbegin \DIFadd{Each time the gaming agent plays this simple game, it takes on average around 100 steps to reach the target spot.  A classifier can be trained to recognize Error Potential from observational human critics that observe the agent playing the game.  The gaming agent plays randomly and movements are marked triggered by the identification of an error potential from the human critic.  Those movements are used as rewards in a Reinforcement Learning scheme to train a Q-Table.  The gaming agent plays the game again, but this time the number of required steps to solve the game is reduced.  If rewards are provided based on random signals,  no reduction is achieved and the average number of steps does not change.   This shows that there is an effective transfer of information from the brainwaves to the agent.   As this process is repeated, the agent keeps improving solving the game effectively, i.e. performing the minimum number of required steps to reach the goal.
-}
+%Enfatizar la idea de que la mejor métrica de la propia detección está dada por la propia capacidad del agente de minimizar su tarea, que hay un flujo de información que involucra la propia percepción de la persona.
 
+This work aims to propose a simple game that can use the ErrP component to train a gaming agent using a RL model. The collected data shows that ErrP signals can in fact be classified and used to train an agent effectively.
 
-\DIFaddend %Enfatizar la idea de que la mejor métrica de la propia detección está dada por la propia capacidad del agente de minimizar su tarea, que hay un flujo de información que involucra la propia percepción de la persona.
+This proposal tries to keep the system as simple as possible, emphasizing information flow from the subjective error perception of the human critic. Rewards are generated using the signal processing and classification pipeline, and the Q-Table updates, enhancing the performance of the gaming agent.
 
-This work aims to propose a simple game \DIFaddbegin \DIFadd{mechanics }\DIFaddend that can use the ErrP component to train a gaming agent using a RL model. \DIFaddbegin \DIFadd{As described in the literature~\mbox{%DIFAUXCMD
-\cite{Chavarriaga2014}}\hspace{0pt}%DIFAUXCMD
-, ErrPs can be used to transmit subjective feedback to a computer.  }\DIFaddend The collected data \DIFdelbegin \DIFdel{shows }\DIFdelend \DIFaddbegin \DIFadd{show }\DIFaddend that ErrP signals can in fact be classified and used to train an agent effectively.  \DIFdelbegin %DIFDELCMD < 
-
-%DIFDELCMD < %%%
-\DIFdelend This proposal tries to keep the system as simple as possible, emphasizing information flow from the subjective error perception of the human critic.
-\DIFdelbegin \DIFdel{Rewards are generated using the signal processing and classification pipeline, and the Q-Table updates, enhancing the performance of the gaming agent.
-}\DIFdelend 
-
-One additional aspect to remark is the robustness of the learning strategy based on Q-Learning~\cite{Bauer2015,Rubin2012}.   The obtained accuracy to discriminate ErrPs is low\DIFdelbegin \DIFdel{.  However, even with such low accuracy  values}\DIFdelend \DIFaddbegin \DIFadd{, though on the same level to other similar results~\mbox{%DIFAUXCMD
-\cite{Iturrate2013,Ehrlich2016}}\hspace{0pt}%DIFAUXCMD
-.  In this regard, despite the variability of the ErrP response in terms of different experiments, levels of 90\%  accuracy in identifying it are reported~\mbox{%DIFAUXCMD
-\cite{Chavarriaga2014}}\hspace{0pt}%DIFAUXCMD
-.  Despite the low accuracy  in ErrP identification}\DIFaddend , the RL algorithm was able to extract meaningful information from rewards that were helpful to improve, and often maximize, the agent's performance.  Additionally,  \DIFdelbegin \DIFdel{one important aspect of the classification results is the }\DIFdelend \DIFaddbegin \DIFadd{classification results show a }\DIFaddend low percentage of false positives (Figure~\ref{fig:confusionmatrix}), \DIFdelbegin \DIFdel{showing }\DIFdelend \DIFaddbegin \DIFadd{entailing }\DIFaddend a high specificity. On the other hand, the percentage of false negatives is generally higher.  \DIFdelbegin \DIFdel{However, even }\DIFdelend \DIFaddbegin \DIFadd{Even }\DIFaddend though this implies that the agent misses frequently when a wrong action takes place, this is not hindering the overall performance and the agent is still learning. \DIFdelbegin \DIFdel{Though }\DIFdelend \DIFaddbegin \DIFadd{Although they may be }\DIFaddend scarce, accurate rewards are very useful for the RL algorithm.
-%DIF < However, even though this imply that the agent misses frequently that an action taken is wrong, this do not seems to be a serious issue because the agent improves its performance.
+One additional aspect to remark is the robustness of the learning strategy based on Q-Learning~\cite{Bauer2015,Rubin2012}.  The obtained accuracy to discriminate ErrPs is low.  However, even with such low accuracy values, the RL algorithm was able to extract meaningful information from rewards that were helpful to improve, and often maximize, the agent's performance.  Additionally, one important aspect of the classification results is the low percentage of false positives (Figure~\ref{fig:confusionmatrix}), showing a high specificity. On the other hand, the percentage of false negatives is generally higher.  However, even though this implies that the agent misses frequently when a wrong action takes place, this is not hindering the overall performance and the agent is still learning. Though scarce, accurate rewards are very useful for the RL algorithm.
+%However, even though this imply that the agent misses frequently that an action taken is wrong, this do not seems to be a serious issue because the agent improves its performance.
 
 
 
@@ -972,10 +823,9 @@ One additional aspect to remark is the robustness of the learning strategy based
 \label{fig:confusionmatrix}
 \end{figure}
 
-%DIF < Brainwave sessions have a low amount of matches in order to reduce fatigue from OHCs. However data suggests that longer sessions are required in order to reach better classification scores, since more data is available in order to train the classifier. Matches from OHCs with the largest amounts of data have the best classification scores and produced more accurate rewards. This can also be achieved designing a bigger game system that generates more samples with every session.  While classifying, the better performing classifier is Logistic Regression.
-%DIF > Brainwave sessions have a low amount of matches in order to reduce fatigue from OHCs. However data suggests that longer sessions are required in order to reach better classification scores, since more data are available in order to train the classifier. Matches from OHCs with the largest amounts of data have the best classification scores and produced more accurate rewards. This can also be achieved designing a bigger game system that generates more samples with every session.  While classifying, the better performing classifier is Logistic Regression.
+%Brainwave sessions have a low amount of matches in order to reduce fatigue from OHCs. However data suggests that longer sessions are required in order to reach better classification scores, since more data is available in order to train the classifier. Matches from OHCs with the largest amounts of data have the best classification scores and produced more accurate rewards. This can also be achieved designing a bigger game system that generates more samples with every session.  While classifying, the better performing classifier is Logistic Regression.
 
-At the same time, effective agent training depends on the OHC's training data. Results confirm the futility or complexity of using Transfer Learning~\cite{Wu2016}: training a classifier with data obtained from one OHC, and using the same classifier to identify ErrPs for another OHC does not increases the performance of the agent.  Despite that, the rewards generated from different subject's classifiers can be used to train the same Q-Table to improve its performance, which may lead to strategies where the overall performance is enhanced based on the information from different human critics at the same time.  \DIFdelbegin \DIFdel{There }\DIFdelend \DIFaddbegin \DIFadd{We hypothesize that as long as there are accurate rewards obtained from high specificity classifiers, there is extra information that can be used by the agent to get an improved Q-Table.  Additionally, it }\DIFaddend seems to be an agreement in terms of the subjective interpretation of what may be an appropriate movement to reach the goal\DIFaddbegin \DIFadd{, and different OHCs produce rewards for the same type of movements}\DIFaddend .
+At the same time, effective agent training depends on the OHC's training data. Results confirm the futility or complexity of using Transfer Learning~\cite{Wu2016}: training a classifier with data obtained from one OHC, and using the same classifier to identify ErrPs for another OHC does not increases the performance of the agent.  Despite that, the rewards generated from different subject's classifiers can be used to train the same Q-Table to improve its performance, which may lead to strategies where the overall performance is enhanced based on the information from different human critics at the same time.  There seems to be an agreement in terms of the subjective interpretation of what may be an appropriate movement to reach the goal.
 
 The simple setup of the grid-based game allows further experimentation, using the reduction on the number of average steps to reach the goal as a validation of the achieved information transfer.  It will be of research interest to verify if the smooth progression towards the end alters the shape of the ErrP response, how the ErrP response is triggered in relation with different shapes and colors of the board markers~\cite{EIMER1997143}, or if there is a differential ErrP signal component in relation to up, down, left and right movements.  In addition, the outcome of manipulating the stimulus could be further studied as well as the influence on the results if incentives are given to participants.
 
