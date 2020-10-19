@@ -131,7 +131,16 @@ AE's Comments to Author:
 
 Associate Editor
 Comments to the Author:
-The paper is improved but would benefit from a further update to 
+The paper is improved 
+
+\begin{quotation}
+{\color{blue}
+We thanks the AE and all the Reviewers for all the information provided in the comments and for thoughtfully reviewing our manuscript.
+}
+\end{quotation}
+
+
+but would benefit from a further update to 
 
 - improve abstract
 
@@ -273,7 +282,7 @@ Line 42 col 2 “These results are also consistent with their classification ROC
 
 \begin{quotation}
 {\color{blue}
-Due to previous Reviewer's requests, we added all the ROC curves on the new Figure 6.  We now emphasized on this figure's caption which ROC curves where showing an effective identification of the ErrP potential and which did not.  We added this in the text, highlighting the important finding that we could not provide an enhancement of the agent performance based on the rewards from subjects where the obtained ROC curves were not good (Section III, page 5).
+Based on a previous Reviewer's requests, we added all the ROC curves on the new Figure 6.  We think it is better to allow comparisons between Figures 5,6 and 8.  We are now emphasizing on this figure's caption which ROC curves were showing an effective identification of the ErrP potential and which did not.  We added this in the text, highlighting the important finding that we could not provide an enhancement of the agent performance based on the rewards from subjects where the obtained ROC curves were not good (Section III, page 5).
 }
 \end{quotation}
 
@@ -288,7 +297,7 @@ Line 51 “No\sout{t} performance gain is evidenced, the agents learn nothing wh
 We fixed the inappropriate wording, and appreciate the Reviewer for pointing this out. 
 
  
-Figure 5, for Subject 5 (in the first version of the manuscript it was labeled E) has only two sets of testing data because that Participant (OHC) couldn't complete more sessions.  Hence we used two training sessions to calculate the Q-Table and subsequently performed the run session (i.e. the agent performs movements randomly based on the trained QTable for 200 iterations).
+Figure 5, for Subject 5 (in the first version of the manuscript it was labeled E) has only two sets of testing data because that Participant (OHC) couldn't complete more sessions.  Hence we used two training sessions to calculate the Q-Table and subsequently performed the run session (i.e. the agent performs movements randomly based on the trained Q-Table for 200 iterations).
 On the other hand, we hypothesize that the smaller change obtained from 1-2 for Subject 5 (as well as for Subject 6), may be due to the fact that the ROC curves for those Subjects also display very low classification accuracy.  This could be for reasons related to BCI-illeteracy issues, or the Participant (OHC) not being  concentrated at all during the experiment.  This information was explained in Section III, page 5.
 }
 \end{quotation}
@@ -297,7 +306,7 @@ Line 55 “It can be seen that the overall performance of the agent improves as 
 
 \begin{quotation}
 {\color{blue}
-This is a great question.  Traditional transfer learning strategies focus on the procedure to enrich a classifier training it with a vast dataset and using it to generalize to new data from unseen scenarios.  While dealing with EEG data, this strategy tends to fail, and other approaches are required.  We found in this work, that even when that strategy fails, if the system is coupled with a basic reinforcement learning algorithm, the cumulative rewards from different subjects, can be used to effectively transmit information and improve the agent performance.  We agree with the Reviewer that this may be due to the average effect of positive or learners with a higher accuracy, but we think it may be related to the fact that the RL algorithm is quite robust and if we can get a higher specificity, the cumulative usage of data from various OHCs help to overcome this issue and improve the agent performance.
+This is a great question.  Traditional transfer learning strategies focus on the procedure to enrich a classifier training it with a vast dataset and using it to generalize to new data from unseen scenarios.  While dealing with EEG data, this strategy tends to fail, and other approaches are required.  We found in this work, that even when that strategy fails, if the system is coupled with a basic reinforcement learning algorithm, the cumulative rewards from different subjects, can be used to effectively transmit information and improve the agent performance.  We agree with the Reviewer that this may be due to the average effect of positive or learners with a higher accuracy, but we think it may be related to the fact that the RL algorithm is quite robust and if we can get a higher specificity, the cumulative usage of data from various OHCs help to overcome this issue and improve the agent performance.  We have added this information in Section IV.
 }
 \end{quotation}
 
